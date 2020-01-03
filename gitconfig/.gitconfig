@@ -8,6 +8,10 @@
 [includeIf "gitdir:~/Work/"]
 	path = ~/.gitconfig_work
 
+[url "github:"]
+    pushInsteadOf = https://github.com/
+    pushInsteadOf = git@github.com:
+
 
 [core]
   editor = vim
