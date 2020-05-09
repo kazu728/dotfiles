@@ -49,12 +49,6 @@ set hlsearch
 vnoremap x "_x
 nnoremap x "_x
 
-" 1 で行頭に移動
-nnoremap 1 ^
-
-" 2で行末に移動
-nnoremap 2 $
-
 " , で前のバッファタブへ
 nnoremap <silent> , :bprev<CR>
 
@@ -90,14 +84,6 @@ imap <C-k> <C-r>=<SID>kill()<CR>
 " visulaモードでインデント調整後に選択範囲を開放しない
 vnoremap > >gv
 vnoremap < <gv
-
-" 画面分割系
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap ss :<C-u>sp<CR><C-w>j
-nnoremap sv :<C-u>vs<CR><C-w>l
 
 if (empty($TMUX))
   if (has("nvim"))

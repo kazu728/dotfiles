@@ -12,6 +12,13 @@
     pushInsteadOf = https://github.com/
     pushInsteadOf = git@github.com:
 
+[fetch]
+  prune = true
+[merge]
+	ff = false
+[pull]
+	ff = only
+
 
 [core]
   editor = vim

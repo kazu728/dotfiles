@@ -61,6 +61,7 @@ cask "ip-in-menu-bar"
 cask "iterm2"
 cask "java"
 cask "kindle"
+cask "mysqlworkbench"
 cask "ngrok"
 cask "postman"
 cask "sequel-pro-nightly"
@@ -73,7 +74,7 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
 cask "zeplin"
-cask "zoom"
+cask "zoomus"
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
