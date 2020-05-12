@@ -12,16 +12,11 @@ set t_Co=256
 " スワップファイルの作成先を変更
 set noswapfile
 
-" ヤンクをクリップボードへ繋ぐ
 set clipboard+=unnamed
 
-" ビープ音を消す
 set belloff=all
 
-" 行番号系
 set number
-
-" タイトル系
 set title
 
 " インデント系
