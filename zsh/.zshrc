@@ -18,7 +18,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias rm='rm -i'
 
-alias sshk='ssh-keygen -t rsa'
 alias vsc='vi ~/.ssh/config'
 
 alias vz='vim ~/.zshrc'

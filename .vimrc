@@ -50,9 +50,6 @@ nnoremap <silent> , :bprev<CR>
 " . で次のバッファタブへ
 nnoremap <silent> . :bnext<CR>
 
-" Option + | でファイル内の文字置換
-nnoremap \ :%s/old/new/g<LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>
-
 " 現在のバッファ削除
 nnoremap bd :bd<CR>
 
@@ -76,9 +73,7 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 imap <C-k> <C-r>=<SID>kill()<CR>
 
-" visulaモードでインデント調整後に選択範囲を開放しない
-vnoremap > >gv
-vnoremap < <gv
+noremap! <C-j> <esc>
 
 if (empty($TMUX))
   if (has("nvim"))
