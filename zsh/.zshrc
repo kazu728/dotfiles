@@ -18,6 +18,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias rm='rm -i'
 
+alias ls='exa'
+alias cat='bat'
+alias find='fd'
+alias dust='du'
+
 alias vsc='vi ~/.ssh/config'
 
 alias vz='vim ~/.zshrc'
@@ -36,3 +41,4 @@ alias gca='git commit --amend'
 alias dc='docker container'
 alias fig='docker-compose'
 
+alias ubuntu='docker run -it --rm ubuntu /bin/bash'
