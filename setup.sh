@@ -24,7 +24,7 @@ setup_zsh(){
 
 # anyenv
 env_install(){
-  envs=(nodenv rbenv sbtenv)
+  envs=(nodenv)
   for env in ${envs[*]}
   do
     echo Install ${env}...
@@ -55,7 +55,7 @@ setup_anyenv(){
 setup_symbolic_link(){
   echo Start setup symbolic link
 
-  configs=(gitconfig/.gitconfig gitconfig/.gitconfig_private gitconfig/.gitignore_global .vimrc .tmux.conf)
+  configs=(gitconfig/.gitconfig .vimrc .tmux.conf)
 
   for i in ${confis}
   do
