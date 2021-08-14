@@ -2,20 +2,16 @@
   name = Kazuki Matsuo
   email = kazuki.matsuo.728@gmail.com
 
-[includeIf "gitdir:~/Private/"]
-  path = ~/.gitconfig_private
-
-[includeIf "gitdir:~/Work/"]
-  path = ~/.gitconfig_work
-
-[url "github:"]
-  pushInsteadOf = https://github.com/
-  pushInsteadOf = git@github.com:
+[url "git@github.com:"]
+  insteadOf = https://github.com/
 
 [fetch]
   prune = true
+
 [merge]
-	ff = false
+  ff = false
+[pull]
+  rebase = yes
 
 [core]
   editor = vim
