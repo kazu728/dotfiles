@@ -84,6 +84,8 @@ if (empty($TMUX))
   endif
 endif
 
+set mouse=a
+
 syntax on
 let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
