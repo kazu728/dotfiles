@@ -6,7 +6,6 @@ alias rm='rm -i'
 
 alias ls='exa'
 alias cat='bat'
-alias find='fd'
 alias dust='du'
 
 alias vsc='vi ~/.ssh/config'
@@ -23,8 +22,11 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gsu='git stash save -u'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
+alias gbd='git branch --merged | grep -Ev "\*|development|staging|main|master|production" | xargs git branch -d'
 
 alias dc='docker container'
 alias fig='docker-compose'
+alias rsyncr='rsync -re "ssh -i ~/.ssh/key" dest user@ip:source'
+alias dbx64='docker build --platform linux/amd64'
 
-alias ubuntu='docker run -it --rm ubuntu /bin/bash'
+alias ubuntu=' docker run -it --rm  --platform linux/amd64 ubuntu /bin/bash'
