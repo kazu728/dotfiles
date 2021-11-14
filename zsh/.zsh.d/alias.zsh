@@ -7,6 +7,7 @@ alias rm='rm -i'
 alias ls='exa'
 alias cat='bat'
 alias dust='du'
+alias awk='gawk'
 
 alias vsc='vi ~/.ssh/config'
 
