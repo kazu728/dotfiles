@@ -4,6 +4,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "act"
 brew "anyenv"
+brew "augeas"
+brew "python@3.9"
 brew "awscli"
 brew "bat"
 brew "certbot"
@@ -12,8 +14,11 @@ brew "deno"
 brew "docker-clean"
 brew "exa"
 brew "fzf"
+brew "gawk"
+brew "gh"
 brew "ghq"
 brew "gibo"
+brew "gnu-sed"
 brew "grep"
 brew "hadolint"
 brew "hub"
@@ -27,6 +32,7 @@ brew "nkf"
 brew "peco"
 brew "percona-toolkit"
 brew "procs"
+brew "protobuf"
 brew "pulumi"
 brew "qemu"
 brew "tfenv"
@@ -76,7 +82,9 @@ mas "Hex Fiend", id: 1342896380
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
+mas "Messenger", id: 1480068668
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pine Player", id: 1112075769
+mas "Times", id: 1048770312
 mas "Xcode", id: 497799835
