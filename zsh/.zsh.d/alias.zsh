@@ -24,6 +24,7 @@ alias gsu='git stash save -u'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gbd='git branch --merged | grep -Ev "\*|development|staging|main|master|production" | xargs git branch -d'
+alias gz='git-cz --disable-emoji'
 
 alias dc='docker container'
 alias fig='docker-compose'
