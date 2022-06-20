@@ -79,7 +79,6 @@ cask "multipass"
 cask "mysqlworkbench"
 cask "notion"
 cask "postman"
-cask "prisma-studio"
 cask "responsively"
 cask "slack"
 cask "spectacle"
@@ -89,11 +88,9 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
 cask "wireshark"
-mas "Be Focused", id: 973134470
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Hex Fiend", id: 1342896380
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
@@ -101,4 +98,3 @@ mas "Pages", id: 409201541
 mas "Pine Player", id: 1112075769
 mas "Times", id: 1048770312
 mas "WebP Converter", id: 1522368690
-mas "Xcode", id: 497799835
