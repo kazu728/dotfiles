@@ -10,8 +10,12 @@
 
 [merge]
   ff = false
+  
 [pull]
   rebase = yes
+
+[rebase]
+  autostash = true
 
 [core]
   editor = vim
