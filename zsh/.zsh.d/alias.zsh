@@ -1,4 +1,5 @@
 alias c='clear'
+alias ll='ls -l'
 alias lla='ll -a'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -27,7 +28,7 @@ alias gbd='git branch --merged | grep -Ev "\*|development|staging|main|master|pr
 alias gz='git-cz --disable-emoji'
 
 alias dc='docker container'
-alias fig='docker-compose'
+alias doco='docker-compose'
 alias rsyncr='rsync -re "ssh -i ~/.ssh/key" dest user@ip:source'
 alias dbx64='docker build --platform linux/amd64'
 
