@@ -1,74 +1,28 @@
-#!/bin/bash
-
-# brew
-setup_brew(){
-  echo Start install brew...
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew bundle install --file=./Brewfile
-  echo Done
+nix_install(){
+  curl -L https://nixos.org/nix/install | sh
+  nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+  nix-channel --update
 }
 
-# zsh
-setup_zsh(){
-  echo Start setup zsh
+add_homemanager(){
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
 
-  cd ~ && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+  @see https://github.com/nix-community/home-manager/issues/2564#issuecomment-994943471
 
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-
-  echo Done
+  nix-shell '<home-manager>' -A instal
 }
 
-# anyenv
-env_install(){
-  envs=(nodenv)
-  for env in ${envs[*]}
-  do
-    echo Install ${env}...
-    anyenv install $env
-    echo Installed ${env}
-  done
-
-  exec $SHELL - l
+add_nix_darwin(){
+  nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+  ./result/bin/darwin-installer
 }
 
-setup_anyenv(){
-  echo Start setup anyenv
 
-  ANY_ENV_ROOT="~/.anyenv" 
-  anyenv install --init
-  exec $SHELL
+nix_install
+add_homemanager
+add_nix_darwin
 
-  mkdir -p $ANY_ENV_ROOT/plugins
-  git clone https://github.com/znz/anyenv-update.git $ANY_ENV_ROOT/plugins/anyenv-update
-  anyenv update
-
-  env_install
-
-  echo Done
-}
-
-# symbolic link
-setup_symbolic_link(){
-  echo Start setup symbolic link
-
-  configs=(gitconfig/.gitconfig .vimrc .tmux.conf)
-
-  for i in ${confis}
-  do
-    ln -sf ~/dotfiles/${i} ~/${i}
-  done
-
-  ln -sf ~/dotfiles/anyenv/nodenv/default-packages ~/.anyenv/envs/nodenv/default-packages
-  ln -sf ~/dotfiles/anyenv/rbenv/default-gems ~/.anyenv/envs/rbenv/default-gems
-
-  echo Done
-}
-
-setup_brew
-setup_zsh
-setup_anyenv
-setup_symbolic_link
+home-manager -f ~/dotfiles/home.nix switch
+darwin-rebuild switch -I darwin-config=~/dotfiles/configuration.nix
