@@ -4,6 +4,7 @@
   home.username = "kazuki";
   home.homeDirectory = "/Users/kazuki";
   home.packages = with pkgs; [
+    asdf
     bat
     exa
     ghq
