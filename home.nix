@@ -114,8 +114,12 @@
   programs.starship = {
     enable = true;
     settings = {
-      status = {
-        disabled = false;
+      aws = {
+        disabled = true;
+      };
+
+      gcloud = {
+        disabled = true;
       };
     };
   };
