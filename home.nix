@@ -11,7 +11,7 @@
     procs
     yarn
   ];
-
+  
   home.stateVersion = "22.05";
 
   programs = {
@@ -67,8 +67,10 @@
 
     neovim = {
       enable = true;
+      viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      extraConfig = builtins.readFile ./neovim/init.vim;
     };
 
     zsh = {
