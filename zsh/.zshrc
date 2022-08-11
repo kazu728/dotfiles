@@ -3,7 +3,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-export GOPATH=$HOME/go
 export PATH="$PATH:`yarn global bin`"
 
 ghq-fzf() {
