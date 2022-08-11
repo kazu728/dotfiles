@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
+
 cask "adobe-acrobat-reader"
 cask "android-file-transfer"
 cask "appcleaner"
@@ -17,9 +18,11 @@ cask "google-chrome"
 cask "google-chrome-canary"
 cask "google-drive"
 cask "grammarly"
+cask "imhex"
 cask "ip-in-menu-bar"
 cask "iterm2"
 cask "karabiner-elements"
+cask "keycastr"
 cask "kindle"
 cask "mimestream"
 cask "multipass"
@@ -29,11 +32,13 @@ cask "responsively"
 cask "slack"
 cask "spectacle"
 cask "tableplus"
+cask "tidal"
 cask "toggl-track"
 cask "vagrant"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
 cask "wireshark"
+
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Keynote", id: 409183694
