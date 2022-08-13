@@ -1,5 +1,6 @@
 let $LANG='en_US.UTF-8'
 
+set noswapfile
 set number
 set clipboard=unnamed
 
