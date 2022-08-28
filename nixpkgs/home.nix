@@ -42,7 +42,6 @@
           prune = true;
         };
         merge = {
-          conflictStyle = "diff3";
           ff = false;
         };
         pull = {
@@ -70,13 +69,13 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      extraConfig = builtins.readFile ./neovim/init.vim;
+      extraConfig = builtins.readFile ../neovim/init.vim;
     };
 
     zsh = {
       enable = true;
       defaultKeymap = "emacs";
-      dotDir = ".config/zsh";
+      dotDir = "..config/zsh";
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       enableCompletion = true;
@@ -106,7 +105,7 @@
         rsyncr = "rsync -re 'ssh -i ~/.ssh/key' dest user@ip:source";
       };
 
-      initExtra = builtins.readFile zsh/.zshrc;
+      initExtra = builtins.readFile ../zsh/.zshrc;
     };
 
     fzf = {
