@@ -6,12 +6,13 @@
   home.packages = with pkgs; [
     asdf
     ghq
-    mas
     nodejs-18_x
     procs
+    rustup
     yarn
+    pstree
   ];
-  
+
   home.stateVersion = "22.05";
 
   programs = {
