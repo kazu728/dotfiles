@@ -120,12 +120,20 @@
     starship = {
       enable = true;
       settings = {
+        git_branch = {
+          symbol = "🌱 ";
+        };
+        git_status = {
+          disabled = true;
+        };
         aws = {
           disabled = true;
         };
-
         gcloud = {
           disabled = true;
+        };
+        nodejs = {
+          symbol = "Node ";
         };
       };
     };
