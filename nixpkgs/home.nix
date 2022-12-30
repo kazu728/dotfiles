@@ -89,6 +89,7 @@
         ll = "ls -a";
         lla = "ls -la";
         cat = "bat";
+        ps = "procs";
         dust = "du";
         grep = "grep --color";
         ga = "git add -A";
@@ -99,11 +100,12 @@
         gsu = "git stash save -u";
         gcm = "git commit -m";
         gca = "git commit --amend";
-        gbd = "git branch --merged | grep -Ev '\*|development|staging|main|master|production' | xargs git branch -d";
+        gbd = "git branch --merged | egrep 'feature|fix|chore' | xargs git branch -d";
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker-compose";
         rsyncr = "rsync -re 'ssh -i ~/.ssh/key' dest user@ip:source";
+        ubuntu = "docker run -it amd64/ubuntu bash";
       };
 
       initExtra = builtins.readFile ../zsh/.zshrc;
