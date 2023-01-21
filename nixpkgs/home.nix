@@ -5,6 +5,7 @@
   home.homeDirectory = "/Users/kazuki";
   home.packages = with pkgs; [
     asdf
+    bottom
     ghq
     nodejs-18_x
     procs
