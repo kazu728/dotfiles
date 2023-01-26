@@ -8,6 +8,7 @@ cask "bitwarden"
 cask "bluesnooze"
 cask "clipy"
 cask "cloudflare-warp"
+cask "dash"
 cask "deepl"
 cask "discord"
 cask "docker"
@@ -26,24 +27,16 @@ cask "keycastr"
 cask "kindle"
 cask "mimestream"
 cask "multipass"
+cask "ngrok"
 cask "notion"
 cask "raycast"
 cask "responsively"
 cask "slack"
-cask "spectacle"
+cask "spotify"
 cask "tableplus"
-cask "tidal"
 cask "toggl-track"
-cask "vagrant"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
 cask "wireshark"
-
-mas "GarageBand", id: 682658836
-mas "Gifski", id: 1351639930
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Times", id: 1048770312
-mas "Xcode", id: 497799835
+cask "wkhtmltopdf"
+cask "zulip"
