@@ -23,47 +23,30 @@
 
     git = {
       enable = true;
-      aliases = {
-        graph = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-        grapha = "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-      };
+      userName = "Kazuki Matsuo";
+      userEmail = "kazuki.matsuo.728@gmail.com";
       extraConfig = {
-        color = {
-          ui = "auto";
-        };
         core = {
           editor = "nvim";
+          ignorecase = false;
         };
-        diff = {
-          compactionHeuristic = true;
-        };
-        init = {
-          defaultBranch = "master";
-        };
-        fetch = {
-          prune = true;
-        };
-        merge = {
-          ff = false;
-        };
-        pull = {
-          rebase = true;
-        };
+        color.ui = true;
+        diff.compactionHeuristic = true;
+        init.defaultBranch = "master";
+        fetch.prune = true;
+        merge.ff = false;
+        pull.rebase = true;
         rebase = {
           autosquash = true;
           autostash = true;
         };
-        url = {
-          "https://github.com/".insteadOf = "git@github.com:";
-        };
+        url = { "https://github.com/".insteadOf = "git@github.com:"; };
       };
       ignores = [
         ".DS_Store"
         ".direnv"
         "node_modules"
       ];
-      userName = "Kazuki Matsuo";
-      userEmail = "kazuki.matsuo.728@gmail.com";
     };
 
     neovim = {
@@ -105,7 +88,6 @@
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker-compose";
-        rsyncr = "rsync -re 'ssh -i ~/.ssh/key' dest user@ip:source";
         ubuntu = "docker run -it amd64/ubuntu bash";
       };
 
@@ -121,21 +103,11 @@
     starship = {
       enable = true;
       settings = {
-        git_branch = {
-          symbol = "🌱 ";
-        };
-        git_status = {
-          disabled = true;
-        };
-        aws = {
-          disabled = true;
-        };
-        gcloud = {
-          disabled = true;
-        };
-        nodejs = {
-          symbol = "Node ";
-        };
+        git_branch.symbol = "🌱 ";
+        git_status.disabled = true;
+        aws.disabled = true;
+        gcloud.disabled = true;
+        nodejs.symbol = "Node ";
       };
     };
 
