@@ -8,7 +8,7 @@ home-manager-install:
 
 	# @see https://github.com/nix-community/home-manager/issues/2564#issuecomment-994943471
 	export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
-	nix-shell '<home-manager>' -A instal
+	nix-shell '<home-manager>' -A install
 
 nix-darwin-install:
 	nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
