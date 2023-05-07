@@ -66,8 +66,6 @@
       enableCompletion = true;
 
       shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../..";
         rm = "rm -i";
         ls = "exa";
         ll = "ls -a";
@@ -106,8 +104,9 @@
         git_branch.symbol = "🌱 ";
         git_status.disabled = true;
         aws.disabled = true;
+        elixir.disabled = true;
         gcloud.disabled = true;
-        nodejs.symbol = "Node ";
+        nodejs.disabled = true;
       };
     };
 
