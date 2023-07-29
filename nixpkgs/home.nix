@@ -4,14 +4,12 @@
   home.username = "kazuki";
   home.homeDirectory = "/Users/kazuki";
   home.packages = with pkgs; [
-    asdf
     bottom
     ghq
     nodejs-18_x
     procs
-    rustup
-    yarn
     pstree
+    rustup
   ];
 
   home.stateVersion = "22.05";
@@ -80,7 +78,7 @@
         co = "git checkout";
         gl = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         gsu = "git stash save -u";
-        gcm = "git commit -m";
+        gcm = "if git diff --cached --quiet; then echo 'No changes added to commit'; else echo -n 'Commit message: ' && read message && git commit -m \"$message\"; fi";
         gca = "git commit --amend";
         gbd = "git branch --merged | egrep 'feature|fix|chore' | xargs git branch -d";
         gz = "git-cz --disable-emoji";
