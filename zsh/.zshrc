@@ -3,7 +3,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(rtx activate zsh)"
 
-export PATH="$PATH:`yarn global bin`"
+export PATH=$PATH:$HOME/.bun/bin
 
 ghq-fzf() {
   local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs exa -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
