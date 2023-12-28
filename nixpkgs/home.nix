@@ -5,8 +5,9 @@
   home.homeDirectory = "/Users/kazuki";
   home.packages = with pkgs; [
     bottom
+    gh
     ghq
-    nodejs-18_x
+    nodejs_20
     procs
     pstree
     rustup
@@ -39,10 +40,13 @@
           autostash = true;
         };
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
+        commit.gpgsign = true;
+        tag.gpgsign = true;
+        gpg.format = "ssh";
+        user.signingKey = "/Users/kazuki/.ssh/id_github_rsa.pub";
       };
       ignores = [
         ".DS_Store"
-        ".direnv"
         "node_modules"
       ];
     };
@@ -78,7 +82,7 @@
         co = "git checkout";
         gl = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         gsu = "git stash save -u";
-        gcm = "if git diff --cached --quiet; then echo 'No changes added to commit'; else echo -n 'Commit message: ' && read message && git commit -m \"$message\"; fi";
+        gco = "git commit";
         gca = "git commit --amend";
         gbd = "git branch --merged | egrep 'feature|fix|chore' | xargs git branch -d";
         gz = "git-cz --disable-emoji";
