@@ -11,6 +11,7 @@
     procs
     pstree
     rustup
+    zoxide
   ];
 
   home.stateVersion = "22.05";
@@ -88,7 +89,6 @@
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker-compose";
-        ubuntu = "docker run -it amd64/ubuntu bash";
       };
 
       initExtra = builtins.readFile ../zsh/.zshrc;

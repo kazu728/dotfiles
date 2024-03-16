@@ -1,7 +1,8 @@
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(rtx activate zsh)"
+eval "$(/Users/kazuki/.local/bin/mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 export PATH=$PATH:$HOME/.bun/bin
 
