@@ -40,6 +40,9 @@
           autosquash = true;
           autostash = true;
         };
+        rerere = {
+          enabled = true;
+        };
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
         commit.gpgsign = true;
         tag.gpgsign = true;
