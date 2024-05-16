@@ -19,13 +19,13 @@
 
     dock = {
       autohide = true;
-      autohide-delay = "0.0";
+      autohide-delay = 0.0;
     };
      NSGlobalDomain = {
       "com.apple.sound.beep.feedback" = 0;
-      "com.apple.sound.beep.volume" = "0.000";
+      "com.apple.sound.beep.volume" = 0.000;
       "com.apple.trackpad.enableSecondaryClick" = true;
-      "com.apple.trackpad.scaling" = "1.75";
+      "com.apple.trackpad.scaling" = 1.75;
       "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       AppleShowAllExtensions = true;
     };
