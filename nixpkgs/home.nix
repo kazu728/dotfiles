@@ -16,6 +16,12 @@
   ];
 
   home.stateVersion = "22.05";
+  
+  nix.gc = {
+    automatic = true;
+    frequency = "monthly";
+    options = "--delete-older-than 60d";
+  };
 
   programs = {
     bat.enable = true;
