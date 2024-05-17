@@ -25,7 +25,7 @@
 
   programs = {
     bat.enable = true;
-    exa.enable = true;
+    eza.enable = true;
     home-manager.enable = true;
 
     git = {
@@ -74,13 +74,13 @@
       enable = true;
       defaultKeymap = "emacs";
       dotDir = "..config/zsh";
-      enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
       enableCompletion = true;
 
       shellAliases = {
         rm = "rm -i";
-        ls = "exa";
+        ls = "eza";
         ll = "ls -a";
         lla = "ls -la";
         cat = "bat";
