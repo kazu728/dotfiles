@@ -9,6 +9,7 @@
   programs.zsh.enable = true;
 
   system.stateVersion = 4;
+  system.startup.chime = false;
 
   system.defaults = {
     finder = {
@@ -25,7 +26,7 @@
       "com.apple.sound.beep.feedback" = 0;
       "com.apple.sound.beep.volume" = 0.000;
       "com.apple.trackpad.enableSecondaryClick" = true;
-      "com.apple.trackpad.scaling" = 1.75;
+      "com.apple.trackpad.scaling" = 3.0;
       "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       AppleShowAllExtensions = true;
     };
@@ -34,7 +35,6 @@
       Clicking = true;
       TrackpadRightClick = true;
     };
-
   };
 
   system.keyboard = {
