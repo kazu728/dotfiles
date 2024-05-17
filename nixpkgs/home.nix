@@ -7,6 +7,7 @@
     bottom
     gh
     ghq
+    mise
     nodejs_20
     procs
     pstree
