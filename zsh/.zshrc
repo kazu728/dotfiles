@@ -2,8 +2,10 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
-export PATH=$PATH:$HOME/.bun/bin
 export PATH=$PATH:$HOME/.cargo/bin
+
+# nixpkg壊れているのでグローバルに入れる `curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh``
+export PATH=$HOME/.ghcup/bin:$PATH
 
 ghq-fzf() {
   local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs exa -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
