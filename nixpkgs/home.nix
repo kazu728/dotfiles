@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   home.username = "kazuki";
@@ -8,6 +8,7 @@
     gh
     ghq
     mise
+    nil
     nodejs_20
     procs
     pstree
