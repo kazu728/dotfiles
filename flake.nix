@@ -1,4 +1,4 @@
-# darwin-rebuild switch --flake .#kazuki
+# darwin-rebuild switch --flake .#aarch64
 
 {
   description = "Darwin system configuration";
@@ -9,8 +9,8 @@
     darwin.url = "github:lnl7/nix-darwin";
   };
 
-  outputs = inputs@{ self, darwin, nixpkgs, home-manager, ... }: {
-    darwinConfigurations.kazuki = darwin.lib.darwinSystem {
+  outputs = { darwin, home-manager, ... }: {
+    darwinConfigurations.aarch64 = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./nixpkgs/darwin-configuration.nix
