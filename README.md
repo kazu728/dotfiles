@@ -1,4 +1,5 @@
 # dotfiles
+dotfiles of my aarch64 darwin
 
 ## Requirement
 - [Nix](https://nixos.org/download.html#nix-install-macos "Nix")
