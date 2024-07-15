@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = [ pkgs.vim ];
@@ -12,6 +12,12 @@
   system.startup.chime = false;
 
   system.defaults = {
+    alf = {
+      allowdownloadsignedenabled = 1;
+      allowsignedenabled = 1;
+      globalstate = 1;
+      stealthenabled = 1;
+    };
     finder = {
       AppleShowAllExtensions = true;
       FXEnableExtensionChangeWarning = true;
