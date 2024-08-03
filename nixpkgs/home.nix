@@ -11,7 +11,6 @@
     nil
     nodejs_20
     procs
-    pstree
     rustup
     zoxide
   ];
@@ -100,6 +99,7 @@
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker-compose";
+        "??"= "gh copilot suggest -t shell '$1'";
       };
 
       initExtra = builtins.readFile ../zsh/.zshrc;
