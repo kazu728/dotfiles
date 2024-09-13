@@ -1,4 +1,4 @@
-# darwin-rebuild switch --flake .#aarch64
+# darwin-rebuild switch --flake .arm64
 
 {
   description = "Darwin system configuration";
@@ -10,8 +10,8 @@
   };
 
   outputs = { darwin, home-manager, ... }: {
-    darwinConfigurations.aarch64 = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+    darwinConfigurations.arm64 = darwin.lib.darwinSystem {
+      system = "arm64-darwin";
       modules = [
         ./nixpkgs/darwin-configuration.nix
         home-manager.darwinModules.home-manager {
