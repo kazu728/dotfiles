@@ -1,4 +1,4 @@
-# darwin-rebuild switch --flake .#aarch64
+# darwin-rebuild switch --flake .aarch64
 
 {
   description = "Darwin system configuration";
