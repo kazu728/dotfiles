@@ -5,17 +5,17 @@
   home.homeDirectory = lib.mkForce "/Users/kazuki";
   home.packages = with pkgs; [
     bottom
+    deno
     gh
     ghq
     mise
     nil
-    nodejs_20
+    nodejs_22
     procs
     rustup
-    zoxide
   ];
 
-  home.stateVersion = "22.05";
+  home.stateVersion = "24.11";
   
   nix.gc = {
     automatic = true;
