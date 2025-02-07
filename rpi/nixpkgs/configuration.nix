@@ -67,6 +67,20 @@ in {
     };
   };
   
+  systemd.services.k3s = {
+    enable = true;
+    description = "Lightweight Kubernetes (K3s)";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.k3s}/bin/k3s server --write-kubeconfig-mode 644";
+      Restart = "always";
+      RestartSec = "5s";
+    };
+  };  
+
+  
   services.tailscale.enable = true;
 
   # Tailscaleで接続するため、インターネットからの接続は全て拒否する
