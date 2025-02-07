@@ -78,9 +78,8 @@ in {
       Restart = "always";
       RestartSec = "5s";
     };
-  };  
+  };
 
-  
   services.tailscale.enable = true;
 
   # Tailscaleで接続するため、インターネットからの接続は全て拒否する
@@ -105,6 +104,12 @@ in {
   virtualisation.docker.enable = true;
 
   security.sudo.wheelNeedsPassword = true;
+  security.sudo.extraRules = [
+    {
+      users = [ user ];
+      commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ];
+    }
+  ];
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "23.11";
 }
