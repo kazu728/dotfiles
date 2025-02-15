@@ -18,6 +18,7 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/update-flake-lock@main
         with:
+          path-to-flake-dir: "mac/"
           pr-title: "Update flake.lock"
           pr-labels: |
             dependencies
