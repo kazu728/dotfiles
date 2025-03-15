@@ -1,6 +1,5 @@
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(zoxide init zsh)"
 
 export PATH=$PATH:$HOME/.cargo/bin
 
