@@ -32,27 +32,46 @@
       enable = true;
       userName = "Kazuki Matsuo";
       userEmail = "kazuki.matsuo.728@gmail.com";
-      extraConfig = {
-        core = {
-          editor = "nvim";
-          ignorecase = false;
-        };
+        extraConfig = {
+          core = {
+            editor = "nvim";
+            ignorecase = false;
+            excludesfile = "~/.gitignore";
+          };
         color.ui = true;
         diff.compactionHeuristic = true;
         init.defaultBranch = "master";
-        fetch.prune = true;
         merge.ff = false;
         pull.rebase = true;
-        rebase = {
-          autosquash = true;
-          autostash = true;
-        };
-        rerere = {
-          enabled = true;
-        };
+          rerere = {
+            enabled = true;
+            autoUpdate = true;
+          };
+          branch = {
+            sort = "-committerdate";
+          };
+          tag = {
+            sort = "-version:refname";
+            gpgsign = true;
+          };
+          push = {
+            default = "current";
+            autoSetupRemote = true;
+          };
+          fetch = {
+            prune = true;
+            prunetags = true;
+          };
+          help = {
+            autocorrect = "immediate";
+          };
+          rebase = {
+            autosquash = true;
+            autostash = true;
+            updateRefs = true;
+          };
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
         commit.gpgsign = true;
-        tag.gpgsign = true;
         gpg.format = "ssh";
         user.signingKey = "/Users/kazuki/.ssh/id_github_rsa.pub";
       };
