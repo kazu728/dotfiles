@@ -5,6 +5,7 @@
   home.homeDirectory = lib.mkForce "/Users/kazuki";
   home.packages = with pkgs; [
     bottom
+    checkov
     deno
     gh
     ghq
@@ -13,6 +14,8 @@
     nodejs_22
     procs
     rustup
+    terraform
+    uv
   ];
 
   home.stateVersion = "24.11";

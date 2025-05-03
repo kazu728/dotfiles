@@ -3,8 +3,8 @@
 {
   environment.systemPackages = [ pkgs.vim ];
 
-  services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
+  nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
 
