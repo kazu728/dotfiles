@@ -3,6 +3,7 @@ name: update-flake-lock
 on:
   workflow_dispatch:
   schedule:
+    # 毎週日曜日の午前0時(UTC)に実行
     - cron: "0 0 * * 0"
 
 permissions:
