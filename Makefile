@@ -4,7 +4,7 @@ build-mac:
 	darwin-rebuild switch --flake ./mac/.#aarch64
 
 .PHONY: build-rpi
-# 実行時にUSERの環境変数が必要
+# example: make build-rpi USER=user
 build-rpi: sync-nixconfig-to-rpi deploy-to-rpi	
 
 .PHONY: sync-nixconfig-to-rpi
