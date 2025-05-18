@@ -1,52 +1,25 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   secrets = import ./secrets.nix;
-
-  user = secrets.user_name;
-  password = secrets.user_password;
-  hostname = secrets.hostname;
-  networks = secrets.wireless_networks;
-
-in {
-
-  boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-    kernelParams = [ "cgroup_enable=cpuset" "cgroup_enable=memory" "cgroup_memory=1" ];
-    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
-    loader = {
-      grub.enable = false;
-      generic-extlinux-compatible.enable = true;
-    };
-  };
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-      options = [ "noatime" ];
-    };
-  };
-  
-  # SDカードの書き込み回数を減らすため、swapをzramにする
-  swapDevices = [];
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
-
+in
+{
   networking = {
-    hostName = hostname;
+    hostName = secrets.hostname;
     useDHCP = true;
     interfaces = {
-      wlan0 = {
-        useDHCP = true;
-      };
+      wlan0.useDHCP = true;
     };
     wireless = {
       enable = true;
       interfaces = [ "wlan0" ];
-      networks = networks;
+      networks = secrets.wireless_networks;
+    };
+    # Tailscale経由で接続するためingress通信は何も許可しない
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
     };
   };
 
@@ -58,15 +31,6 @@ in {
     libcgroup
   ];
 
-  services.openssh = {
-    enable = true;
-    openFirewall = false;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-    };
-  };
-  
   systemd.services.k3s = {
     enable = true;
     description = "Lightweight Kubernetes (K3s)";
@@ -82,34 +46,49 @@ in {
 
   services.tailscale.enable = true;
 
-  # Tailscaleで接続するため、インターネットからの接続は全て拒否する
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ ];
-    allowedUDPPorts = [ ];
+  services = {
+    openssh = {
+      enable = true;
+      openFirewall = false;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        X11Forwarding = false;
+        MaxAuthTries = 3;
+        LoginGraceTime = "30s";
+      };
+      extraConfig = ''
+        AllowUsers ${secrets.user_name}
+        ClientAliveInterval 300
+        ClientAliveCountMax 2
+      '';
+    };
   };
+
+  programs.nix-ld.enable = true;
 
   users = {
     mutableUsers = false;
-    users."${user}" = {
+    users.${secrets.user_name} = {
       isNormalUser = true;
-      password = password;
-      extraGroups = [ "wheel" "docker" ];
-      openssh.authorizedKeys.keys = [
-        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHNDMcODa6D7FfipS30eX+NmFi/c6Q6UsPKx5udV3N8Gso6V8WPJb9iK5fwD6KJkPSBWMXMN1AzfOos2cC7B7Pdzo75tDtvLuM2vQmS0UhX5EvJqKbPUqPPR66RPePLcsve7ikEt7+7c4havMl2EVZXaf7zSCORDKdJq130fjL/ZlNvMYHE4rWvtt+Tbx/sch9YlWhETieguhwC3ZW2sJtB1RsNALw6BIXit1okp4MVlPBzIhNzGVuTGws4rxnjEp1L2tq/JU3NFtGIifPQU/e4pqTiFmdP/7uv/hDFPI+4zQTfFKZdDL9YGacc0ruUjIZshupPoCzmMUELlzqTCm7 kazuki@mbp"
-      ];
+      password = secrets.user_password;
+      extraGroups = [ "wheel" "docker" "systemd-journal" ];
+      openssh.authorizedKeys.keyFiles = [ ../ssh/authorized_keys ];
     };
   };
 
   virtualisation.docker.enable = true;
 
-  security.sudo.wheelNeedsPassword = true;
-  security.sudo.extraRules = [
-    {
-      users = [ user ];
-      commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ];
-    }
-  ];
-  hardware.enableRedistributableFirmware = true;
+  security.sudo = {
+    wheelNeedsPassword = true;
+    extraRules = [
+      {
+        users = [ "${secrets.user_name}" ];
+        commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ];
+      }
+    ];
+  };
+
   system.stateVersion = "23.11";
 }

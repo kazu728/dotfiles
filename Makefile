@@ -9,9 +9,9 @@ build-rpi: sync-nixconfig-to-rpi deploy-to-rpi
 
 .PHONY: sync-nixconfig-to-rpi
 sync-nixconfig-to-rpi:
-	rsync -avz --no-perms --no-owner --no-group --omit-dir-times -e "ssh" ./rpi/nixpkgs/. $(USER)@rpi:/etc/nixos/
+	rsync -avz --no-perms --no-owner --no-group --omit-dir-times -e "ssh" ./rpi/. $(USER)@rpi:/etc/nixos/
 
 .PHONY: deploy-to-rpi
 deploy-to-rpi:
-	ssh $(USER)@rpi "sudo nixos-rebuild switch"
+	ssh $(USER)@rpi "cd /etc/nixos && sudo nixos-rebuild switch --flake .#rpi"
 	
