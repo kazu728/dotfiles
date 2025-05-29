@@ -1,0 +1,8 @@
+theme = Atom
+background = 000000
+
+cursor-style-blink = false
+confirm-close-surface = false
+
+font-family = "Monaco"
+font-size = 11.5

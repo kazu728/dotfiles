@@ -14,7 +14,8 @@
     rustup
   ];
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
+  home.file.".config/ghostty/config".source = ../ghostty/config;
   
   nix.gc = {
     automatic = true;
@@ -31,44 +32,44 @@
       enable = true;
       userName = "Kazuki Matsuo";
       userEmail = "kazuki.matsuo.728@gmail.com";
-        extraConfig = {
-          core = {
-            editor = "nvim";
-            ignorecase = false;
-            excludesfile = "~/.gitignore";
-          };
+      extraConfig = {
+        core = {
+          editor = "nvim";
+          ignorecase = false;
+          excludesfile = "~/.gitignore";
+        };
         color.ui = true;
         diff.compactionHeuristic = true;
         init.defaultBranch = "master";
         merge.ff = false;
         pull.rebase = true;
-          rerere = {
-            enabled = true;
-            autoUpdate = true;
-          };
-          branch = {
-            sort = "-committerdate";
-          };
-          tag = {
-            sort = "-version:refname";
-            gpgsign = true;
-          };
-          push = {
-            default = "current";
-            autoSetupRemote = true;
-          };
-          fetch = {
-            prune = true;
-            prunetags = true;
-          };
-          help = {
-            autocorrect = "immediate";
-          };
-          rebase = {
-            autosquash = true;
-            autostash = true;
-            updateRefs = true;
-          };
+        rerere = {
+          enabled = true;
+          autoUpdate = true;
+        };
+        branch = {
+          sort = "-committerdate";
+        };
+        tag = {
+          sort = "-version:refname";
+          gpgsign = true;
+        };
+        push = {
+          default = "current";
+          autoSetupRemote = true;
+        };
+        fetch = {
+          prune = true;
+          prunetags = true;
+        };
+        help = {
+          autocorrect = "immediate";
+        };
+        rebase = {
+          autosquash = true;
+          autostash = true;
+          updateRefs = true;
+        };
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
         commit.gpgsign = true;
         gpg.format = "ssh";
@@ -91,7 +92,7 @@
     zsh = {
       enable = true;
       defaultKeymap = "emacs";
-      dotDir = "..config/zsh";
+      dotDir = ".config/zsh";
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       enableCompletion = true;
@@ -117,7 +118,7 @@
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker-compose";
-        "??"= "gh copilot suggest -t shell '$1'";
+        "??" = "gh copilot suggest -t shell '$1'";
       };
 
       initExtra = builtins.readFile ../zsh/.zshrc;
@@ -125,8 +126,7 @@
 
     fzf = {
       enable = true;
-      defaultOptions =
-        [ "--layout=reverse" ];
+      defaultOptions = [ "--layout=reverse" ];
     };
 
     starship = {
