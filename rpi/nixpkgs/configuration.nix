@@ -20,6 +20,8 @@ in
       enable = true;
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ ];
+      
+      trustedInterfaces = [ "lo" ];
     };
   };
 
@@ -27,6 +29,8 @@ in
     docker
     git
     k3s
+    kubernetes-helm
+    helmfile
     vim
     libcgroup
   ];
