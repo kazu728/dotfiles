@@ -121,7 +121,7 @@
         "??" = "gh copilot suggest -t shell '$1'";
       };
 
-      initExtra = builtins.readFile ../zsh/.zshrc;
+      initContent = builtins.readFile ../zsh/.zshrc;
     };
 
     fzf = {
