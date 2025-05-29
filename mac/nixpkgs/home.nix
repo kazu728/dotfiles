@@ -6,16 +6,12 @@
   home.packages = with pkgs; [
     bottom
     checkov
-    deno
     gh
     ghq
     mise
     nil
-    nodejs_22
     procs
     rustup
-    terraform
-    uv
   ];
 
   home.stateVersion = "24.11";
