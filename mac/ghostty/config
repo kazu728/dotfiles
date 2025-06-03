@@ -1,5 +1,4 @@
 theme = Atom
-background = 000000
 
 cursor-style-blink = false
 confirm-close-surface = false

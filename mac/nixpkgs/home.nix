@@ -93,7 +93,11 @@
       enable = true;
       defaultKeymap = "emacs";
       dotDir = ".config/zsh";
-      autosuggestion.enable = true;
+      autosuggestion = {
+          enable = true;
+          strategy = [ "history" "completion" ];
+          highlight = "fg=#666666";
+        };
       syntaxHighlighting.enable = true;
       enableCompletion = true;
 
