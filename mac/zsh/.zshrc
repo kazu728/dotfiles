@@ -6,10 +6,10 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # nixpkg壊れているのでグローバルに入れる `curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh``
 export PATH=$HOME/.ghcup/bin:$PATH
-export SSH_AUTH_SOCK=/Users/kazuki/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
+export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
 
 ghq-fzf() {
-  local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs exa -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
+  local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs ls -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
   if [ -n "$repo" ]; then
     repo=$(ghq list --full-path --exact $repo)
     BUFFER="cd ${repo}"

@@ -85,7 +85,7 @@ in
   virtualisation.docker.enable = true;
 
   security.sudo = {
-    wheelNeedsPassword = true;
+    wheelNeedsPassword = false;
     extraRules = [
       {
         users = [ "${secrets.user_name}" ];

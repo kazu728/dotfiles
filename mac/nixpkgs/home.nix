@@ -1,8 +1,12 @@
 { lib, pkgs, ... }:
 
+let
+  username = "kazuki";
+  homeDirectory = "/Users/${username}";
+in
 {
-  home.username = "kazuki";
-  home.homeDirectory = lib.mkForce "/Users/kazuki";
+  home.username = username;
+  home.homeDirectory = lib.mkForce homeDirectory;
   home.packages = with pkgs; [
     bottom
     checkov
@@ -73,7 +77,7 @@
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
         commit.gpgsign = true;
         gpg.format = "ssh";
-        user.signingKey = "/Users/kazuki/.ssh/id_github_rsa.pub";
+        user.signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
       };
       ignores = [
         ".DS_Store"
