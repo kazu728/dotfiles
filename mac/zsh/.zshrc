@@ -21,7 +21,7 @@ ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
-ip() {
+myip() {
   curl http://checkip.amazonaws.com/
 }
 
