@@ -14,6 +14,7 @@ in
     ghq
     mise
     nil
+    podman
     procs
     rustup
   ];
