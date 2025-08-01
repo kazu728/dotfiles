@@ -1,7 +1,7 @@
 .PHONY: build-mac
 build-mac:
 	@echo "Building for Mac"
-	darwin-rebuild switch --flake ./mac/.#aarch64
+	sudo darwin-rebuild switch --flake ./mac/.#aarch64
 
 .PHONY: build-rpi
 # example: make build-rpi USER=user

@@ -10,6 +10,7 @@
 
   system.stateVersion = 4;
   system.startup.chime = false;
+  system.primaryUser = "kazuki";
 
   system.defaults = {
     alf = {
@@ -47,6 +48,8 @@
     enableKeyMapping = true;
     remapCapsLockToControl = true;
   };
+
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   homebrew = {
     enable = true;
