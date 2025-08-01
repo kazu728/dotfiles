@@ -9,6 +9,10 @@ export EDITOR=vim
 export PATH=$HOME/.ghcup/bin:$PATH
 export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
 
+export DISABLE_AUTOUPDATER=1
+# export MAX_THINKING_TOKENS=31999
+
+
 ghq-fzf() {
   local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs ls -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
   if [ -n "$repo" ]; then

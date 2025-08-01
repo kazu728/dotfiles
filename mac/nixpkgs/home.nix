@@ -10,6 +10,8 @@ in
   home.packages = with pkgs; [
     bottom
     checkov
+    claude-code
+    gemini-cli
     gh
     ghq
     mise
