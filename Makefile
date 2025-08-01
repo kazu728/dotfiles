@@ -15,3 +15,7 @@ sync-nixconfig-to-rpi:
 deploy-to-rpi:
 	ssh $(USER)@rpi "cd /etc/nixos && sudo nixos-rebuild switch --flake .#rpi"
 	
+.PHONY: brew-dump
+brew-dump:
+	@echo "Dumping Brewfile"
+	brew bundle dump --file=mac/Brewfile --force
