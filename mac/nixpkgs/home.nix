@@ -23,6 +23,10 @@ in
 
   home.stateVersion = "25.05";
   home.file.".config/ghostty/config".source = ../ghostty/config;
+  home.file.".claude/commands" = {
+    source = ../claude/commands;
+    recursive = true;
+  };
   
   nix.gc = {
     automatic = true;
