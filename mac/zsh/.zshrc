@@ -29,4 +29,8 @@ myip() {
   curl http://checkip.amazonaws.com/
 }
 
+'$'() {
+    "$@"
+}
+
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
