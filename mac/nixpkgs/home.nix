@@ -9,9 +9,9 @@ in
   home.homeDirectory = lib.mkForce homeDirectory;
   home.packages = with pkgs; [
     bottom
+    bun
     checkov
     claude-code
-    gemini-cli
     gh
     ghq
     mise
