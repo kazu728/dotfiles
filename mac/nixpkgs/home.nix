@@ -27,6 +27,12 @@ in
     source = ../claude/commands;
     recursive = true;
   };
+  home.file.".gitignore".text = ''
+    .DS_Store
+    node_modules
+    .envrc
+    .direnv
+  '';
   
   nix.gc = {
     automatic = true;
@@ -86,12 +92,6 @@ in
         gpg.format = "ssh";
         user.signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
       };
-      ignores = [
-        ".DS_Store"
-        "node_modules"
-        ".envrc"
-        ".direnv"
-      ];
     };
 
     neovim = {
