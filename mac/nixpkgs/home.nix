@@ -133,6 +133,7 @@ in
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker compose";
+        nix-direnv = "echo 'use flake' >> .envrc && direnv all";
         "??" = "gh copilot suggest -t shell '$1'";
       };
 
