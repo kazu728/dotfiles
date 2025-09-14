@@ -89,6 +89,8 @@ in
       ignores = [
         ".DS_Store"
         "node_modules"
+        ".envrc"
+        ".direnv"
       ];
     };
 
