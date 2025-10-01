@@ -1,3 +1,19 @@
+.PHONY: init
+init:
+	@if command -v nix >/dev/null 2>&1; then \
+		echo "Nix is already installed"; \
+	else \
+		echo "Installing Nix..."; \
+		curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate; \
+	fi
+	@if command -v darwin-rebuild >/dev/null 2>&1; then \
+		echo "nix-darwin is already installed, running build-mac..."; \
+		$(MAKE) build-mac; \
+	else \
+		echo "Setting up nix-darwin for the first time..."; \
+		nix run nix-darwin -- switch --flake ./mac/.#aarch64; \
+	fi
+
 .PHONY: build-mac
 build-mac:
 	@echo "Building for Mac"
