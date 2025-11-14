@@ -13,9 +13,10 @@ $ nixos-rebuild boot
 
 # When changing the configuration, run the following command
 $ nixos-rebuild switch
-
-# Add Twingate connector and resource by manual
 ```
+
+## Tailscale
+`sudo tailscale up -ssh` in raspberry pi
 
 ## Reference
 
