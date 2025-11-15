@@ -30,6 +30,10 @@ sync-nixconfig-to-rpi:
 .PHONY: deploy-to-rpi
 deploy-to-rpi:
 	ssh $(USER)@rpi "cd /etc/nixos && NIX_STORE_LOG=trace sudo nixos-rebuild switch --flake .#rpi"
+
+.PHONY: tailscale-rpi
+tailscale-rpi:
+	ssh $(USER)@rpi "sudo tailscale up -ssh"
 	
 .PHONY: brew-dump
 brew-dump:
