@@ -2,7 +2,7 @@
   description = "NixOS configuration for Raspberry Pi 4";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 

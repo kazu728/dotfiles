@@ -2,7 +2,6 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
     kernelParams = [
       "cgroup_enable=cpuset"
       "cgroup_enable=memory"
