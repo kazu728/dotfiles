@@ -9,9 +9,6 @@
       "systemd.unified_cgroup_hierarchy=1"
       
       "gpu_mem=256"
-      "arm_boost=1"
-      "arm_freq=1800"
-      "over_voltage=6"
     ];
     initrd = {
       availableKernelModules = [

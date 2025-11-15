@@ -29,12 +29,20 @@ sync-nixconfig-to-rpi:
 
 .PHONY: deploy-to-rpi
 deploy-to-rpi:
-	ssh $(USER)@rpi "cd /etc/nixos && NIX_STORE_LOG=trace sudo nixos-rebuild switch --flake .#rpi"
+	ssh $(USER)@rpi "cd /etc/nixos && sudo nixos-rebuild switch --flake .#rpi"
 
 .PHONY: tailscale-rpi
 tailscale-rpi:
 	ssh $(USER)@rpi "sudo tailscale up -ssh"
-	
+
+.PHONY: argo-admin-password
+argo-admin-password:
+	ssh $(USER)@rpi "kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo"
+
+.PHONY: helmfile-sync
+helmfile-sync:
+	ssh $(USER)@rpi "cd /etc/nixos/k3s/helm && KUBECONFIG=/etc/rancher/k3s/k3s.yaml helmfile sync"
+		
 .PHONY: brew-dump
 brew-dump:
 	@echo "Dumping Brewfile"

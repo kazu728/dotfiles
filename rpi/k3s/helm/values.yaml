@@ -1,6 +1,11 @@
 configs:
-  params:
-    server.insecure: true
+  params: {}
+  # NOTE: manage argocdServerAdminPassword via secrets/overlays before applying.
 server:
   extensions:
     enabled: true
+  certificate:
+    enabled: false
+  service:
+    type: NodePort
+    nodePortHttps: 32443
