@@ -11,7 +11,6 @@ in
     bottom
     bun
     checkov
-    claude-code
     gh
     ghq
     mise
