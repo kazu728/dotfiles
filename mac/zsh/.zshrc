@@ -1,4 +1,3 @@
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh)"
 
@@ -11,7 +10,7 @@ export PATH=$HOME/.ghcup/bin:$PATH
 export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
 
 export DISABLE_AUTOUPDATER=1
-# export MAX_THINKING_TOKENS=31999
+export MAX_THINKING_TOKENS=31999
 
 
 ghq-fzf() {
@@ -33,5 +32,3 @@ myip() {
 '$'() {
     "$@"
 }
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
