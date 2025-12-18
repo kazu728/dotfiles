@@ -13,6 +13,7 @@ in
     checkov
     gh
     ghq
+    helix
     mise
     nil
     podman
