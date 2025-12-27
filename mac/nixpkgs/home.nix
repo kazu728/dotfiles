@@ -40,7 +40,7 @@ in
   nix.gc = {
     automatic = true;
     frequency = "monthly";
-    options = "--delete-older-than 60d";
+    options = "--delete-older-than 7d";
   };
 
   programs = {
