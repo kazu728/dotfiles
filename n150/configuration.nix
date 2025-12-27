@@ -74,7 +74,7 @@
     neovim
     kubectl
     kubernetes-helm
-    helmfile
+    kubeseal
   ];
   # Make kubectl point to k3s kubeconfig by default.
   environment.sessionVariables.KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
@@ -85,6 +85,34 @@
     role = "server";
     clusterInit = true;
     extraFlags = "--write-kubeconfig-mode=644 --disable traefik --disable servicelb --kubelet-arg=max-pods=50";
+  };
+
+  systemd.services.k3s-manifests = {
+    description = "Link k3s bootstrap manifests from /etc/nixos";
+    before = [ "k3s.service" ];
+    wantedBy = [ "k3s.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+    };
+    script = ''
+      set -euo pipefail
+
+      src=/etc/nixos/k3s/manifests
+      dst=/var/lib/rancher/k3s/server/manifests
+
+      ${pkgs.coreutils}/bin/install -d -m 0755 "$dst"
+      if [ -d "$src" ]; then
+        for f in "$src"/*.yaml; do
+          [ -e "$f" ] || continue
+          ${pkgs.coreutils}/bin/ln -sf "$f" "$dst/$(basename "$f")"
+        done
+      fi
+      for link in "$dst"/*.yaml; do
+        if [ -L "$link" ] && [ ! -e "$link" ]; then
+          ${pkgs.coreutils}/bin/rm -f "$link"
+        fi
+      done
+    '';
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

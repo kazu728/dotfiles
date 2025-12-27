@@ -1,0 +1,24 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: argocd-apps
+  namespace: kube-system
+spec:
+  chart: argocd-apps
+  repo: https://argoproj.github.io/argo-helm
+  targetNamespace: argo-cd
+  valuesContent: |-
+    applications:
+      - name: manifest
+        namespace: argo-cd
+        project: default
+        source:
+          repoURL: git@github.com:kazu728/manifest.git
+          targetRevision: HEAD
+          path: k8s
+        destination:
+          server: https://kubernetes.default.svc
+          namespace: default
+        syncPolicy:
+          syncOptions:
+            - CreateNamespace=true
