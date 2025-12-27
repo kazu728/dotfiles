@@ -19,30 +19,14 @@ build-mac:
 	@echo "Building for Mac"
 	sudo darwin-rebuild switch --flake ./mac/.#aarch64
 
-.PHONY: build-rpi
-# example: make build-rpi USER=user
-build-rpi: sync-nixconfig-to-rpi deploy-to-rpi	
+N150_HOST ?= n150
+N150_STAGE_DIR ?= /tmp/nixos-sync
+.PHONY: build-n150
+build-n150:
+	ssh $(N150_HOST) "rm -rf $(N150_STAGE_DIR) && mkdir -p $(N150_STAGE_DIR)"
+	rsync -avz --no-perms --no-owner --no-group --omit-dir-times -e "ssh" ./n150/. $(N150_HOST):$(N150_STAGE_DIR)/
+	ssh -t $(N150_HOST) "sudo rsync -av --no-perms --no-owner --no-group --omit-dir-times $(N150_STAGE_DIR)/ /etc/nixos/ && cd /etc/nixos && sudo nixos-rebuild switch"
 
-.PHONY: sync-nixconfig-to-rpi
-sync-nixconfig-to-rpi:
-	rsync -avz --no-perms --no-owner --no-group --omit-dir-times --rsync-path="sudo rsync" -e "ssh" ./rpi/. $(USER)@rpi:/etc/nixos/
-
-.PHONY: deploy-to-rpi
-deploy-to-rpi:
-	ssh $(USER)@rpi "cd /etc/nixos && sudo nixos-rebuild switch --flake .#rpi"
-
-.PHONY: tailscale-rpi
-tailscale-rpi:
-	ssh $(USER)@rpi "sudo tailscale up -ssh"
-
-.PHONY: argo-admin-password
-argo-admin-password:
-	ssh $(USER)@rpi "kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo"
-
-.PHONY: helmfile-sync
-helmfile-sync:
-	ssh $(USER)@rpi "cd /etc/nixos/k3s/helm && KUBECONFIG=/etc/rancher/k3s/k3s.yaml helmfile sync"
-		
 .PHONY: brew-dump
 brew-dump:
 	@echo "Dumping Brewfile"
