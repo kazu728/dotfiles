@@ -23,6 +23,9 @@ in
 
   home.stateVersion = "25.05";
   home.file.".config/ghostty/config".source = ../ghostty/config;
+  home.file.".config/helix/config.toml".source = ../helix/config.toml;
+  home.file.".config/helix/themes/onedark_pro_night_flat.toml".source =
+    ../helix/themes/onedark_pro_night_flat.toml;
   home.file.".claude/commands" = {
     source = ../claude/commands;
     recursive = true;
@@ -47,6 +50,7 @@ in
 
     git = {
       enable = true;
+      delta.enable = true;
       userName = "Kazuki Matsuo";
       userEmail = "kazuki.matsuo.728@gmail.com";
       extraConfig = {
@@ -91,6 +95,16 @@ in
         commit.gpgsign = true;
         gpg.format = "ssh";
         user.signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
+      };
+    };
+
+    lazygit = {
+      enable = true;
+      settings = {
+        git.paging = {
+          colorArg = "always";
+          pager = "delta --paging=never";
+        };
       };
     };
 
