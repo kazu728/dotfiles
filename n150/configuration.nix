@@ -15,6 +15,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # Track the latest stable kernel to improve rtw89_8852be Wi-Fi stability.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+  };
 
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
