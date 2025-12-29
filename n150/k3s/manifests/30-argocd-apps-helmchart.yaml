@@ -9,7 +9,7 @@ spec:
   targetNamespace: argo-cd
   valuesContent: |-
     applications:
-      - name: manifest
+      manifest:
         namespace: argo-cd
         project: default
         source:
@@ -20,5 +20,8 @@ spec:
           server: https://kubernetes.default.svc
           namespace: default
         syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
           syncOptions:
             - CreateNamespace=true

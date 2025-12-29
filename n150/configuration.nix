@@ -87,7 +87,7 @@
     enable = true;
     role = "server";
     clusterInit = true;
-    extraFlags = "--write-kubeconfig-mode=644 --disable traefik --disable servicelb --kubelet-arg=max-pods=50";
+    extraFlags = "--write-kubeconfig-mode=644 --disable traefik --disable servicelb --kubelet-arg=max-pods=50 --resolv-conf=/etc/resolv.conf";
   };
 
   systemd.services.k3s-manifests = {
