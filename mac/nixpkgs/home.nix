@@ -121,7 +121,6 @@ in
         gsu = "git stash save -u";
         gco = "git commit";
         gca = "git commit --amend";
-        gbd = "git branch --merged | egrep 'feature|fix|chore' | xargs git branch -d";
         gz = "git-cz --disable-emoji";
         dc = "docker container";
         doco = "docker compose";
