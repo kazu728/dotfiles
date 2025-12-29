@@ -25,6 +25,30 @@ ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
+cdf() {
+  local dir path d preview_cmd
+  preview_cmd='eza -a --icons --classify --git --no-permissions --no-user --no-filesize --sort modified --reverse --tree --level 2 -- "{}" 2>/dev/null || ls -la "{}"'
+
+  if command -v fd >/dev/null 2>&1; then
+    dir=$(fd --type d --hidden --follow --exclude .git --strip-cwd-prefix | fzf --preview "$preview_cmd")
+  elif command -v git >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    dir=$(git ls-files -co --exclude-standard -z | while IFS= read -r -d '' path; do
+      d="${path#./}"
+      d="${d%/*}"
+      [[ "$d" == "$path" || -z "$d" || "$d" == "." ]] && continue
+      while [[ -n "$d" && "$d" != "." ]]; do
+        print -r -- "$d"
+        [[ "$d" == */* ]] || break
+        d="${d%/*}"
+      done
+    done | sort -u | fzf --preview "$preview_cmd")
+  else
+    dir=$(find . -mindepth 1 -type d -not -path '*/.git/*' -not -path './.git' -print | sed 's|^\./||' | fzf --preview "$preview_cmd")
+  fi
+
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
 myip() {
   curl http://checkip.amazonaws.com/
 }
