@@ -22,6 +22,7 @@
     finder = {
       AppleShowAllExtensions = true;
       FXEnableExtensionChangeWarning = true;
+      FXRemoveOldTrashItems = true;
       _FXShowPosixPathInTitle = true;
     };
 
