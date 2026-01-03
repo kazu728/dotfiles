@@ -5,6 +5,9 @@ let
   homeDirectory = "/Users/${username}";
 in
 {
+  imports = [
+    ./modules/nvim-nvchad.nix
+  ];
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.packages = with pkgs; [
@@ -44,7 +47,7 @@ in
         color.ui = true;
         commit.gpgsign = true;
         core = {
-          editor = "nvim";
+          editor = "nvim --clean";
           ignorecase = false;
         };
         diff.compactionHeuristic = true;
@@ -79,14 +82,6 @@ in
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
         user.signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
       };
-    };
-
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-      extraConfig = builtins.readFile ../neovim/init.vim;
     };
 
     zsh = {
@@ -146,6 +141,16 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+    };
+
+    lazygit = {
+      enable = true;
+      settings = {
+        git.paging = {
+          colorArg = "always";
+          pager = "delta --paging=never";
+        };
+      };
     };
   };
 }
