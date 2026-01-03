@@ -17,6 +17,7 @@ in
     mise
     nil
     procs
+    ripgrep
     rustup
   ];
 
