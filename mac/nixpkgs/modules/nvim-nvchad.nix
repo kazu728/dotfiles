@@ -147,6 +147,15 @@ let
       },
     }
     EOF
+    cat > $out/lua/plugins/copilot.lua <<'EOF'
+    return {
+      {
+        "github/copilot.vim",
+        cmd = "Copilot",
+        event = "InsertEnter",
+      },
+    }
+    EOF
     cat > $out/lua/configs/lazy.lua <<'EOF'
     return {
       defaults = { lazy = true },
