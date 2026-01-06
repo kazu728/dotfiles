@@ -156,6 +156,46 @@ let
       },
     }
     EOF
+    cat > $out/lua/plugins/sidekick.lua <<'EOF'
+    return {
+      {
+        "folke/sidekick.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {
+          {
+            "<leader>aa",
+            function()
+              require("sidekick.cli").toggle()
+            end,
+            desc = "Sidekick Toggle CLI",
+          },
+          {
+            "<leader>as",
+            function()
+              require("sidekick.cli").select()
+            end,
+            desc = "Sidekick Select CLI",
+          },
+          {
+            "<leader>ad",
+            function()
+              require("sidekick.cli").close()
+            end,
+            desc = "Sidekick Detach CLI",
+          },
+          {
+            "<leader>ap",
+            function()
+              require("sidekick.cli").prompt()
+            end,
+            mode = { "n", "x" },
+            desc = "Sidekick Select Prompt",
+          },
+        },
+      },
+    }
+    EOF
     cat > $out/lua/configs/lazy.lua <<'EOF'
     return {
       defaults = { lazy = true },
