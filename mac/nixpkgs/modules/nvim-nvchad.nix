@@ -196,6 +196,25 @@ let
       },
     }
     EOF
+    cat > $out/lua/plugins/snacks.lua <<'EOF'
+    return {
+      {
+        "folke/snacks.nvim",
+        opts = {
+          lazygit = {},
+        },
+        keys = {
+          {
+            "<leader>gg",
+            function()
+              Snacks.lazygit()
+            end,
+            desc = "LazyGit",
+          },
+        },
+      },
+    }
+    EOF
     cat > $out/lua/configs/lazy.lua <<'EOF'
     return {
       defaults = { lazy = true },
