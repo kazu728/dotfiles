@@ -29,6 +29,7 @@
     dock = {
       autohide = true;
       autohide-delay = 0.0;
+      show-recents = false;
     };
      NSGlobalDomain = {
       "com.apple.sound.beep.feedback" = 0;
