@@ -125,6 +125,36 @@ let
     vim.o.showtabline = 0
     vim.o.winbar = ""
     EOF
+    cat > $out/lua/autocmds.lua <<'EOF'
+    require "nvchad.autocmds"
+
+    local function autosave()
+      if vim.bo.buftype ~= "" then
+        return
+      end
+      if not vim.bo.modifiable or vim.bo.readonly then
+        return
+      end
+      if vim.fn.expand("%") == "" then
+        return
+      end
+      if vim.bo.modified then
+        vim.cmd "silent! write"
+      end
+    end
+
+    vim.api.nvim_create_autocmd({ "InsertLeave", "BufLeave", "FocusLost" }, {
+      callback = autosave,
+    })
+
+    vim.opt.autoread = true
+    vim.opt.updatetime = 1000
+    vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+      callback = function()
+        vim.cmd "checktime"
+      end,
+    })
+    EOF
     cat > $out/lua/mappings.lua <<'EOF'
     -- Custom mappings
     vim.keymap.set("i", "<C-j>", "<Esc>", { desc = "Exit insert mode" })
@@ -160,7 +190,6 @@ let
     return {
       {
         "folke/sidekick.nvim",
-        event = "VeryLazy",
         opts = {},
         keys = {
           {
