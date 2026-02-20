@@ -2,7 +2,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh)"
 
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$HOME/.bun/bin:$PATH
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=vim
 
 # nixpkg壊れているのでグローバルに入れる `curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh``
