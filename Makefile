@@ -11,15 +11,15 @@ init:
 		$(MAKE) build; \
 	else \
 		echo "Setting up nix-darwin for the first time..."; \
-		nix run nix-darwin -- switch --flake ./mac/.#aarch64; \
+		nix run nix-darwin -- switch --flake .#aarch64; \
 	fi
 
 .PHONY: build
 build:
 	@echo "Building for Mac"
-	sudo darwin-rebuild switch --flake ./mac/.#aarch64
+	sudo darwin-rebuild switch --flake .#aarch64
 
 .PHONY: brew-dump
 brew-dump:
 	@echo "Dumping Brewfile"
-	brew bundle dump --file=mac/Brewfile --force
+	brew bundle dump --file=Brewfile --force
