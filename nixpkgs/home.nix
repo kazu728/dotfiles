@@ -27,21 +27,22 @@ in
 
   nix.gc = {
     automatic = true;
-    frequency = "monthly";
+    dates = "monthly";
     options = "--delete-older-than 7d";
   };
 
   programs = {
     eza.enable = true;
     home-manager.enable = true;
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+    };
 
     git = {
       enable = true;
-      delta.enable = true;
-      userName = "Kazuki Matsuo";
-      userEmail = "kazuki.matsuo.728@gmail.com";
       ignores = [ ".DS_Store" "node_modules" ".envrc" ".direnv" ];
-      extraConfig = {
+      settings = {
         branch = {
           sort = "-committerdate";
         };
@@ -81,14 +82,18 @@ in
           gpgsign = true;
         };
         url = { "https://github.com/".insteadOf = "git@github.com:"; };
-        user.signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
+        user = {
+          name = "Kazuki Matsuo";
+          email = "kazuki.matsuo.728@gmail.com";
+          signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
+        };
       };
     };
 
     zsh = {
       enable = true;
       defaultKeymap = "emacs";
-      dotDir = ".config/zsh";
+      dotDir = "${homeDirectory}/.config/zsh";
       autosuggestion = {
           enable = true;
           strategy = [ "history" "completion" ];

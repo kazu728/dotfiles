@@ -13,12 +13,6 @@
   system.primaryUser = "kazuki";
 
   system.defaults = {
-    alf = {
-      allowdownloadsignedenabled = 1;
-      allowsignedenabled = 1;
-      globalstate = 1;
-      stealthenabled = 1;
-    };
     finder = {
       AppleShowAllExtensions = true;
       FXEnableExtensionChangeWarning = true;
@@ -44,6 +38,14 @@
       Clicking = true;
       TrackpadRightClick = true;
     };
+  };
+
+  networking.applicationFirewall = {
+    enable = true;
+    blockAllIncoming = false;
+    allowSigned = true;
+    allowSignedApp = true;
+    enableStealthMode = true;
   };
 
   system.keyboard = {
