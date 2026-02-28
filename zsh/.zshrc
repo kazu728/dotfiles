@@ -14,6 +14,44 @@ export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwar
 export DISABLE_AUTOUPDATER=1
 export MAX_THINKING_TOKENS=31999
 
+cache_cleanup() {
+  local mode="${1:-safe}"
+  local targets=(
+    "$HOME/.cache/uv"
+    "$HOME/.bun/install/cache"
+    "$HOME/.npm/_cacache"
+    "$HOME/Library/Caches"
+  )
+
+  if [[ "$mode" != "safe" && "$mode" != "full" ]]; then
+    echo "Usage: cache_cleanup [safe|full]"
+    return 1
+  fi
+
+  echo "Before:"
+  du -sh "${targets[@]}" 2>/dev/null
+
+  case "$mode" in
+    safe)
+      uv cache prune
+      npm cache verify
+      ;;
+    full)
+      read -q "REPLY?Delete caches now? [y/N] "
+      echo
+      if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        return 1
+      fi
+      uv cache clean
+      npm cache clean --force
+      rm -rf "$HOME/.bun/install/cache" "$HOME/Library/Caches/"*
+      ;;
+  esac
+
+  echo "After:"
+  df -h /
+}
 
 ghq-fzf() {
   local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs ls -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
@@ -116,3 +154,8 @@ myip() {
 '$'() {
     "$@"
 }
+
+# Codex default: no approval prompts within workspace sandbox.
+alias codex='codex -a never -s workspace-write'
+# Explicit opt-in for fully unrestricted local execution.
+alias codex-danger='codex --dangerously-bypass-approvals-and-sandbox'
