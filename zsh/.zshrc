@@ -155,7 +155,5 @@ myip() {
     "$@"
 }
 
-# Codex default: no approval prompts within workspace sandbox.
-alias codex='codex -a never -s workspace-write'
 # Explicit opt-in for fully unrestricted local execution.
 alias codex-danger='codex --dangerously-bypass-approvals-and-sandbox'

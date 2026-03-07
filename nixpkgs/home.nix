@@ -46,6 +46,35 @@ in
         branch = {
           sort = "-committerdate";
         };
+        alias = {
+          aicommit = ''!f() {
+            if ! command -v codex >/dev/null 2>&1; then
+              echo "codex not found in PATH" >&2
+              exit 1
+            fi
+
+            if git diff --cached --quiet; then
+              echo "No staged changes. Run git add first." >&2
+              exit 1
+            fi
+
+            repo_root=$(git rev-parse --show-toplevel) || exit 1
+            tmpfile=$(mktemp) || exit 1
+            trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
+
+            codex exec -C "$repo_root" --sandbox read-only --ephemeral -o "$tmpfile" \
+              "Inspect the staged git diff using git diff --cached and return exactly one English Git commit subject line in imperative mood. Summarize what changed and why. Output only the subject line without quotes, markdown, or explanation." \
+              >/dev/null || exit 1
+
+            msg=$(tr -d '\r' < "$tmpfile")
+            if [ -z "$msg" ]; then
+              echo "Codex returned an empty commit message." >&2
+              exit 1
+            fi
+
+            git commit -m "$msg" "$@"
+          }; f'';
+        };
         color.ui = true;
         commit.gpgsign = true;
         core = {
