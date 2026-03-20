@@ -62,7 +62,8 @@ in
             tmpfile=$(mktemp) || exit 1
             trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
 
-            codex exec -C "$repo_root" --sandbox read-only --ephemeral -o "$tmpfile" \
+            codex exec -C "$repo_root" --sandbox read-only --ephemeral \
+              -c 'model_reasoning_effort="medium"' -o "$tmpfile" \
               "Inspect the staged git diff using git diff --cached and return exactly one English Git commit subject line in imperative mood. Summarize what changed and why. Output only the subject line without quotes, markdown, or explanation." \
               >/dev/null || exit 1
 
