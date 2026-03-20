@@ -156,4 +156,4 @@ myip() {
 }
 
 # Explicit opt-in for fully unrestricted local execution.
-alias codex-danger='codex --dangerously-bypass-approvals-and-sandbox'
+alias codex='codex --dangerously-bypass-approvals-and-sandbox'
