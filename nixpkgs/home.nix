@@ -6,7 +6,7 @@ let
 in
 {
   imports = [
-    ./modules/nvim-nvchad.nix
+    ../helix/helix.nix
   ];
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
@@ -24,6 +24,7 @@ in
   home.stateVersion = "25.05";
   xdg.enable = true;
   xdg.configFile."ghostty/config".source = ../ghostty/config;
+  xdg.configFile."nvim".source = ../neovim;
 
   nix.gc = {
     automatic = true;
@@ -79,7 +80,7 @@ in
         color.ui = true;
         commit.gpgsign = true;
         core = {
-          editor = "nvim --clean";
+          editor = "nvim";
           ignorecase = false;
         };
         diff.compactionHeuristic = true;
@@ -118,6 +119,13 @@ in
           signingKey = "${homeDirectory}/.ssh/id_github_rsa.pub";
         };
       };
+    };
+
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
     };
 
     zsh = {
