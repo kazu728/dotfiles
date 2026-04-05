@@ -217,10 +217,10 @@ EOF
         gui.showListFooter = false;
         gui.sidePanelWidth = 0.2;
         gui.expandFocusedSidePanel = true;
-        git.paging = {
+        git.pagers = [{
           colorArg = "always";
           pager = "delta --paging=never";
-        };
+        }];
       };
     };
   };
