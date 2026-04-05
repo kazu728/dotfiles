@@ -194,12 +194,9 @@ EOF
     starship = {
       enable = true;
       settings = {
+        format = "$directory$git_branch\n$character";
         git_branch.symbol = "🌱 ";
-        git_status.disabled = true;
-        aws.disabled = true;
-        elixir.disabled = true;
-        gcloud.disabled = true;
-        nodejs.disabled = true;
+        git_branch.format = "[$symbol$branch]($style) ";
       };
     };
 
