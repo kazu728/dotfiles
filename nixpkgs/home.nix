@@ -60,12 +60,33 @@ in
             fi
 
             repo_root=$(git rev-parse --show-toplevel) || exit 1
+            recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || true)
             tmpfile=$(mktemp) || exit 1
             trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
 
+            prompt=$(cat <<EOF
+Inspect the staged git diff using git diff --cached.
+
+Recent commit subjects from this repository:
+$recent_subjects
+
+Infer the dominant commit subject style from those examples.
+When the style is clear, match it closely:
+- use the same language
+- preserve common prefixes such as feat:, fix:, chore:, docs:, refactor:
+- keep similar tone, casing, punctuation, and length
+
+If the examples are mixed or no clear style is present, return exactly one English Git commit subject line in imperative mood.
+Summarize what changed and why.
+
+Return exactly one commit subject line only.
+Do not output quotes, markdown, bullets, code fences, or explanations.
+EOF
+            )
+
             codex exec -C "$repo_root" --sandbox read-only --ephemeral \
               -c 'model_reasoning_effort="medium"' -o "$tmpfile" \
-              "Inspect the staged git diff using git diff --cached and return exactly one English Git commit subject line in imperative mood. Summarize what changed and why. Output only the subject line without quotes, markdown, or explanation." \
+              "$prompt" \
               >/dev/null || exit 1
 
             msg=$(tr -d '\r' < "$tmpfile")
