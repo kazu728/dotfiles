@@ -14,6 +14,7 @@ in
     bun
     gh
     ghq
+    go
     mise
     nil
     procs
