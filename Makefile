@@ -19,6 +19,11 @@ build:
 	@echo "Building for Mac"
 	sudo darwin-rebuild switch --flake .#aarch64
 
+.PHONY: check
+check:
+	@echo "Checking flake"
+	nix flake check --print-build-logs
+
 .PHONY: brew-dump
 brew-dump:
 	@echo "Dumping Brewfile"

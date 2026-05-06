@@ -23,7 +23,7 @@
       autohide-delay = 0.0;
       show-recents = false;
     };
-     NSGlobalDomain = {
+    NSGlobalDomain = {
       "com.apple.sound.beep.feedback" = 0;
       "com.apple.sound.beep.volume" = 0.000;
       "com.apple.trackpad.enableSecondaryClick" = true;
