@@ -31,6 +31,11 @@ in
   xdg.configFile."ghostty/config".source = ../ghostty/config;
   xdg.configFile."nvim".source = ../neovim;
 
+  home.file.".local/bin/git-aicommit" = {
+    source = ../scripts/git-aicommit;
+    executable = true;
+  };
+
   nix.gc = {
     automatic = true;
     dates = "monthly";
@@ -56,58 +61,6 @@ in
       settings = {
         branch = {
           sort = "-committerdate";
-        };
-        alias = {
-          aicommit = ''
-            !f() {
-                        if ! command -v codex >/dev/null 2>&1; then
-                          echo "codex not found in PATH" >&2
-                          exit 1
-                        fi
-
-                        if git diff --cached --quiet; then
-                          echo "No staged changes. Run git add first." >&2
-                          exit 1
-                        fi
-
-                        repo_root=$(git rev-parse --show-toplevel) || exit 1
-                        recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || true)
-                        tmpfile=$(mktemp) || exit 1
-                        trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
-
-                        prompt=$(cat <<EOF
-            Inspect the staged git diff using git diff --cached.
-
-            Recent commit subjects from this repository:
-            $recent_subjects
-
-            Infer the dominant commit subject style from those examples.
-            When the style is clear, match it closely:
-            - use the same language
-            - preserve common prefixes such as feat:, fix:, chore:, docs:, refactor:
-            - keep similar tone, casing, punctuation, and length
-
-            If the examples are mixed or no clear style is present, return exactly one English Git commit subject line in imperative mood.
-            Summarize what changed and why.
-
-            Return exactly one commit subject line only.
-            Do not output quotes, markdown, bullets, code fences, or explanations.
-            EOF
-                        )
-
-                        codex exec -C "$repo_root" --sandbox read-only --ephemeral \
-                          -c 'model_reasoning_effort="medium"' -o "$tmpfile" \
-                          "$prompt" \
-                          >/dev/null || exit 1
-
-                        msg=$(tr -d '\r' < "$tmpfile")
-                        if [ -z "$msg" ]; then
-                          echo "Codex returned an empty commit message." >&2
-                          exit 1
-                        fi
-
-                        git commit -m "$msg" "$@"
-                      }; f'';
         };
         color.ui = true;
         commit.gpgsign = true;

@@ -153,3 +153,4 @@ gbd() {
 
 # Explicit opt-in for fully unrestricted local execution.
 alias codex='codex --dangerously-bypass-approvals-and-sandbox'
+alias claude='claude --permission-mode auto'
