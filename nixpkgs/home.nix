@@ -173,23 +173,5 @@ in
       enable = true;
       nix-direnv.enable = true;
     };
-
-    lazygit = {
-      enable = true;
-      settings = {
-        gui.showCommandLog = false;
-        gui.showBottomLine = false;
-        gui.showPanelJumps = false;
-        gui.showListFooter = false;
-        gui.sidePanelWidth = 0.2;
-        gui.expandFocusedSidePanel = true;
-        git.pagers = [
-          {
-            colorArg = "always";
-            pager = "delta --paging=never";
-          }
-        ];
-      };
-    };
   };
 }
