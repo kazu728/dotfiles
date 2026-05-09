@@ -2,6 +2,7 @@ theme = Atom
 
 cursor-style-blink = false
 confirm-close-surface = false
+macos-option-as-alt = true
 
 font-family = "Monaco"
 font-size = 11.5
