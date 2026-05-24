@@ -33,9 +33,17 @@ in
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    BUN_INSTALL = "${homeDirectory}/.bun";
     DISABLE_AUTOUPDATER = "1";
+    EDITOR = "nvim";
+    SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock";
   };
+
+  home.sessionPath = [
+    "${homeDirectory}/.local/bin"
+    "${homeDirectory}/.bun/bin"
+    "${homeDirectory}/.cargo/bin"
+  ];
 
   xdg.enable = true;
   xdg.configFile."nvim".source = ../neovim;

@@ -1,3 +1,6 @@
 # Nix build outputs
 result
 result-*
+
+# Raycast settings export (binary; back up manually)
+Raycast.rayconfig

@@ -1,13 +1,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh)"
 
-export PATH=$PATH:$HOME/.cargo/bin
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
-
 cache_cleanup() {
   local mode="${1:-safe}"
   local targets=(
