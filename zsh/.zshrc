@@ -5,14 +5,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export EDITOR=nvim
 
-# nixpkg壊れているのでグローバルに入れる `curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh``
-export PATH=$HOME/.ghcup/bin:$PATH
 export SSH_AUTH_SOCK=$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock
-
-export DISABLE_AUTOUPDATER=1
-export MAX_THINKING_TOKENS=31999
 
 cache_cleanup() {
   local mode="${1:-safe}"

@@ -23,8 +23,3 @@ build:
 check:
 	@echo "Checking flake"
 	nix flake check --print-build-logs
-
-.PHONY: brew-dump
-brew-dump:
-	@echo "Dumping Brewfile"
-	brew bundle dump --file=Brewfile --force

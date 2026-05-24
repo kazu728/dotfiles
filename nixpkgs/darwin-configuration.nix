@@ -55,5 +55,60 @@
 
   homebrew = {
     enable = true;
+    onActivation = {
+      autoUpdate = false;
+      cleanup = "none";
+      upgrade = true;
+    };
+    taps = [
+      "aws/tap"
+    ];
+    brews = [
+      "automake"
+      "aws/tap/copilot-cli"
+      "awscli"
+      "coreutils"
+      "cryptography"
+      "direnv"
+      "expect"
+      "just"
+      "libgit2"
+      "libyaml"
+      "mise"
+      "poppler"
+      "sevenzip"
+      "shellcheck"
+      "unixodbc"
+      "unzip"
+      "wxwidgets"
+    ];
+    casks = [
+      "android-studio"
+      "appcleaner"
+      "cloudflare-warp"
+      "discord"
+      "ghostty"
+      "google-chrome"
+      "google-chrome@beta"
+      "google-chrome@canary"
+      "google-drive"
+      "imhex"
+      "iterm2"
+      "karabiner-elements"
+      "keycastr"
+      "orbstack"
+      "raycast"
+      "slack"
+      "spotify"
+      "tableplus"
+      "tailscale-app"
+      "twingate"
+      "utm"
+      "visual-studio-code"
+      "vmware-fusion"
+      "wireshark-app"
+      "wkhtmltopdf"
+      "zulip"
+    ];
   };
 }
