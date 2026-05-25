@@ -36,7 +36,7 @@ in
     BUN_INSTALL = "${homeDirectory}/.bun";
     DISABLE_AUTOUPDATER = "1";
     EDITOR = "nvim";
-    SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock";
+    SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
   };
 
   home.sessionPath = [

@@ -48,13 +48,10 @@
         sort = "-version:refname";
         gpgsign = true;
       };
-      url = {
-        "https://github.com/".insteadOf = "git@github.com:";
-      };
       user = {
         name = "Kazuki Matsuo";
         email = "kazuki.matsuo.728@gmail.com";
-        signingKey = "${config.home.homeDirectory}/.ssh/id_github_rsa.pub";
+        signingKey = "key::ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHxrSOVyERLr5n6WAxcHo8lKeiVR4ai2bqbC68lR/Vt8MEv2JKmvZQh6aoO9eSbs6m3vG3czdB1Dn6nQkErOcRA= github@secretive.mba.local";
       };
     };
   };
