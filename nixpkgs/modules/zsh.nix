@@ -33,6 +33,7 @@
       gco = "git commit";
       gca = "git commit --amend";
       gz = "git-cz --disable-emoji";
+      lg = "lazygit";
       dc = "docker container";
       doco = "docker compose";
       nix-direnv = "echo 'use flake' >> .envrc && direnv all";

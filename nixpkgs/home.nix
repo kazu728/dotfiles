@@ -10,6 +10,8 @@ in
     ./modules/ghostty.nix
     ./modules/zsh.nix
     ./modules/git.nix
+    ./modules/neovim.nix
+    ./modules/yazi.nix
   ];
 
   home.username = username;
@@ -18,12 +20,12 @@ in
 
   home.packages = with pkgs; [
     bun
+    deadnix
     gh
     ghq
     go
+    lazygit
     mise
-    deadnix
-    nil
     nix-output-monitor
     nixfmt-rfc-style
     procs
@@ -46,7 +48,6 @@ in
   ];
 
   xdg.enable = true;
-  xdg.configFile."nvim".source = ../neovim;
 
   home.file.".local/bin/git-aicommit" = {
     source = ../scripts/git-aicommit;
@@ -66,13 +67,6 @@ in
     delta = {
       enable = true;
       enableGitIntegration = true;
-    };
-
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
     };
 
     fzf = {
