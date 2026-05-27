@@ -8,16 +8,23 @@
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+      blink-cmp
       fzf-lua
       nvim-lspconfig
+      (nvim-treesitter.withPlugins (p: with p; [
+        markdown
+        markdown-inline
+        nix
+        rust
+        typescript
+      ]))
+      onedark-nvim
     ];
 
     extraPackages = with pkgs; [
       typescript-language-server
-      lua-language-server
       nil
       rust-analyzer
-      gopls
     ];
 
     extraLuaConfig = builtins.readFile ../../neovim/init.lua;

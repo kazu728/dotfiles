@@ -1,5 +1,8 @@
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamed"
+vim.opt.termguicolors = true
+vim.opt.laststatus = 0
+vim.opt.ruler = false
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -15,15 +18,32 @@ vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { desc = "Live gr
 vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<cr>", { desc = "Resume" })
 
-vim.lsp.config("lua_ls", {
-  settings = {
-    Lua = {
-      diagnostics = { globals = { "vim" } },
-    },
-  },
+vim.keymap.set("n", "<leader>gg", function()
+  vim.cmd("tabnew | terminal lazygit")
+  vim.cmd("startinsert")
+end, { desc = "Lazygit" })
+
+vim.keymap.set("n", "<leader>gd", function()
+  vim.cmd("tabnew | terminal hunk diff --watch")
+  vim.cmd("startinsert")
+end, { desc = "Hunk diff" })
+
+require("blink.cmp").setup({
+  keymap = { preset = "enter" },
 })
 
-vim.lsp.enable({ "ts_ls", "lua_ls", "nil_ls", "rust_analyzer", "gopls" })
+require("nvim-treesitter.configs").setup({
+  highlight = { enable = true },
+  indent = { enable = true },
+})
+
+require("onedark").setup({
+  style = "dark",
+  colors = { bg0 = "#161719" },
+})
+require("onedark").load()
+
+vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
@@ -33,6 +53,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.lsp.completion.enable(true, args.data.client_id, args.buf, { autotrigger = true })
   end,
 })
