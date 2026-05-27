@@ -1,7 +1,5 @@
 vim.opt.swapfile = false
-vim.opt.number = true
 vim.opt.clipboard = "unnamed"
-vim.opt.autoread = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -16,6 +14,14 @@ vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files"
 vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<cr>", { desc = "Resume" })
+
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } },
+    },
+  },
+})
 
 vim.lsp.enable({ "ts_ls", "lua_ls", "nil_ls", "rust_analyzer", "gopls" })
 
