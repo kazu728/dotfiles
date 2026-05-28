@@ -63,7 +63,7 @@ in
     home-manager.enable = true;
     eza.enable = true;
 
-    delta = {
+    hunk = {
       enable = true;
       enableGitIntegration = true;
     };

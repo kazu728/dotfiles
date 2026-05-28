@@ -16,7 +16,7 @@ _:
       color.ui = true;
       commit.gpgsign = true;
       core = {
-        editor = "nvim";
+        editor = "nvim --clean";
         ignorecase = false;
       };
       diff.compactionHeuristic = true;
@@ -30,7 +30,6 @@ _:
       };
       init.defaultBranch = "master";
       merge.ff = false;
-      pager.diff = "hunk";
       pull.rebase = true;
       push = {
         default = "current";

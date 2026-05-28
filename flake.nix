@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hunk = {
+      url = "github:modem-dev/hunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +22,7 @@
       self,
       darwin,
       home-manager,
+      hunk,
       nixpkgs,
       ...
     }:
@@ -59,6 +64,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
+            home-manager.sharedModules = [
+              hunk.homeManagerModules.default
+            ];
             home-manager.users.kazuki = import ./nixpkgs/home.nix;
           }
         ];
