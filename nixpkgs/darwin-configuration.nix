@@ -62,6 +62,7 @@
     };
     taps = [
       "aws/tap"
+      "k1LoW/tap"
     ];
     brews = [
       "automake"
@@ -72,6 +73,7 @@
       "direnv"
       "expect"
       "just"
+      "k1LoW/tap/mo"
       "libgit2"
       "libyaml"
       "mise"
@@ -103,7 +105,6 @@
       "tailscale-app"
       "twingate"
       "utm"
-      "visual-studio-code"
       "wireshark-app"
       "wkhtmltopdf"
       "zulip"
