@@ -9,6 +9,7 @@
 
     plugins = with pkgs.vimPlugins; [
       blink-cmp
+      copilot-vim
       fzf-lua
       nvim-lspconfig
       (nvim-treesitter.withPlugins (p: with p; [
@@ -22,6 +23,7 @@
     ];
 
     extraPackages = with pkgs; [
+      nodejs
       typescript-language-server
       nil
       rust-analyzer
