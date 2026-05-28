@@ -12,17 +12,23 @@
       copilot-vim
       fzf-lua
       nvim-lspconfig
-      (nvim-treesitter.withPlugins (p: with p; [
-        markdown
-        markdown-inline
-        nix
-        rust
-        typescript
-      ]))
+      (nvim-treesitter.withPlugins (
+        p: with p; [
+          elm
+          elixir
+          markdown
+          markdown-inline
+          nix
+          rust
+          typescript
+        ]
+      ))
       onedark-nvim
     ];
 
     extraPackages = with pkgs; [
+      elmPackages.elm-language-server
+      elixir-ls
       nodejs
       typescript-language-server
       nil

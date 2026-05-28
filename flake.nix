@@ -36,7 +36,7 @@
         '';
         nixfmt = pkgs.runCommandLocal "nixfmt-check" { } ''
           find ${self} -name '*.nix' -print0 | xargs -0 ${pkgs.nixfmt-rfc-style}/bin/nixfmt --check
-          touch $out：
+          touch $out
         '';
         statix = pkgs.runCommandLocal "statix-check" { } ''
           cat > statix.toml <<'EOF'
