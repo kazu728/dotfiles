@@ -6,7 +6,6 @@ let
 in
 {
   imports = [
-    ./modules/helix.nix
     ./modules/ghostty.nix
     ./modules/zsh.nix
     ./modules/git.nix
