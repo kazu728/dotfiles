@@ -23,7 +23,6 @@ in
     gh
     ghq
     go
-    lazygit
     mise
     nix-output-monitor
     nixfmt-rfc-style
@@ -66,6 +65,17 @@ in
     hunk = {
       enable = true;
       enableGitIntegration = true;
+    };
+
+    lazygit = {
+      enable = true;
+      enableZshIntegration = false;
+      settings.git.pagers = [
+        {
+          colorArg = "always";
+          pager = "hunk pager";
+        }
+      ];
     };
 
     fzf = {
