@@ -25,6 +25,10 @@ vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<cr>", { desc = "Resume" })
 vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Workspace symbols" })
 
+vim.keymap.set("n", "gl", function()
+  vim.diagnostic.open_float(nil, { scope = "line" })
+end, { desc = "Line diagnostics" })
+
 vim.keymap.set("n", "<leader>gg", function()
   vim.cmd("tabnew | terminal lazygit")
   vim.cmd("startinsert")
