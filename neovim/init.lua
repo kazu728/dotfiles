@@ -3,6 +3,8 @@ vim.opt.clipboard = "unnamed"
 vim.opt.termguicolors = true
 vim.opt.laststatus = 0
 vim.opt.ruler = false
+vim.opt.updatetime = 1000
+vim.o.autocomplete = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -10,7 +12,9 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "i" }, "<C-j>", "<Esc>")
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
-vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, { command = "silent! wall" })
+vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "CursorHold", "CursorHoldI" }, {
+  command = "silent! wall",
+})
 
 require("fzf-lua").setup({
   grep = {
@@ -28,6 +32,7 @@ vim.keymap.set("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { des
 vim.keymap.set("n", "gl", function()
   vim.diagnostic.open_float(nil, { scope = "line" })
 end, { desc = "Line diagnostics" })
+vim.diagnostic.config({ signs = false })
 
 vim.keymap.set("n", "<leader>gg", function()
   vim.cmd("tabnew | terminal lazygit")
@@ -39,13 +44,10 @@ vim.keymap.set("n", "<leader>gd", function()
   vim.cmd("startinsert")
 end, { desc = "Hunk diff" })
 
-require("blink.cmp").setup({
-  keymap = { preset = "enter" },
-})
-
-require("nvim-treesitter.configs").setup({
-  highlight = { enable = true },
-  indent = { enable = true },
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
 })
 
 require("onedark").setup({
@@ -59,6 +61,10 @@ vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls" })
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+    end
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", function()
       require("fzf-lua").lsp_references()

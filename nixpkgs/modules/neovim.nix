@@ -8,7 +8,6 @@
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      blink-cmp
       copilot-vim
       fzf-lua
       nvim-lspconfig
@@ -16,8 +15,6 @@
         p: with p; [
           elm
           elixir
-          markdown
-          markdown-inline
           nix
           rust
           typescript
@@ -35,6 +32,6 @@
       rust-analyzer
     ];
 
-    extraLuaConfig = builtins.readFile ../../neovim/init.lua;
+    initLua = builtins.readFile ../../neovim/init.lua;
   };
 }
