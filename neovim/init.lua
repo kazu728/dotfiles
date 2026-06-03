@@ -4,16 +4,38 @@ vim.opt.termguicolors = true
 vim.opt.laststatus = 0
 vim.opt.ruler = false
 vim.opt.updatetime = 1000
-vim.o.autocomplete = true
+vim.o.complete = "o,.,w,b"
+vim.o.completeopt = "menu,menuone,popup,noselect,fuzzy"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set({ "n", "i" }, "<C-j>", "<Esc>")
 
+vim.keymap.set("i", "<CR>", function()
+  if vim.fn.pumvisible() == 0 then
+    return "<CR>"
+  end
+  return vim.fn.complete_info().selected ~= -1 and "<C-y>" or "<C-n><C-y>"
+end, { expr = true, desc = "Accept completion / newline" })
+
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "CursorHold", "CursorHoldI" }, {
   command = "silent! wall",
+})
+
+-- Autocomplete on keystroke, but not on bare insert-enter
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    vim.o.autocomplete = false
+  end,
+})
+vim.api.nvim_create_autocmd("InsertCharPre", {
+  callback = function()
+    if not vim.o.autocomplete then
+      vim.o.autocomplete = true
+    end
+  end,
 })
 
 require("fzf-lua").setup({
@@ -63,7 +85,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local opts = { buffer = args.buf }
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+      vim.lsp.completion.enable(true, client.id, args.buf)
     end
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", function()
