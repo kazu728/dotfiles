@@ -15,7 +15,7 @@ in
 
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     bun
@@ -26,7 +26,7 @@ in
     lima
     mise
     nix-output-monitor
-    nixfmt-rfc-style
+    nixfmt
     procs
     ripgrep
     rustup

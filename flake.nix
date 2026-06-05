@@ -31,7 +31,7 @@
       pkgs = import nixpkgs { inherit system; };
     in
     {
-      formatter.${system} = pkgs.nixfmt-rfc-style;
+      formatter.${system} = pkgs.nixfmt;
 
       checks.${system} = {
         darwin = self.darwinConfigurations.aarch64.system;
@@ -40,7 +40,7 @@
           touch $out
         '';
         nixfmt = pkgs.runCommandLocal "nixfmt-check" { } ''
-          find ${self} -name '*.nix' -print0 | xargs -0 ${pkgs.nixfmt-rfc-style}/bin/nixfmt --check
+          find ${self} -name '*.nix' -print0 | xargs -0 ${pkgs.nixfmt}/bin/nixfmt --check
           touch $out
         '';
         statix = pkgs.runCommandLocal "statix-check" { } ''
