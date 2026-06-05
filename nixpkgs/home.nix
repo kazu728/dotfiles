@@ -23,6 +23,7 @@ in
     gh
     ghq
     go
+    lima
     mise
     nix-output-monitor
     nixfmt-rfc-style
