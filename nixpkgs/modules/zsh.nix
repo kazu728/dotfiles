@@ -21,8 +21,6 @@
       ls = "eza";
       ll = "ls -a";
       lla = "ls -la";
-      ps = "procs";
-      dust = "du";
       grep = "grep --color";
       ga = "git add -A";
       gs = "git status";
@@ -32,10 +30,8 @@
       gsu = "git stash save -u";
       gco = "git commit";
       gca = "git commit --amend";
-      gz = "git-cz --disable-emoji";
       dc = "docker container";
       doco = "docker compose";
-      nix-direnv = "echo 'use flake' >> .envrc && direnv all";
     };
 
     initContent = builtins.readFile ../../zsh/.zshrc;
