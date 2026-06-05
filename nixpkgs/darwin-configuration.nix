@@ -4,6 +4,12 @@
   nix.package = pkgs.nix;
   nixpkgs.config.allowUnfree = true;
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 30d";
+  };
+  nix.optimise.automatic = true;
+
   programs.zsh.enable = true;
 
   system.stateVersion = 4;
