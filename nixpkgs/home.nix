@@ -53,12 +53,6 @@ in
     executable = true;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "monthly";
-    options = "--delete-older-than 7d";
-  };
-
   programs = {
     home-manager.enable = true;
     eza.enable = true;
@@ -71,12 +65,18 @@ in
     lazygit = {
       enable = true;
       enableZshIntegration = false;
-      settings.git.pagers = [
-        {
-          colorArg = "always";
-          pager = "hunk pager";
-        }
-      ];
+      settings = {
+        gui = {
+          showCommandLog = false;
+          sidePanelWidth = 0.2;
+        };
+        git.pagers = [
+          {
+            colorArg = "always";
+            pager = "hunk pager";
+          }
+        ];
+      };
     };
 
     fzf = {

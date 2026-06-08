@@ -1,6 +1,11 @@
-_:
+{ config, ... }:
 
+let
+  signingKey = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHxrSOVyERLr5n6WAxcHo8lKeiVR4ai2bqbC68lR/Vt8MEv2JKmvZQh6aoO9eSbs6m3vG3czdB1Dn6nQkErOcRA= github@secretive.mba.local";
+in
 {
+  xdg.configFile."git/allowed_signers".text = "kazuki.matsuo.728@gmail.com ${signingKey}\n";
+
   programs.git = {
     enable = true;
     ignores = [
@@ -25,6 +30,7 @@ _:
         prunetags = true;
       };
       gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "${config.xdg.configHome}/git/allowed_signers";
       help = {
         autocorrect = "immediate";
       };
@@ -51,7 +57,7 @@ _:
       user = {
         name = "Kazuki Matsuo";
         email = "kazuki.matsuo.728@gmail.com";
-        signingKey = "key::ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHxrSOVyERLr5n6WAxcHo8lKeiVR4ai2bqbC68lR/Vt8MEv2JKmvZQh6aoO9eSbs6m3vG3czdB1Dn6nQkErOcRA= github@secretive.mba.local";
+        signingKey = "key::${signingKey}";
       };
     };
   };
