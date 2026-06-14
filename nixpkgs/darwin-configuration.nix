@@ -67,12 +67,10 @@
       upgrade = true;
     };
     taps = [
-      "aws/tap"
       "k1LoW/tap"
     ];
     brews = [
       "automake"
-      "aws/tap/copilot-cli"
       "awscli"
       "coreutils"
       "cryptography"
