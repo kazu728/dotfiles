@@ -59,7 +59,7 @@ in
 
     hunk = {
       enable = true;
-      enableGitIntegration = true;
+      enableGitIntegration = false;
     };
 
     lazygit = {

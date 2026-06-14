@@ -36,6 +36,10 @@ in
       };
       init.defaultBranch = "master";
       merge.ff = false;
+      pager = {
+        diff = "hunk pager";
+        show = "hunk pager";
+      };
       pull.rebase = true;
       push = {
         default = "current";
