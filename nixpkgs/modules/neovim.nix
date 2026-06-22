@@ -13,6 +13,7 @@
       nvim-lspconfig
       (nvim-treesitter.withPlugins (
         p: with p; [
+          c
           elm
           elixir
           nix
@@ -24,6 +25,7 @@
     ];
 
     extraPackages = with pkgs; [
+      clang-tools
       elmPackages.elm-language-server
       elixir-ls
       nodejs

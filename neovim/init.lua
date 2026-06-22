@@ -78,7 +78,7 @@ require("onedark").setup({
 })
 require("onedark").load()
 
-vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls" })
+vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls", "clangd" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
