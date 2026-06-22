@@ -138,6 +138,5 @@ gbd() {
     "$@"
 }
 
-# Explicit opt-in for fully unrestricted local execution.
-alias codex='codex --dangerously-bypass-approvals-and-sandbox'
+alias codex='codex -s workspace-write -a on-request'
 alias claude='claude --permission-mode auto'
