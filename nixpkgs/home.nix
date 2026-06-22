@@ -11,6 +11,7 @@ in
     ./modules/git.nix
     ./modules/neovim.nix
     ./modules/yazi.nix
+    ./modules/agent-skills.nix
   ];
 
   home.username = username;
@@ -52,6 +53,9 @@ in
     source = ../scripts/git-aicommit;
     executable = true;
   };
+
+  home.file."AGENTS.md".source = ../AGENTS.md;
+  home.file.".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
 
   programs = {
     home-manager.enable = true;
