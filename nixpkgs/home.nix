@@ -91,9 +91,10 @@ in
     starship = {
       enable = true;
       settings = {
-        format = "$directory$git_branch$git_state\n$character";
+        format = "$directory$git_branch$git_state$git_status\n$character";
         git_branch.symbol = "🌱 ";
         git_branch.format = "[$symbol$branch]($style) ";
+        git_status.format = "([\\[$conflicted\\]]($style) )";
       };
     };
 
