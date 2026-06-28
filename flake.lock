@@ -152,12 +152,33 @@
         "type": "github"
       }
     },
+    "reauthfi": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782642112,
+        "narHash": "sha256-LwP+hwS6pKfiIU1sNw7fsJbZZBhBNPOtAT4J/i1ovgg=",
+        "owner": "kazu728",
+        "repo": "reauthfi",
+        "rev": "07db0ecb1327cf69d54149b1eef72f093562b500",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kazu728",
+        "repo": "reauthfi",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
         "hunk": "hunk",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "reauthfi": "reauthfi"
       }
     },
     "systems": {

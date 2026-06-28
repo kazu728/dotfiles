@@ -66,6 +66,8 @@ in
       enableGitIntegration = false;
     };
 
+    reauthfi.enable = true;
+
     lazygit = {
       enable = true;
       enableZshIntegration = false;

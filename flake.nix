@@ -11,6 +11,10 @@
       url = "github:modem-dev/hunk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    reauthfi = {
+      url = "github:kazu728/reauthfi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +27,7 @@
       darwin,
       home-manager,
       hunk,
+      reauthfi,
       nixpkgs,
       ...
     }:
@@ -66,6 +71,7 @@
             home-manager.backupFileExtension = "backup";
             home-manager.sharedModules = [
               hunk.homeManagerModules.default
+              reauthfi.homeManagerModules.default
             ];
             home-manager.users.kazuki = import ./nixpkgs/home.nix;
           }
