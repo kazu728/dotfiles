@@ -24,6 +24,7 @@ in
     gh
     ghq
     go
+    jq
     lima
     mise
     nix-output-monitor
