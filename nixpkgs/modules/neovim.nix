@@ -22,6 +22,7 @@
         ]
       ))
       onedark-nvim
+      toggleterm-nvim
     ];
 
     extraPackages = with pkgs; [
