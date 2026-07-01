@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   username = "kazuki";
@@ -11,6 +15,7 @@ in
     ./modules/git.nix
     ./modules/neovim.nix
     ./modules/yazi.nix
+    ./modules/herdr.nix
     ./modules/agent-skills.nix
   ];
 

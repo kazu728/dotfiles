@@ -15,6 +15,10 @@
       url = "github:kazu728/reauthfi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    herdr = {
+      url = "github:ogulcancelik/herdr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +29,7 @@
     {
       self,
       darwin,
+      herdr,
       home-manager,
       hunk,
       reauthfi,
@@ -73,6 +78,7 @@
               hunk.homeManagerModules.default
               reauthfi.homeManagerModules.default
             ];
+            home-manager.extraSpecialArgs = { inherit herdr; };
             home-manager.users.kazuki = import ./nixpkgs/home.nix;
           }
         ];
