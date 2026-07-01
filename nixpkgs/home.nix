@@ -26,6 +26,7 @@ in
   home.packages = with pkgs; [
     bun
     deadnix
+    delta
     gh
     ghq
     go
@@ -85,7 +86,11 @@ in
         git.pagers = [
           {
             colorArg = "always";
-            pager = "hunk pager";
+            pager = "delta --paging=never --side-by-side";
+          }
+          {
+            colorArg = "always";
+            pager = "delta --paging=never";
           }
         ];
       };
