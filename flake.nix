@@ -54,13 +54,7 @@
           touch $out
         '';
         statix = pkgs.runCommandLocal "statix-check" { } ''
-          cat > statix.toml <<'EOF'
-          disabled = ["repeated_keys"]
-          nix_version = "2.4"
-          ignore = [".direnv"]
-          EOF
-
-          ${pkgs.statix}/bin/statix check --config statix.toml ${self}
+          ${pkgs.statix}/bin/statix check ${self}
           touch $out
         '';
       };
@@ -71,15 +65,17 @@
           ./nixpkgs/darwin-configuration.nix
           home-manager.darwinModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [
-              hunk.homeManagerModules.default
-              reauthfi.homeManagerModules.default
-            ];
-            home-manager.extraSpecialArgs = { inherit herdr; };
-            home-manager.users.kazuki = import ./nixpkgs/home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              sharedModules = [
+                hunk.homeManagerModules.default
+                reauthfi.homeManagerModules.default
+              ];
+              extraSpecialArgs = { inherit herdr; };
+              users.kazuki = import ./nixpkgs/home.nix;
+            };
           }
         ];
       };

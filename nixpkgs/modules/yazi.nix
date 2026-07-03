@@ -6,7 +6,11 @@
     enableZshIntegration = true;
     settings = {
       mgr = {
-        ratio = [ 0 1 2 ];
+        ratio = [
+          0
+          1
+          2
+        ];
       };
     };
     plugins = {

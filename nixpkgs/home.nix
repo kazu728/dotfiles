@@ -19,50 +19,54 @@ in
     ./modules/agent-skills.nix
   ];
 
-  home.username = username;
-  home.homeDirectory = lib.mkForce homeDirectory;
-  home.stateVersion = "26.05";
+  home = {
+    inherit username;
+    homeDirectory = lib.mkForce homeDirectory;
+    stateVersion = "26.05";
 
-  home.packages = with pkgs; [
-    bun
-    deadnix
-    delta
-    gh
-    ghq
-    go
-    jq
-    lima
-    mise
-    nix-output-monitor
-    nixfmt
-    procs
-    ripgrep
-    rustup
-    statix
-  ];
+    packages = with pkgs; [
+      bun
+      deadnix
+      delta
+      gh
+      ghq
+      go
+      jq
+      lima
+      mise
+      nix-output-monitor
+      nixfmt
+      procs
+      ripgrep
+      rustup
+      statix
+    ];
 
-  home.sessionVariables = {
-    BUN_INSTALL = "${homeDirectory}/.bun";
-    DISABLE_AUTOUPDATER = "1";
-    EDITOR = "nvim";
-    SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
+    sessionVariables = {
+      BUN_INSTALL = "${homeDirectory}/.bun";
+      DISABLE_AUTOUPDATER = "1";
+      EDITOR = "nvim";
+      SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
+    };
+
+    sessionPath = [
+      "${homeDirectory}/.local/bin"
+      "${homeDirectory}/.bun/bin"
+      "${homeDirectory}/.cargo/bin"
+    ];
+
+    file = {
+      ".local/bin/git-aicommit" = {
+        source = ../scripts/git-aicommit;
+        executable = true;
+      };
+
+      "AGENTS.md".source = ../AGENTS.md;
+      ".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
+    };
   };
-
-  home.sessionPath = [
-    "${homeDirectory}/.local/bin"
-    "${homeDirectory}/.bun/bin"
-    "${homeDirectory}/.cargo/bin"
-  ];
 
   xdg.enable = true;
-
-  home.file.".local/bin/git-aicommit" = {
-    source = ../scripts/git-aicommit;
-    executable = true;
-  };
-
-  home.file."AGENTS.md".source = ../AGENTS.md;
-  home.file.".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
 
   programs = {
     home-manager.enable = true;
@@ -70,7 +74,6 @@ in
 
     hunk = {
       enable = true;
-      enableGitIntegration = false;
     };
 
     reauthfi.enable = true;

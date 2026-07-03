@@ -14,7 +14,6 @@
       highlight = "fg=#666666";
     };
     syntaxHighlighting.enable = true;
-    enableCompletion = true;
 
     shellAliases = {
       rm = "rm -i";
