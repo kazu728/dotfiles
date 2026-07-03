@@ -100,7 +100,6 @@ _:
       "google-chrome"
       "google-chrome@canary"
       "google-drive"
-      "iterm2"
       "karabiner-elements"
       "keycastr"
       "orbstack"

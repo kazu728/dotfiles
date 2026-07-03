@@ -56,15 +56,10 @@ cdf() {
   local dir entry preview_cmd
   preview_cmd='eza -a --icons --classify --git --no-permissions --no-user --no-filesize --sort modified --reverse --tree --level 2 -- "{}" 2>/dev/null || ls -la "{}"'
 
-  if command -v fd >/dev/null 2>&1; then
-    dir=$(fd --type d --hidden --follow --exclude .git --strip-cwd-prefix --color=never 2>/dev/null |
-      fzf --preview "$preview_cmd")
-  else
-    dir=$(find . -mindepth 1 -type d -not -path '*/.git/*' -not -path './.git' -print 2>/dev/null |
-      while IFS= read -r entry; do
-        print -r -- "${entry#./}"
-      done | fzf --preview "$preview_cmd")
-  fi
+  dir=$(find . -mindepth 1 -type d -not -path '*/.git/*' -not -path './.git' -print 2>/dev/null |
+    while IFS= read -r entry; do
+      print -r -- "${entry#./}"
+    done | fzf --preview "$preview_cmd")
 
   [[ -n "$dir" ]] && cd -- "$dir"
 }
@@ -86,7 +81,7 @@ gbs() {
 gbd() {
   _git_fzf_guard || return 1
   local current target bind action pos branch
-  local -a branches list positions
+  local -a branches list positions fzf_opts
   local -A merged_set
   current=$(git branch --show-current)
 
@@ -118,16 +113,20 @@ gbd() {
     bind="start:${action%+}+first"
   fi
 
+  fzf_opts=(
+    --multi
+    --prompt='delete!> '
+    --height 40%
+    --reverse
+    --sync
+    --bind 'space:toggle,ctrl-space:toggle'
+    --preview 'git log --color=always --date=short --pretty=format:"%C(auto)%ad %h %d %s" -n 10 {}'
+  )
   if [[ -n "$bind" ]]; then
-    target=$(printf '%s\n' "${list[@]}" | fzf --multi --prompt='delete!> ' --height 40% --reverse --sync \
-      --bind "$bind" \
-      --bind 'space:toggle,ctrl-space:toggle' \
-      --preview 'git log --color=always --date=short --pretty=format:"%C(auto)%ad %h %d %s" -n 10 {}')
-  else
-    target=$(printf '%s\n' "${list[@]}" | fzf --multi --prompt='delete!> ' --height 40% --reverse --sync \
-      --bind 'space:toggle,ctrl-space:toggle' \
-      --preview 'git log --color=always --date=short --pretty=format:"%C(auto)%ad %h %d %s" -n 10 {}')
+    fzf_opts+=(--bind "$bind")
   fi
+  target=$(printf '%s\n' "${list[@]}" | fzf "${fzf_opts[@]}")
+
   [[ -z "$target" ]] && return 0
   while IFS= read -r line; do
     git branch -D "$line"
