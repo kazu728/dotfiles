@@ -17,9 +17,8 @@
 
     shellAliases = {
       rm = "rm -i";
-      ls = "eza";
-      ll = "ls -a";
-      lla = "ls -la";
+      ll = "eza -a";
+      lla = "eza -la";
       grep = "grep --color";
       ga = "git add -A";
       gs = "git status";

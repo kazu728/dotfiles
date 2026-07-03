@@ -41,9 +41,11 @@ cache_cleanup() {
 }
 
 ghq-fzf() {
-  local repo=$(ghq list | fzf --preview "ghq list --full-path --exact {} | xargs ls -h --long --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2")
+  local repo preview_cmd
+  preview_cmd='repo=$(ghq list --full-path --exact {}) && { eza -a --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2 -- "$repo" 2>/dev/null || ls -la "$repo"; }'
+  repo=$(ghq list | fzf --preview "$preview_cmd")
   if [ -n "$repo" ]; then
-    repo=$(ghq list --full-path --exact $repo)
+    repo=$(ghq list --full-path --exact "$repo")
     BUFFER="cd ${repo}"
     zle accept-line
   fi
