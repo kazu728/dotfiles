@@ -60,6 +60,8 @@ in
         source = ../scripts/git-aicommit;
         executable = true;
       };
+      ".local/share/git-aicommit/subject-policy.md".source =
+        ../agent-skills/personal/aicommit/subject-policy.md;
 
       "AGENTS.md".source = ../AGENTS.md;
       ".claude/CLAUDE.md".text = "@~/AGENTS.md\n";

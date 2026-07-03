@@ -16,23 +16,44 @@ recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || 
 tmpfile=$(mktemp)
 trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
 
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+policy_file=""
+policy_candidates=()
+
+if [ -n "${GIT_AICOMMIT_SUBJECT_POLICY:-}" ]; then
+  policy_candidates+=("$GIT_AICOMMIT_SUBJECT_POLICY")
+fi
+
+if [ -n "${XDG_DATA_HOME:-}" ]; then
+  policy_candidates+=("$XDG_DATA_HOME/git-aicommit/subject-policy.md")
+elif [ -n "${HOME:-}" ]; then
+  policy_candidates+=("$HOME/.local/share/git-aicommit/subject-policy.md")
+fi
+
+policy_candidates+=("$script_dir/../agent-skills/personal/aicommit/subject-policy.md")
+
+for candidate in "${policy_candidates[@]}"; do
+  if [ -f "$candidate" ]; then
+    policy_file=$candidate
+    break
+  fi
+done
+
+if [ -z "$policy_file" ]; then
+  echo "subject-policy.md not found. Set GIT_AICOMMIT_SUBJECT_POLICY or install dotfiles." >&2
+  exit 1
+fi
+
+subject_policy=$(cat "$policy_file")
+
 prompt=$(cat <<EOF
 Inspect the staged git diff using git diff --cached.
 
 Recent commit subjects from this repository:
 $recent_subjects
 
-Infer the dominant commit subject style from those examples.
-When the style is clear, match it closely:
-- use the same language
-- preserve common prefixes such as feat:, fix:, chore:, docs:, refactor:
-- keep similar tone, casing, punctuation, and length
-
-If the examples are mixed or no clear style is present, return exactly one English Git commit subject line in imperative mood.
-Summarize what changed and why.
-
-Return exactly one commit subject line only.
-Do not output quotes, markdown, bullets, code fences, or explanations.
+Subject policy:
+$subject_policy
 EOF
 )
 
