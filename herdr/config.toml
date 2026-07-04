@@ -4,6 +4,26 @@ onboarding = false
 name = "one-dark"
 auto_switch = false
 
+[keys]
+
+[[keys.command]]
+key = "prefix+alt+g"
+type = "pane"
+command = "lazygit"
+description = "lazygit"
+
+[[keys.command]]
+key = "prefix+alt+d"
+type = "pane"
+command = "hunk diff --watch"
+description = "hunk diff"
+
+[[keys.command]]
+key = "prefix+alt+s"
+type = "pane"
+command = "hunk diff --staged --watch"
+description = "hunk staged diff"
+
 [ui]
 agent_panel_sort = "priority"
 pane_borders = false

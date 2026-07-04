@@ -56,20 +56,6 @@ vim.keymap.set("n", "gl", function()
 end, { desc = "Line diagnostics" })
 vim.diagnostic.config({ signs = false })
 
-require("toggleterm").setup()
-
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", direction = "tab", hidden = true })
-local hunk_diff = Terminal:new({ cmd = "hunk diff --watch", direction = "tab", hidden = true })
-
-vim.keymap.set("n", "<leader>gg", function()
-  lazygit:toggle()
-end, { desc = "Lazygit" })
-
-vim.keymap.set("n", "<leader>gd", function()
-  hunk_diff:toggle()
-end, { desc = "Hunk diff" })
-
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
     pcall(vim.treesitter.start, args.buf)
