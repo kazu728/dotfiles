@@ -1,7 +1,7 @@
 onboarding = false
 
 [theme]
-name = "one-dark"
+name = "terminal"
 auto_switch = false
 
 [keys]
@@ -27,6 +27,7 @@ description = "hunk staged diff"
 [ui]
 agent_panel_sort = "priority"
 pane_borders = false
+prompt_new_tab_name = false
 
 [ui.sound]
 enabled = false
