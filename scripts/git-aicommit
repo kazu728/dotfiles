@@ -58,7 +58,7 @@ EOF
 )
 
 codex exec -C "$repo_root" --sandbox read-only --ephemeral \
-  -c 'model_reasoning_effort="medium"' -o "$tmpfile" \
+  -c 'model_reasoning_effort="low"' -o "$tmpfile" \
   "$prompt" \
   >/dev/null
 
