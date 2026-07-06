@@ -62,7 +62,7 @@
       darwinConfigurations.aarch64 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          ./nixpkgs/darwin-configuration.nix
+          ./nix/darwin-configuration.nix
           home-manager.darwinModules.home-manager
           {
             home-manager = {
@@ -74,7 +74,7 @@
                 reauthfi.homeManagerModules.default
               ];
               extraSpecialArgs = { inherit herdr; };
-              users.kazuki = import ./nixpkgs/home.nix;
+              users.kazuki = import ./nix/home.nix;
             };
           }
         ];

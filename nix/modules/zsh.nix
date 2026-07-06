@@ -32,6 +32,6 @@
       doco = "docker compose";
     };
 
-    initContent = builtins.readFile ../../zsh/.zshrc;
+    initContent = builtins.readFile ../../config/zsh/.zshrc;
   };
 }

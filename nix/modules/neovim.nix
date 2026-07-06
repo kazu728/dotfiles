@@ -34,6 +34,6 @@
       rust-analyzer
     ];
 
-    initLua = builtins.readFile ../../neovim/init.lua;
+    initLua = builtins.readFile ../../config/neovim/init.lua;
   };
 }

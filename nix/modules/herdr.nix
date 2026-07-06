@@ -21,5 +21,5 @@ in
     ) integrations
   );
 
-  xdg.configFile."herdr/config.toml".source = ../../herdr/config.toml;
+  xdg.configFile."herdr/config.toml".source = ../../config/herdr/config.toml;
 }
