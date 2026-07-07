@@ -139,5 +139,5 @@ gbd() {
     "$@"
 }
 
-alias codex='codex -s workspace-write -a on-request'
+alias codex='codex -s workspace-write -a never'
 alias claude='claude --permission-mode auto'
