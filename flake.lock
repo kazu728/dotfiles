@@ -179,11 +179,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782642112,
-        "narHash": "sha256-LwP+hwS6pKfiIU1sNw7fsJbZZBhBNPOtAT4J/i1ovgg=",
+        "lastModified": 1783770560,
+        "narHash": "sha256-hxW6GzA9DeSDgEzjzTvHCfNitZSy1NldqYHpCZH/L/E=",
         "owner": "kazu728",
         "repo": "reauthfi",
-        "rev": "07db0ecb1327cf69d54149b1eef72f093562b500",
+        "rev": "1c65d388d67666fcb3064d4f8344881c45a00429",
         "type": "github"
       },
       "original": {
