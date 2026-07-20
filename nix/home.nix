@@ -76,6 +76,7 @@ in
 
     hunk = {
       enable = true;
+      settings.wrap_lines = true;
     };
 
     reauthfi.enable = true;
