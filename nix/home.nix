@@ -65,6 +65,7 @@ in
 
       "AGENTS.md".source = ../AGENTS.md;
       ".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
+      ".codex/AGENTS.md".source = ../AGENTS.md;
     };
   };
 
