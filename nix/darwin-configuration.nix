@@ -67,7 +67,6 @@ _:
     onActivation = {
       autoUpdate = false;
       cleanup = "none";
-      upgrade = true;
     };
     taps = [
       "k1LoW/tap"
@@ -92,7 +91,6 @@ _:
       "wxwidgets"
     ];
     casks = [
-      "android-studio"
       "appcleaner"
       "cloudflare-warp"
       "discord"
