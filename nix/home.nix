@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -7,6 +8,7 @@
 let
   username = "kazuki";
   homeDirectory = "/Users/${username}";
+  hunkReviewSkill = "${config.programs.hunk.package}/skills/hunk-review";
 in
 {
   imports = [
@@ -66,6 +68,9 @@ in
       "AGENTS.md".source = ../AGENTS.md;
       ".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
       ".codex/AGENTS.md".source = ../AGENTS.md;
+
+      ".claude/skills/hunk-review".source = hunkReviewSkill;
+      ".codex/skills/hunk-review".source = hunkReviewSkill;
     };
   };
 
