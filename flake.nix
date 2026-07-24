@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hunk = {
-      url = "github:modem-dev/hunk";
+      url = "github:modem-dev/hunk/v0.17.4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     reauthfi = {
