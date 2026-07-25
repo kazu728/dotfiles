@@ -17,7 +17,8 @@ general-purpose subagent を4体並列で起動し、それぞれに1つの skil
 - /prune-review
 - /adversarial-review
 
-各 subagent への指示は「対象 skill を実行し、指摘を file:line 付きで列挙して返す。修正はしない」。
+各 subagent への指示は「差分を自分で取得し、対象 skill を実行し、指摘を file:line 付きで列挙して返す。修正はしない」。
+差分は切り出して渡さず、対象の指定（未コミット差分、HEAD からの差分など）だけを渡す。
 
 ## Phase 2 — 検証
 
