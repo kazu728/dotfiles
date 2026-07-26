@@ -1,0 +1,15 @@
+{
+  "name": "kazu728-dotfiles",
+  "description": "Personal agent skills distributed from kazu728/dotfiles",
+  "owner": {
+    "name": "Kazuki Matsuo"
+  },
+  "plugins": [
+    {
+      "name": "personal-skills",
+      "source": "./",
+      "skills": "./agent-skills/personal",
+      "description": "Personal agent skills"
+    }
+  ]
+}
