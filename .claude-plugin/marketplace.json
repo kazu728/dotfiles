@@ -7,8 +7,8 @@
   "plugins": [
     {
       "name": "personal-skills",
-      "source": "./",
-      "skills": ["./agent-skills/personal", "./agent-skills/third-party/grilling"],
+      "source": "./agent-skills",
+      "skills": ["./personal", "./third-party/grilling"],
       "description": "Personal agent skills"
     }
   ]
