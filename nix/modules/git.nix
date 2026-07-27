@@ -44,7 +44,7 @@ in
       help = {
         autocorrect = "immediate";
       };
-      init.defaultBranch = "master";
+      init.defaultBranch = "main";
       merge.ff = false;
       pager = {
         diff = "hunk pager";
