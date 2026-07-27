@@ -9,7 +9,8 @@
       "name": "personal-skills",
       "source": "./agent-skills",
       "skills": ["./personal", "./third-party/grilling"],
-      "description": "Personal agent skills"
+      "description": "Personal agent skills",
+      "strict": false
     }
   ]
 }
