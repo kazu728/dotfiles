@@ -6,6 +6,7 @@
     enableZshIntegration = true;
     settings = {
       mgr = {
+        show_hidden = true;
         ratio = [
           0
           1
