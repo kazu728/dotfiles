@@ -16,6 +16,7 @@ in
     ./modules/zsh.nix
     ./modules/git.nix
     ./modules/neovim.nix
+    ./modules/ssh.nix
     ./modules/yazi.nix
     ./modules/herdr.nix
     ./modules/agent-skills.nix
@@ -48,7 +49,6 @@ in
       BUN_INSTALL = "${homeDirectory}/.bun";
       DISABLE_AUTOUPDATER = "1";
       EDITOR = "nvim";
-      SSH_AUTH_SOCK = "${homeDirectory}/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
     };
 
     sessionPath = [
