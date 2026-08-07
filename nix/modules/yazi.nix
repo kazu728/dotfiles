@@ -22,7 +22,10 @@
         {
           on = "T";
           run = "plugin toggle-pane max-preview";
-          desc = "プレビューを最大化/元に戻す";
+        }
+        {
+          on = "M";
+          run = "shell --block -- mdpx %h";
         }
       ];
     };
