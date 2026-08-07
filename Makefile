@@ -1,3 +1,5 @@
+BUN_GLOBAL_PACKAGES := @openai/codex opencode-ai elm
+
 .PHONY: init
 init:
 	@if command -v nix >/dev/null 2>&1; then \
@@ -13,11 +15,17 @@ init:
 		echo "Setting up nix-darwin for the first time..."; \
 		nix run nix-darwin -- switch --flake .#aarch64; \
 	fi
+	$(MAKE) tools
 
 .PHONY: build
 build:
 	@echo "Building for Mac"
 	sudo darwin-rebuild switch --flake .#aarch64
+
+.PHONY: tools
+tools:
+	@echo "Installing bun global packages"
+	bun install -g $(BUN_GLOBAL_PACKAGES)
 
 .PHONY: check
 check:
