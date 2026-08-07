@@ -1,6 +1,10 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh)"
 
+if [[ $HERDR_ENV == 1 && $TERM == xterm-256color ]]; then
+  export TERM=xterm-ghostty
+fi
+
 cache_cleanup() {
   local mode="${1:-safe}"
   local targets=(
