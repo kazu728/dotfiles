@@ -28,6 +28,8 @@ description = "hunk staged diff"
 agent_panel_sort = "priority"
 pane_borders = false
 prompt_new_tab_name = false
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
 
 [ui.sound]
 enabled = false
