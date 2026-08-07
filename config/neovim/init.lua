@@ -21,6 +21,7 @@ end, { expr = true, desc = "Accept completion / newline" })
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave", "CursorHold", "CursorHoldI" }, {
+  nested = true,
   command = "silent! wall",
 })
 
