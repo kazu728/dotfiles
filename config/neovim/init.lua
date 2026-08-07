@@ -54,7 +54,7 @@ vim.keymap.set("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { des
 vim.keymap.set("n", "gl", function()
   vim.diagnostic.open_float(nil, { scope = "line" })
 end, { desc = "Line diagnostics" })
-vim.diagnostic.config({ signs = false })
+vim.diagnostic.config({ signs = false, virtual_lines = { current_line = true } })
 
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
@@ -67,6 +67,14 @@ require("onedark").setup({
   colors = { bg0 = "#161719" },
 })
 require("onedark").load()
+
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = { experimental = { enable = true } },
+    },
+  },
+})
 
 vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls", "clangd" })
 
