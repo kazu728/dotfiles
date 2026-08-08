@@ -13,6 +13,7 @@ in
 {
   imports = [
     ./modules/ghostty.nix
+    ./modules/opencode.nix
     ./modules/zsh.nix
     ./modules/git.nix
     ./modules/neovim.nix
