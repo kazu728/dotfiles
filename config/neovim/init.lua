@@ -33,7 +33,9 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 })
 vim.api.nvim_create_autocmd("InsertCharPre", {
   callback = function()
-    if not vim.o.autocomplete then
+    if vim.v.char == ";" then
+      vim.o.autocomplete = false
+    elseif not vim.o.autocomplete then
       vim.o.autocomplete = true
     end
   end,
