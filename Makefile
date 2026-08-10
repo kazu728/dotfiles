@@ -1,4 +1,4 @@
-BUN_GLOBAL_PACKAGES := @openai/codex opencode-ai elm
+BUN_GLOBAL_PACKAGES := @openai/codex opencode-ai elm @earendil-works/pi-coding-agent
 
 .PHONY: init
 init:
