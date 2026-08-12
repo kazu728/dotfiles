@@ -8,3 +8,4 @@
 - 変更面に応じた検証を実際に行い、何を実行して何が通ったかを報告する。走らせていない検証を推測で補わない。
 - 返ってきた指摘のうち検証を通ったものは握りつぶさず、提示で止めずに直す。
 - GitHub Actions の action は公式・third party を問わず、最新タグのフルの commit SHA で固定し `# vX.Y.Z` のコメントを添える。
+- ツールが未導入のとき `brew install` を直接実行しない。一時利用なら `nix run nixpkgs#<pkg>` / `nix shell` で済ませ、恒久的に必要なら nix/darwin-configuration.nix に追加して switch する。
