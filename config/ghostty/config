@@ -8,6 +8,28 @@ font-family = "Monaco"
 font-size = 11.5
 
 keybind = shift+enter=text:\n
+keybind = cmd+t=text:\x02c
+keybind = cmd+w=text:\x02x
+keybind = cmd+shift+[=text:\x02p
+keybind = cmd+shift+]=text:\x02n
+keybind = cmd+digit_1=text:\x021
+keybind = cmd+digit_2=text:\x022
+keybind = cmd+digit_3=text:\x023
+keybind = cmd+digit_4=text:\x024
+keybind = cmd+digit_5=text:\x025
+keybind = cmd+digit_6=text:\x026
+keybind = cmd+digit_7=text:\x027
+keybind = cmd+digit_8=text:\x028
+keybind = cmd+digit_9=text:\x029
+keybind = cmd+d=text:\x02v
+keybind = cmd+shift+d=text:\x02-
+keybind = cmd+shift+enter=text:\x02z
+keybind = cmd+]=text:\x02\t
+keybind = cmd+[=text:\x02\x1b[Z
+keybind = cmd+alt+arrow_left=text:\x02h
+keybind = cmd+alt+arrow_down=text:\x02j
+keybind = cmd+alt+arrow_up=text:\x02k
+keybind = cmd+alt+arrow_right=text:\x02l
 
 font-feature = -calt
 font-feature = -dlig
