@@ -30,6 +30,7 @@ keybind = cmd+alt+arrow_left=text:\x02h
 keybind = cmd+alt+arrow_down=text:\x02j
 keybind = cmd+alt+arrow_up=text:\x02k
 keybind = cmd+alt+arrow_right=text:\x02l
+keybind = cmd+b=text:\x02b
 
 font-feature = -calt
 font-feature = -dlig
