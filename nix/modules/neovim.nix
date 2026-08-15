@@ -8,7 +8,6 @@
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      copilot-vim
       fzf-lua
       nvim-lspconfig
       (nvim-treesitter.withPlugins (
