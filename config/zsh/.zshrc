@@ -143,5 +143,5 @@ gbd() {
     "$@"
 }
 
-alias codex='codex -s workspace-write -a never -c '\''tui.status_line=["model","five-hour-limit","weekly-limit"]'\'''
+alias codex='codex -c '\''tui.status_line=["model","five-hour-limit","weekly-limit"]'\'''
 alias claude='claude --permission-mode auto'
