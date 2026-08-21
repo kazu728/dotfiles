@@ -54,6 +54,8 @@ vim.keymap.set("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { des
 
 vim.diagnostic.config({ signs = false, virtual_lines = { current_line = true } })
 
+require("markdown_preview")
+
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
     pcall(vim.treesitter.start, args.buf)

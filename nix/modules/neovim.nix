@@ -35,4 +35,6 @@
 
     initLua = builtins.readFile ../../config/neovim/init.lua;
   };
+
+  xdg.configFile."nvim/lua/markdown_preview.lua".source = ../../config/neovim/markdown_preview.lua;
 }
