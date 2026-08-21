@@ -1,8 +1,8 @@
-vim.opt.swapfile = false
-vim.opt.clipboard = "unnamed"
-vim.opt.laststatus = 0
-vim.opt.ruler = false
-vim.opt.updatetime = 1000
+vim.o.swapfile = false
+vim.o.clipboard = "unnamed"
+vim.o.laststatus = 0
+vim.o.ruler = false
+vim.o.updatetime = 1000
 vim.o.complete = "o,.,w,b"
 vim.o.completeopt = "menu,menuone,popup,noselect,fuzzy"
 
