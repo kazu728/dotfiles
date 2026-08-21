@@ -1,6 +1,5 @@
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamed"
-vim.opt.termguicolors = true
 vim.opt.laststatus = 0
 vim.opt.ruler = false
 vim.opt.updatetime = 1000
@@ -8,7 +7,6 @@ vim.o.complete = "o,.,w,b"
 vim.o.completeopt = "menu,menuone,popup,noselect,fuzzy"
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 vim.keymap.set({ "n", "i" }, "<C-j>", "<Esc>")
 
@@ -54,9 +52,6 @@ vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<cr>", { desc = "Resume" })
 vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Workspace symbols" })
 
-vim.keymap.set("n", "gl", function()
-  vim.diagnostic.open_float(nil, { scope = "line" })
-end, { desc = "Line diagnostics" })
 vim.diagnostic.config({ signs = false, virtual_lines = { current_line = true } })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -66,7 +61,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("onedark").setup({
-  style = "dark",
   colors = { bg0 = "#161719" },
 })
 require("onedark").load()
@@ -106,8 +100,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gr", function()
       require("fzf-lua").lsp_references()
     end, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
   end,
 })
