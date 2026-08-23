@@ -15,6 +15,7 @@ repo_root=$(git rev-parse --show-toplevel)
 recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || true)
 tmpfile=$(mktemp)
 trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
+aicommit_skill=${CODEX_HOME:-$HOME/.codex}/skills/aicommit/SKILL.md
 
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 policy_file=""
@@ -57,8 +58,11 @@ $subject_policy
 EOF
 )
 
+# This prompt matches the aicommit skill, so disable it to prevent a recursive commit attempt.
 codex exec -C "$repo_root" --sandbox read-only --ephemeral \
-  -c 'model_reasoning_effort="low"' -o "$tmpfile" \
+  -c 'model_reasoning_effort="low"' \
+  -c "skills.config=[{path=\"$aicommit_skill\",enabled=false}]" \
+  -o "$tmpfile" \
   "$prompt" \
   >/dev/null
 
@@ -67,5 +71,12 @@ if [ -z "$msg" ]; then
   echo "Codex returned an empty commit message." >&2
   exit 1
 fi
+
+case $msg in
+  *$'\n'*)
+    printf 'Codex returned more than a subject line:\n%s\n' "$msg" >&2
+    exit 1
+    ;;
+esac
 
 git commit -m "$msg" "$@"
