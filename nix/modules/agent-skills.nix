@@ -4,21 +4,28 @@ let
   skillsRoot = ../../agent-skills;
   dirsIn =
     path: builtins.attrNames (lib.filterAttrs (_: type: type == "directory") (builtins.readDir path));
-  categories = dirsIn skillsRoot;
-  skillsIn = category: dirsIn (skillsRoot + "/${category}");
   agentSkillDirs = [
     ".claude/skills"
     ".codex/skills"
+    ".agents/skills"
   ];
-  mkLink = category: name: agentDir: {
-    name = "${agentDir}/${name}";
-    value.source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/agent-skills/${category}/${name}";
-  };
+  dotfilesSkills = lib.concatMap (
+    category:
+    map (name: {
+      inherit name;
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/agent-skills/${category}/${name}";
+    }) (dirsIn (skillsRoot + "/${category}"))
+  ) (dirsIn skillsRoot);
+  packagedSkills = [
+    {
+      name = "hunk-review";
+      source = "${config.programs.hunk.package}/skills/hunk-review";
+    }
+  ];
+  mkLink = skill: agentDir: lib.nameValuePair "${agentDir}/${skill.name}" { inherit (skill) source; };
 in
 {
   home.file = lib.listToAttrs (
-    lib.concatMap (
-      category: lib.concatMap (name: map (mkLink category name) agentSkillDirs) (skillsIn category)
-    ) categories
+    lib.concatMap (skill: map (mkLink skill) agentSkillDirs) (dotfilesSkills ++ packagedSkills)
   );
 }

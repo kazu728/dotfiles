@@ -8,7 +8,6 @@
 let
   username = "kazuki";
   homeDirectory = "/Users/${username}";
-  hunkReviewSkill = "${config.programs.hunk.package}/skills/hunk-review";
 in
 {
   imports = [
@@ -72,9 +71,6 @@ in
 
       ".claude/statusline.sh".source =
         config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/ghq/github.com/kazu728/dotfiles/scripts/claude-statusline.sh";
-
-      ".claude/skills/hunk-review".source = hunkReviewSkill;
-      ".codex/skills/hunk-review".source = hunkReviewSkill;
     };
   };
 
