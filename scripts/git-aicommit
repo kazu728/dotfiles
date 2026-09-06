@@ -60,6 +60,7 @@ EOF
 
 # This prompt matches the aicommit skill, so disable it to prevent a recursive commit attempt.
 codex exec -C "$repo_root" --sandbox read-only --ephemeral \
+  -m gpt-5.6-luna \
   -c 'model_reasoning_effort="low"' \
   -c "skills.config=[{path=\"$aicommit_skill\",enabled=false}]" \
   -o "$tmpfile" \
