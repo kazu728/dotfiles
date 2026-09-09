@@ -31,6 +31,7 @@ in
       bun
       deadnix
       delta
+      docker-sbx
       gh
       ghq
       go
