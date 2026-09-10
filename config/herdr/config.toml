@@ -15,14 +15,20 @@ description = "lazygit"
 [[keys.command]]
 key = "prefix+alt+d"
 type = "pane"
-command = "hunk diff --watch"
+command = "hunk diff"
 description = "hunk diff"
 
 [[keys.command]]
 key = "prefix+alt+s"
 type = "pane"
-command = "hunk diff --staged --watch"
+command = "hunk diff --staged"
 description = "hunk staged diff"
+
+[[keys.command]]
+key = "prefix+alt+r"
+type = "shell"
+command = 'codex exec --approve-for-me "hunk-review スキルを使って、現在の hunk セッションの差分をレビューし、指摘をインラインコメントとして追加してください。hunk は画面に開いたままなので hunk session * コマンドだけを使い、hunk diff などの対話コマンドは実行しないでください。完了したら追加したコメントの件数と対象だけを報告してください。"'
+description = "hunk review (background)"
 
 [ui]
 agent_panel_sort = "priority"

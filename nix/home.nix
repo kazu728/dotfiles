@@ -84,6 +84,7 @@ in
     hunk = {
       enable = true;
       settings.wrap_lines = true;
+      settings.sidebar = false;
     };
 
     reauthfi.enable = true;

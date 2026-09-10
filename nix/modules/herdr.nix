@@ -10,6 +10,7 @@ let
   integrations = [
     "claude"
     "codex"
+    "pi"
   ];
 in
 {
