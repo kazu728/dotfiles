@@ -31,6 +31,7 @@
       typescript-language-server
       nil
       rust-analyzer
+      ty
     ];
 
     initLua = builtins.readFile ../../config/neovim/init.lua;

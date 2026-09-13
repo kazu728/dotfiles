@@ -75,7 +75,7 @@ vim.lsp.config("rust_analyzer", {
   },
 })
 
-vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls", "clangd" })
+vim.lsp.enable({ "ts_ls", "nil_ls", "rust_analyzer", "elmls", "elixirls", "clangd", "ty" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
