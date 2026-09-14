@@ -27,7 +27,7 @@ description = "hunk staged diff"
 [[keys.command]]
 key = "prefix+alt+r"
 type = "shell"
-command = 'codex exec --approve-for-me "hunk-review スキルを使って、現在の hunk セッションの差分をレビューし、指摘をインラインコメントとして追加してください。hunk は画面に開いたままなので hunk session * コマンドだけを使い、hunk diff などの対話コマンドは実行しないでください。完了したら追加したコメントの件数と対象だけを報告してください。"'
+command = 'codex exec --approve-for-me -c sandbox_workspace_write.network_access=true "hunk-review スキルを使って、現在の hunk セッションの差分をレビューし、指摘をインラインコメントとして追加してください。hunk は画面に開いたままなので hunk session * コマンドだけを使い、hunk diff などの対話コマンドは実行しないでください。完了したら追加したコメントの件数と対象だけを報告してください。"'
 description = "hunk review (background)"
 
 [ui]
