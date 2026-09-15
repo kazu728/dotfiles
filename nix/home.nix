@@ -85,6 +85,7 @@ in
       enable = true;
       settings.wrap_lines = true;
       settings.sidebar = false;
+      settings.agent_notes = true;
     };
 
     reauthfi.enable = true;
