@@ -15,13 +15,13 @@ description = "lazygit"
 [[keys.command]]
 key = "prefix+alt+d"
 type = "pane"
-command = "hunk diff"
+command = "hunk diff --watch"
 description = "hunk diff"
 
 [[keys.command]]
 key = "prefix+alt+s"
 type = "pane"
-command = "hunk diff --staged"
+command = "hunk diff --staged --watch"
 description = "hunk staged diff"
 
 [[keys.command]]
