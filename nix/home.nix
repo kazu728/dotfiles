@@ -83,9 +83,11 @@ in
 
     hunk = {
       enable = true;
-      settings.wrap_lines = true;
-      settings.sidebar = false;
-      settings.agent_notes = true;
+      settings = {
+        wrap_lines = true;
+        sidebar = false;
+        agent_notes = true;
+      };
     };
 
     reauthfi.enable = true;
