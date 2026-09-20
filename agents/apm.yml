@@ -1,0 +1,30 @@
+name: kazu728-agents
+version: 0.1.0
+description: Agent skills
+
+targets:
+  - agent-skills
+  - claude
+
+dependencies:
+  apm:
+    - git: mattpocock/skills
+      path: skills/engineering/domain-modeling
+      ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+    - git: mattpocock/skills
+      path: skills/productivity/grilling
+      ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+    - git: ctxrs/ctx
+      path: skills/ctx-agent-history-search
+      ref: eb4df7da5825245c9ca53a02382585445f64c4b4
+    - git: ayghri/i-have-adhd
+      path: skills/i-have-adhd
+      ref: b15d0be58f55b33972ba3e39709e0e5208ef30cb
+    - git: modem-dev/hunk
+      path: packages/hunk/skills/hunk-review
+      ref: 3fdfde2dd77eb93802c43304c8edd34d79ce81de
+    - git: ogulcancelik/herdr
+      path: skills/herdr
+      ref: b99002ac99b09e00b4ca692436cb15a6b0d676f1
+    - git: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
+      ref: 8f2d57610a73efc97d743c9b0b0ecb1002e09fa4

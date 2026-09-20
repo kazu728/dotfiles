@@ -1,4 +1,7 @@
 BUN_GLOBAL_PACKAGES := @openai/codex opencode-ai elm @earendil-works/pi-coding-agent
+APM_HOME := $(HOME)/.apm
+APM_GENERATED := $(APM_HOME)/apm.yml $(APM_HOME)/apm.lock.yaml $(APM_HOME)/apm_modules
+SKILL_DIRS := $(HOME)/.agents/skills $(HOME)/.claude/skills
 
 .PHONY: init
 init:
@@ -31,3 +34,8 @@ tools:
 check:
 	@echo "Checking flake"
 	nix flake check --print-build-logs
+
+.PHONY: skills
+skills:
+	rm -rf $(SKILL_DIRS) $(APM_GENERATED)
+	apm install --global "$(CURDIR)/agents" --target agent-skills,claude

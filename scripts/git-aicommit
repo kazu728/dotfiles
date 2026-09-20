@@ -15,7 +15,8 @@ repo_root=$(git rev-parse --show-toplevel)
 recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || true)
 tmpfile=$(mktemp)
 trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
-aicommit_skill=${CODEX_HOME:-$HOME/.codex}/skills/aicommit/SKILL.md
+aicommit_skill=$HOME/.agents/skills/aicommit/SKILL.md
+repo_aicommit_skill=$repo_root/.agents/skills/aicommit/SKILL.md
 
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 policy_file=""
@@ -31,7 +32,7 @@ elif [ -n "${HOME:-}" ]; then
   policy_candidates+=("$HOME/.local/share/git-aicommit/subject-policy.md")
 fi
 
-policy_candidates+=("$script_dir/../agent-skills/personal/aicommit/subject-policy.md")
+policy_candidates+=("$script_dir/../agents/.apm/skills/aicommit/subject-policy.md")
 
 for candidate in "${policy_candidates[@]}"; do
   if [ -f "$candidate" ]; then
@@ -62,7 +63,7 @@ EOF
 codex exec -C "$repo_root" --sandbox read-only --ephemeral \
   -m gpt-5.6-luna \
   -c 'model_reasoning_effort="low"' \
-  -c "skills.config=[{path=\"$aicommit_skill\",enabled=false}]" \
+  -c "skills.config=[{path=\"$aicommit_skill\",enabled=false},{path=\"$repo_aicommit_skill\",enabled=false}]" \
   -o "$tmpfile" \
   "$prompt" \
   >/dev/null

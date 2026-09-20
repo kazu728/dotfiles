@@ -1,0 +1,5 @@
+
+# APM dependencies
+apm_modules/
+/.agents/skills/
+/.claude/skills/
