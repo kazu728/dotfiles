@@ -1,7 +1,9 @@
-_:
+{ pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = [ (pkgs.callPackage ./packages/apm.nix { }) ];
 
   nix = {
     gc = {
