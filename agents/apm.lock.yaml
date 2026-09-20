@@ -513,24 +513,6 @@ deployments:
   content_hash: sha256:a2817face7fbd563d525dd364c4f155c4d9a2a58cb22fbaee2a8ff76ff08e163
 - kind: project-relative
   target: claude
-  value: .claude/skills/hx
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/hx/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:0194498c358f2b9b0446f9ac4490f14e82a49cc072f23722c8c537519c0b2d6f
-- kind: project-relative
-  target: claude
   value: .claude/skills/i-have-adhd
   runtime: null
   scope: project
@@ -666,24 +648,6 @@ deployments:
   content_hash: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
 - kind: project-relative
   target: legacy
-  value: .agents/skills/hx
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/hx/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:0194498c358f2b9b0446f9ac4490f14e82a49cc072f23722c8c537519c0b2d6f
-- kind: project-relative
-  target: legacy
   value: .agents/skills/prune-review
   runtime: null
   scope: project
@@ -710,8 +674,6 @@ local_deployed_files:
 - .agents/skills/deep-review/SKILL.md
 - .agents/skills/handle
 - .agents/skills/handle/SKILL.md
-- .agents/skills/hx
-- .agents/skills/hx/SKILL.md
 - .agents/skills/prune-review
 - .agents/skills/prune-review/SKILL.md
 - .claude/skills/adversarial-review
@@ -723,8 +685,6 @@ local_deployed_files:
 - .claude/skills/deep-review/SKILL.md
 - .claude/skills/handle
 - .claude/skills/handle/SKILL.md
-- .claude/skills/hx
-- .claude/skills/hx/SKILL.md
 - .claude/skills/prune-review
 - .claude/skills/prune-review/SKILL.md
 local_deployed_file_hashes:
@@ -733,12 +693,10 @@ local_deployed_file_hashes:
   .agents/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .agents/skills/deep-review/SKILL.md: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
   .agents/skills/handle/SKILL.md: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
-  .agents/skills/hx/SKILL.md: sha256:0194498c358f2b9b0446f9ac4490f14e82a49cc072f23722c8c537519c0b2d6f
   .agents/skills/prune-review/SKILL.md: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
   .claude/skills/adversarial-review/SKILL.md: sha256:642a15a1ac4128c290305b8273db7d35f9c5817a15427f38b96eb4d03fc031c2
   .claude/skills/aicommit/SKILL.md: sha256:40dc0ff080c4a24e70df11c89eaea89eccd39feb856e48727885fb7ea02e1669
   .claude/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .claude/skills/deep-review/SKILL.md: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
   .claude/skills/handle/SKILL.md: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
-  .claude/skills/hx/SKILL.md: sha256:0194498c358f2b9b0446f9ac4490f14e82a49cc072f23722c8c537519c0b2d6f
   .claude/skills/prune-review/SKILL.md: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
