@@ -15,17 +15,10 @@ dependencies:
   - .agents/skills/i-have-adhd/SKILL.md
   - .agents/skills/i-have-adhd/agents/gemini.toml
   - .agents/skills/i-have-adhd/agents/openai.yaml
-  - .claude/skills/i-have-adhd
-  - .claude/skills/i-have-adhd/SKILL.md
-  - .claude/skills/i-have-adhd/agents/gemini.toml
-  - .claude/skills/i-have-adhd/agents/openai.yaml
   deployed_file_hashes:
     .agents/skills/i-have-adhd/SKILL.md: sha256:3170b16ace00aecb0dd7feb54c0b5aa642e7502acda06ecd24fd89a11c7127e9
     .agents/skills/i-have-adhd/agents/gemini.toml: sha256:5108a6123beb9df24846e0dd3f902c652d18522dfbc56e5762032ea383041c62
     .agents/skills/i-have-adhd/agents/openai.yaml: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
-    .claude/skills/i-have-adhd/SKILL.md: sha256:3170b16ace00aecb0dd7feb54c0b5aa642e7502acda06ecd24fd89a11c7127e9
-    .claude/skills/i-have-adhd/agents/gemini.toml: sha256:5108a6123beb9df24846e0dd3f902c652d18522dfbc56e5762032ea383041c62
-    .claude/skills/i-have-adhd/agents/openai.yaml: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
   content_hash: sha256:27e3b1d7339b6898419c6df77e1339bbd8362e5926e86bb991417c60af390b81
 - repo_url: ctxrs/ctx
   name: ctx-agent-history-search
@@ -39,11 +32,8 @@ dependencies:
   deployed_files:
   - .agents/skills/ctx-agent-history-search
   - .agents/skills/ctx-agent-history-search/SKILL.md
-  - .claude/skills/ctx-agent-history-search
-  - .claude/skills/ctx-agent-history-search/SKILL.md
   deployed_file_hashes:
     .agents/skills/ctx-agent-history-search/SKILL.md: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
-    .claude/skills/ctx-agent-history-search/SKILL.md: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
   content_hash: sha256:b9ee8ae28832c0058d21c16f1dc1cad4e72ad70597359033d18b6b7e556c40ce
 - repo_url: k16shikano/fd287c3133457c4fd8f5601d34aa817d
   name: japanese-tech-writing
@@ -55,11 +45,8 @@ dependencies:
   deployed_files:
   - .agents/skills/fd287c3133457c4fd8f5601d34aa817d
   - .agents/skills/fd287c3133457c4fd8f5601d34aa817d/SKILL.md
-  - .claude/skills/fd287c3133457c4fd8f5601d34aa817d
-  - .claude/skills/fd287c3133457c4fd8f5601d34aa817d/SKILL.md
   deployed_file_hashes:
     .agents/skills/fd287c3133457c4fd8f5601d34aa817d/SKILL.md: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
-    .claude/skills/fd287c3133457c4fd8f5601d34aa817d/SKILL.md: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
   content_hash: sha256:9ddea7db32f38a243da9ff3c08f19fa1f4eb39f9cc27f3a966842cfb323376f3
 - repo_url: mattpocock/skills
   name: domain-modeling
@@ -75,17 +62,10 @@ dependencies:
   - .agents/skills/domain-modeling/ADR-FORMAT.md
   - .agents/skills/domain-modeling/CONTEXT-FORMAT.md
   - .agents/skills/domain-modeling/SKILL.md
-  - .claude/skills/domain-modeling
-  - .claude/skills/domain-modeling/ADR-FORMAT.md
-  - .claude/skills/domain-modeling/CONTEXT-FORMAT.md
-  - .claude/skills/domain-modeling/SKILL.md
   deployed_file_hashes:
     .agents/skills/domain-modeling/ADR-FORMAT.md: sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2
     .agents/skills/domain-modeling/CONTEXT-FORMAT.md: sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597
     .agents/skills/domain-modeling/SKILL.md: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
-    .claude/skills/domain-modeling/ADR-FORMAT.md: sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2
-    .claude/skills/domain-modeling/CONTEXT-FORMAT.md: sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597
-    .claude/skills/domain-modeling/SKILL.md: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
   content_hash: sha256:67343881f5def98487d56243155716110afbcbf22ec92421c882d532b941cb17
 - repo_url: mattpocock/skills
   name: grilling
@@ -99,11 +79,8 @@ dependencies:
   deployed_files:
   - .agents/skills/grilling
   - .agents/skills/grilling/SKILL.md
-  - .claude/skills/grilling
-  - .claude/skills/grilling/SKILL.md
   deployed_file_hashes:
     .agents/skills/grilling/SKILL.md: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
-    .claude/skills/grilling/SKILL.md: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
   content_hash: sha256:ef685a6fa0bbe73b05bbd8dc1ec97258191587f07c6aa7dbc9006675ceb8f90f
 - repo_url: modem-dev/hunk
   name: hunk-review
@@ -117,11 +94,8 @@ dependencies:
   deployed_files:
   - .agents/skills/hunk-review
   - .agents/skills/hunk-review/SKILL.md
-  - .claude/skills/hunk-review
-  - .claude/skills/hunk-review/SKILL.md
   deployed_file_hashes:
     .agents/skills/hunk-review/SKILL.md: sha256:a2817face7fbd563d525dd364c4f155c4d9a2a58cb22fbaee2a8ff76ff08e163
-    .claude/skills/hunk-review/SKILL.md: sha256:a2817face7fbd563d525dd364c4f155c4d9a2a58cb22fbaee2a8ff76ff08e163
   content_hash: sha256:ebad9a743f1835959a61d61b49c7e783419833d01f6c29de225932605f2765c5
 - repo_url: ogulcancelik/herdr
   name: herdr
@@ -135,11 +109,8 @@ dependencies:
   deployed_files:
   - .agents/skills/herdr
   - .agents/skills/herdr/SKILL.md
-  - .claude/skills/herdr
-  - .claude/skills/herdr/SKILL.md
   deployed_file_hashes:
     .agents/skills/herdr/SKILL.md: sha256:25a68bc36d9309048db89e7d168f2e04d1689d734c5d72cc3688bf4ff9db1e9f
-    .claude/skills/herdr/SKILL.md: sha256:25a68bc36d9309048db89e7d168f2e04d1689d734c5d72cc3688bf4ff9db1e9f
   content_hash: sha256:d2ee5846631446f22067c52980d100c9355df48106a679a04aab1c7a383b5f41
 deployments:
 - kind: project-relative
@@ -305,267 +276,6 @@ deployments:
   active_owner: ayghri/i-have-adhd/skills/i-have-adhd
   content_hash: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
 - kind: project-relative
-  target: claude
-  value: .claude/skills/adversarial-review
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/adversarial-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:642a15a1ac4128c290305b8273db7d35f9c5817a15427f38b96eb4d03fc031c2
-- kind: project-relative
-  target: claude
-  value: .claude/skills/aicommit
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/aicommit/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:40dc0ff080c4a24e70df11c89eaea89eccd39feb856e48727885fb7ea02e1669
-- kind: project-relative
-  target: claude
-  value: .claude/skills/aicommit/subject-policy.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
-- kind: project-relative
-  target: claude
-  value: .claude/skills/ctx-agent-history-search
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/ctx-agent-history-search/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
-  content_hash: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
-- kind: project-relative
-  target: claude
-  value: .claude/skills/deep-review
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/deep-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
-- kind: project-relative
-  target: claude
-  value: .claude/skills/domain-modeling
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/engineering/domain-modeling
-  active_owner: mattpocock/skills/skills/engineering/domain-modeling
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/domain-modeling/ADR-FORMAT.md
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/engineering/domain-modeling
-  active_owner: mattpocock/skills/skills/engineering/domain-modeling
-  content_hash: sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2
-- kind: project-relative
-  target: claude
-  value: .claude/skills/domain-modeling/CONTEXT-FORMAT.md
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/engineering/domain-modeling
-  active_owner: mattpocock/skills/skills/engineering/domain-modeling
-  content_hash: sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597
-- kind: project-relative
-  target: claude
-  value: .claude/skills/domain-modeling/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/engineering/domain-modeling
-  active_owner: mattpocock/skills/skills/engineering/domain-modeling
-  content_hash: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
-- kind: project-relative
-  target: claude
-  value: .claude/skills/fd287c3133457c4fd8f5601d34aa817d
-  runtime: null
-  scope: project
-  owners:
-  - gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
-  active_owner: gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/fd287c3133457c4fd8f5601d34aa817d/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
-  active_owner: gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
-  content_hash: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
-- kind: project-relative
-  target: claude
-  value: .claude/skills/grilling
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/productivity/grilling
-  active_owner: mattpocock/skills/skills/productivity/grilling
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/grilling/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - mattpocock/skills/skills/productivity/grilling
-  active_owner: mattpocock/skills/skills/productivity/grilling
-  content_hash: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/handle
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/handle/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
-- kind: project-relative
-  target: claude
-  value: .claude/skills/herdr
-  runtime: null
-  scope: project
-  owners:
-  - ogulcancelik/herdr/skills/herdr
-  active_owner: ogulcancelik/herdr/skills/herdr
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/herdr/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ogulcancelik/herdr/skills/herdr
-  active_owner: ogulcancelik/herdr/skills/herdr
-  content_hash: sha256:25a68bc36d9309048db89e7d168f2e04d1689d734c5d72cc3688bf4ff9db1e9f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/hunk-review
-  runtime: null
-  scope: project
-  owners:
-  - modem-dev/hunk/packages/hunk/skills/hunk-review
-  active_owner: modem-dev/hunk/packages/hunk/skills/hunk-review
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/hunk-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - modem-dev/hunk/packages/hunk/skills/hunk-review
-  active_owner: modem-dev/hunk/packages/hunk/skills/hunk-review
-  content_hash: sha256:a2817face7fbd563d525dd364c4f155c4d9a2a58cb22fbaee2a8ff76ff08e163
-- kind: project-relative
-  target: claude
-  value: .claude/skills/i-have-adhd
-  runtime: null
-  scope: project
-  owners:
-  - ayghri/i-have-adhd/skills/i-have-adhd
-  active_owner: ayghri/i-have-adhd/skills/i-have-adhd
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/i-have-adhd/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ayghri/i-have-adhd/skills/i-have-adhd
-  active_owner: ayghri/i-have-adhd/skills/i-have-adhd
-  content_hash: sha256:3170b16ace00aecb0dd7feb54c0b5aa642e7502acda06ecd24fd89a11c7127e9
-- kind: project-relative
-  target: claude
-  value: .claude/skills/i-have-adhd/agents/gemini.toml
-  runtime: null
-  scope: project
-  owners:
-  - ayghri/i-have-adhd/skills/i-have-adhd
-  active_owner: ayghri/i-have-adhd/skills/i-have-adhd
-  content_hash: sha256:5108a6123beb9df24846e0dd3f902c652d18522dfbc56e5762032ea383041c62
-- kind: project-relative
-  target: claude
-  value: .claude/skills/i-have-adhd/agents/openai.yaml
-  runtime: null
-  scope: project
-  owners:
-  - ayghri/i-have-adhd/skills/i-have-adhd
-  active_owner: ayghri/i-have-adhd/skills/i-have-adhd
-  content_hash: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
-- kind: project-relative
-  target: claude
-  value: .claude/skills/prune-review
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/prune-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
-- kind: project-relative
   target: legacy
   value: .agents/skills/adversarial-review
   runtime: null
@@ -582,7 +292,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:642a15a1ac4128c290305b8273db7d35f9c5817a15427f38b96eb4d03fc031c2
+  content_hash: sha256:5ce9b2fda8704811b8f979e8bc08edc7aef753b61ae324d01efa62c6842ac0c6
 - kind: project-relative
   target: legacy
   value: .agents/skills/aicommit
@@ -600,7 +310,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:40dc0ff080c4a24e70df11c89eaea89eccd39feb856e48727885fb7ea02e1669
+  content_hash: sha256:07e183a0f1720fd853a2d05b5178e993f6f836db262bec16e1c7915de9fb9845
 - kind: project-relative
   target: legacy
   value: .agents/skills/aicommit/subject-policy.md
@@ -627,7 +337,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
+  content_hash: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
 - kind: project-relative
   target: legacy
   value: .agents/skills/handle
@@ -645,7 +355,16 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
+  content_hash: sha256:77348a397b81ca4a16fe1dbaf6ac7582b20184ea2f97d9113f34719c3b6be2ee
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/handle/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
 - kind: project-relative
   target: legacy
   value: .agents/skills/prune-review
@@ -663,7 +382,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
+  content_hash: sha256:3d55446f71204685078cb6578f069461697165de508f115a45bc8165efbfbabd
 local_deployed_files:
 - .agents/skills/adversarial-review
 - .agents/skills/adversarial-review/SKILL.md
@@ -674,29 +393,14 @@ local_deployed_files:
 - .agents/skills/deep-review/SKILL.md
 - .agents/skills/handle
 - .agents/skills/handle/SKILL.md
+- .agents/skills/handle/agents/openai.yaml
 - .agents/skills/prune-review
 - .agents/skills/prune-review/SKILL.md
-- .claude/skills/adversarial-review
-- .claude/skills/adversarial-review/SKILL.md
-- .claude/skills/aicommit
-- .claude/skills/aicommit/SKILL.md
-- .claude/skills/aicommit/subject-policy.md
-- .claude/skills/deep-review
-- .claude/skills/deep-review/SKILL.md
-- .claude/skills/handle
-- .claude/skills/handle/SKILL.md
-- .claude/skills/prune-review
-- .claude/skills/prune-review/SKILL.md
 local_deployed_file_hashes:
-  .agents/skills/adversarial-review/SKILL.md: sha256:642a15a1ac4128c290305b8273db7d35f9c5817a15427f38b96eb4d03fc031c2
-  .agents/skills/aicommit/SKILL.md: sha256:40dc0ff080c4a24e70df11c89eaea89eccd39feb856e48727885fb7ea02e1669
+  .agents/skills/adversarial-review/SKILL.md: sha256:5ce9b2fda8704811b8f979e8bc08edc7aef753b61ae324d01efa62c6842ac0c6
+  .agents/skills/aicommit/SKILL.md: sha256:07e183a0f1720fd853a2d05b5178e993f6f836db262bec16e1c7915de9fb9845
   .agents/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
-  .agents/skills/deep-review/SKILL.md: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
-  .agents/skills/handle/SKILL.md: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
-  .agents/skills/prune-review/SKILL.md: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
-  .claude/skills/adversarial-review/SKILL.md: sha256:642a15a1ac4128c290305b8273db7d35f9c5817a15427f38b96eb4d03fc031c2
-  .claude/skills/aicommit/SKILL.md: sha256:40dc0ff080c4a24e70df11c89eaea89eccd39feb856e48727885fb7ea02e1669
-  .claude/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
-  .claude/skills/deep-review/SKILL.md: sha256:e56f624c898d8c0be8393a2cd8fce187dff18e8110c89671eb166bd7494a8a18
-  .claude/skills/handle/SKILL.md: sha256:773c46aeb291997509418735bf315b81b611b4c7cae1dd14eea3b22227329fcb
-  .claude/skills/prune-review/SKILL.md: sha256:04431c6a85c1eaaf6c4e5531b011813d3b0ad9bdab1eaccbcde59655f6c22c08
+  .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
+  .agents/skills/handle/SKILL.md: sha256:77348a397b81ca4a16fe1dbaf6ac7582b20184ea2f97d9113f34719c3b6be2ee
+  .agents/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
+  .agents/skills/prune-review/SKILL.md: sha256:3d55446f71204685078cb6578f069461697165de508f115a45bc8165efbfbabd
