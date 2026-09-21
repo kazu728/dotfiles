@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -50,6 +49,7 @@ in
       BUN_INSTALL = "${homeDirectory}/.bun";
       DISABLE_AUTOUPDATER = "1";
       EDITOR = "nvim";
+      OPENCODE_DISABLE_CLAUDE_CODE_PROMPT = "1";
     };
 
     sessionPath = [
@@ -67,11 +67,7 @@ in
         ../agents/.apm/skills/aicommit/subject-policy.md;
 
       "AGENTS.md".source = ../AGENTS.md;
-      ".claude/CLAUDE.md".text = "@~/AGENTS.md\n";
       ".codex/AGENTS.md".source = ../AGENTS.md;
-
-      ".claude/statusline.sh".source =
-        config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/ghq/github.com/kazu728/dotfiles/scripts/claude-statusline.sh";
     };
   };
 
