@@ -30,7 +30,7 @@ in
       bun
       deadnix
       delta
-      docker-sbx
+      (pkgs.callPackage ./packages/docker-sbx.nix { })
       gh
       ghq
       go

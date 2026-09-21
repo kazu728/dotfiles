@@ -149,3 +149,23 @@ alias claude='claude --permission-mode auto'
 opencode() {
   command opencode "$@" --auto
 }
+
+sbx() {
+  local -a args=("$@")
+  while (( ${#args} )); do
+    case "${args[1]}" in
+      -D|--debug|--cloud|--cloud-api-url=*) shift args ;;
+      --cloud-api-url)
+        (( ${#args} >= 2 )) || break
+        shift 2 args
+        ;;
+      *) break ;;
+    esac
+  done
+  case "${args[1]-}" in
+    ""|run|create|tui)
+      command sbx skills import --force >/dev/null || return
+      ;;
+  esac
+  command sbx "$@"
+}
