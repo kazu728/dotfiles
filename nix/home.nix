@@ -49,7 +49,6 @@ in
       BUN_INSTALL = "${homeDirectory}/.bun";
       DISABLE_AUTOUPDATER = "1";
       EDITOR = "nvim";
-      OPENCODE_DISABLE_CLAUDE_CODE_PROMPT = "1";
     };
 
     sessionPath = [
