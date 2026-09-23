@@ -48,6 +48,7 @@ in
 
     sessionVariables = {
       BUN_INSTALL = "${homeDirectory}/.bun";
+      CLAUDE_CODE_PLUGIN_PREFER_HTTPS = "1";
       EDITOR = "nvim";
     };
 
