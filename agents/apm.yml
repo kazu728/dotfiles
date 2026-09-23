@@ -4,6 +4,7 @@ description: Agent skills
 
 targets:
   - agent-skills
+  - claude
 
 dependencies:
   apm:
