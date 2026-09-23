@@ -48,7 +48,6 @@ in
 
     sessionVariables = {
       BUN_INSTALL = "${homeDirectory}/.bun";
-      DISABLE_AUTOUPDATER = "1";
       EDITOR = "nvim";
     };
 
