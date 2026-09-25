@@ -1,6 +1,7 @@
 ---
 name: handle
 description: まとまった実装タスクを、必要な設計相談・計画から実装・検証・独立レビュー・修正まで進める。ユーザーが $handle または handle skill の使用を明示したときだけ使う。通常の実装依頼や、この skill 自体への質問・編集依頼には自動適用しない。
+disable-model-invocation: true
 ---
 
 # handle
