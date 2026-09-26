@@ -49,7 +49,7 @@ fi
 subject_policy=$(cat "$policy_file")
 
 prompt=$(cat <<EOF
-Inspect the staged git diff using git diff --cached.
+Write a git commit subject for the staged diff provided in the <stdin> block.
 
 Recent commit subjects from this repository:
 $recent_subjects
@@ -59,8 +59,9 @@ $subject_policy
 EOF
 )
 
+# Pipe the diff instead of asking the model to run git diff; it sometimes skips the tool call and invents a subject.
 # This prompt matches the aicommit skill, so disable it to prevent a recursive commit attempt.
-codex exec -C "$repo_root" --sandbox read-only --ephemeral \
+git diff --cached | codex exec -C "$repo_root" --sandbox read-only --ephemeral \
   -m gpt-6-luna \
   -c 'model_reasoning_effort="low"' \
   -c "skills.config=[{path=\"$aicommit_skill\",enabled=false},{path=\"$repo_aicommit_skill\",enabled=false}]" \
