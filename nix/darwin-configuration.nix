@@ -95,6 +95,7 @@
     casks = [
       "appcleaner"
       "cloudflare-warp"
+      "codexbar"
       "discord"
       "ghostty"
       "google-chrome"
