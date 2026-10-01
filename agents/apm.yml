@@ -22,9 +22,9 @@ dependencies:
       ref: b15d0be58f55b33972ba3e39709e0e5208ef30cb
     - git: modem-dev/hunk
       path: packages/hunk/skills/hunk-review
-      ref: 3fdfde2dd77eb93802c43304c8edd34d79ce81de
+      ref: 7991d3034af1d2116e9c77db31265e409a73bd9f
     - git: ogulcancelik/herdr
       path: skills/herdr
-      ref: b99002ac99b09e00b4ca692436cb15a6b0d676f1
+      ref: 7b116c05bfda646af39d2524c54e70c751f57ee8
     - git: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
       ref: 8f2d57610a73efc97d743c9b0b0ecb1002e09fa4

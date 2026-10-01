@@ -6,11 +6,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "apm";
-  version = "0.31.0";
+  version = "0.32.0";
 
   src = fetchurl {
     url = "https://github.com/microsoft/apm/releases/download/v${version}/apm-darwin-arm64.tar.gz";
-    hash = "sha256-O5hbpzVbPNkl/ThPQ699LUWRJUQx3yj10BY/FtOhPoE=";
+    hash = "sha256-IuMO89nuSV15j0Z70wYn3LLxemSmDs/KoVymzqojjFY=";
   };
 
   dontFixup = true;

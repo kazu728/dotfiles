@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hunk = {
-      url = "github:modem-dev/hunk/v0.22.0";
+      url = "github:modem-dev/hunk/v0.23.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     reauthfi = {
@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     herdr = {
-      url = "github:ogulcancelik/herdr/v0.9.0";
+      url = "github:ogulcancelik/herdr/v0.9.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
