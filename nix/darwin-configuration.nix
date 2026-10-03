@@ -62,7 +62,10 @@
     enableStealthMode = true;
   };
 
-  security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local = {
+    touchIdAuth = true;
+    reattach = true;
+  };
 
   homebrew = {
     enable = true;
