@@ -1810,6 +1810,42 @@ deployments:
   content_hash: sha256:892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c
 - kind: project-relative
   target: claude
+  value: .claude/skills/japanese-ui-ux
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/japanese-ui-ux/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
+- kind: project-relative
+  target: claude
+  value: .claude/skills/japanese-ui-ux/references/ui-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
+- kind: project-relative
+  target: claude
+  value: .claude/skills/japanese-ui-ux/references/ux-writing.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
+- kind: project-relative
+  target: claude
   value: .claude/skills/job-stories
   runtime: null
   scope: project
@@ -2260,6 +2296,42 @@ deployments:
   content_hash: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
 - kind: project-relative
   target: legacy
+  value: .agents/skills/japanese-ui-ux
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/japanese-ui-ux/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/japanese-ui-ux/references/ui-patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/japanese-ui-ux/references/ux-writing.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
+- kind: project-relative
+  target: legacy
   value: .agents/skills/prune-review
   runtime: null
   scope: project
@@ -2287,6 +2359,10 @@ local_deployed_files:
 - .agents/skills/handle
 - .agents/skills/handle/SKILL.md
 - .agents/skills/handle/agents/openai.yaml
+- .agents/skills/japanese-ui-ux
+- .agents/skills/japanese-ui-ux/SKILL.md
+- .agents/skills/japanese-ui-ux/references/ui-patterns.md
+- .agents/skills/japanese-ui-ux/references/ux-writing.md
 - .agents/skills/prune-review
 - .agents/skills/prune-review/SKILL.md
 - .claude/skills/adversarial-review
@@ -2299,6 +2375,10 @@ local_deployed_files:
 - .claude/skills/handle
 - .claude/skills/handle/SKILL.md
 - .claude/skills/handle/agents/openai.yaml
+- .claude/skills/japanese-ui-ux
+- .claude/skills/japanese-ui-ux/SKILL.md
+- .claude/skills/japanese-ui-ux/references/ui-patterns.md
+- .claude/skills/japanese-ui-ux/references/ux-writing.md
 - .claude/skills/prune-review
 - .claude/skills/prune-review/SKILL.md
 local_deployed_file_hashes:
@@ -2308,6 +2388,9 @@ local_deployed_file_hashes:
   .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .agents/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
   .agents/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
+  .agents/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
+  .agents/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
+  .agents/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
   .agents/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
   .claude/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
   .claude/skills/aicommit/SKILL.md: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
@@ -2315,4 +2398,7 @@ local_deployed_file_hashes:
   .claude/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .claude/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
   .claude/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
+  .claude/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
+  .claude/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
+  .claude/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
   .claude/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
