@@ -28,23 +28,23 @@ dependencies:
     .claude/skills/i-have-adhd/agents/openai.yaml: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
   content_hash: sha256:27e3b1d7339b6898419c6df77e1339bbd8362e5926e86bb991417c60af390b81
 - repo_url: ctxrs/ctx
-  name: ctx-agent-history-search
+  name: ctx
   host: github.com
-  resolved_commit: eb4df7da5825245c9ca53a02382585445f64c4b4
-  resolved_ref: eb4df7da5825245c9ca53a02382585445f64c4b4
+  resolved_commit: c13a92db70147533c256532384fe8baab6f87950
+  resolved_ref: c13a92db70147533c256532384fe8baab6f87950
   version: unknown
-  virtual_path: skills/ctx-agent-history-search
+  virtual_path: skills/ctx
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/ctx-agent-history-search
-  - .agents/skills/ctx-agent-history-search/SKILL.md
-  - .claude/skills/ctx-agent-history-search
-  - .claude/skills/ctx-agent-history-search/SKILL.md
+  - .agents/skills/ctx
+  - .agents/skills/ctx/SKILL.md
+  - .claude/skills/ctx
+  - .claude/skills/ctx/SKILL.md
   deployed_file_hashes:
-    .agents/skills/ctx-agent-history-search/SKILL.md: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
-    .claude/skills/ctx-agent-history-search/SKILL.md: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
-  content_hash: sha256:b9ee8ae28832c0058d21c16f1dc1cad4e72ad70597359033d18b6b7e556c40ce
+    .agents/skills/ctx/SKILL.md: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
+    .claude/skills/ctx/SKILL.md: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
+  content_hash: sha256:93115b2bd2fa3dbafdec4361e1ee6fa3f5e01b635a4f9f4c62ab06ab340b747d
 - repo_url: k16shikano/fd287c3133457c4fd8f5601d34aa817d
   name: japanese-tech-writing
   host: gist.github.com
@@ -64,8 +64,8 @@ dependencies:
 - repo_url: mattpocock/skills
   name: domain-modeling
   host: github.com
-  resolved_commit: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
-  resolved_ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+  resolved_commit: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
+  resolved_ref: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
   version: unknown
   virtual_path: skills/engineering/domain-modeling
   is_virtual: true
@@ -75,23 +75,27 @@ dependencies:
   - .agents/skills/domain-modeling/ADR-FORMAT.md
   - .agents/skills/domain-modeling/CONTEXT-FORMAT.md
   - .agents/skills/domain-modeling/SKILL.md
+  - .agents/skills/domain-modeling/agents/openai.yaml
   - .claude/skills/domain-modeling
   - .claude/skills/domain-modeling/ADR-FORMAT.md
   - .claude/skills/domain-modeling/CONTEXT-FORMAT.md
   - .claude/skills/domain-modeling/SKILL.md
+  - .claude/skills/domain-modeling/agents/openai.yaml
   deployed_file_hashes:
     .agents/skills/domain-modeling/ADR-FORMAT.md: sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2
     .agents/skills/domain-modeling/CONTEXT-FORMAT.md: sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597
     .agents/skills/domain-modeling/SKILL.md: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
+    .agents/skills/domain-modeling/agents/openai.yaml: sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b
     .claude/skills/domain-modeling/ADR-FORMAT.md: sha256:f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2
     .claude/skills/domain-modeling/CONTEXT-FORMAT.md: sha256:b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597
     .claude/skills/domain-modeling/SKILL.md: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
-  content_hash: sha256:67343881f5def98487d56243155716110afbcbf22ec92421c882d532b941cb17
+    .claude/skills/domain-modeling/agents/openai.yaml: sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b
+  content_hash: sha256:bd6324a1e2522ac9245c6840e74e8d1293884c96b720084858fb737bd3451b1a
 - repo_url: mattpocock/skills
   name: grilling
   host: github.com
-  resolved_commit: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
-  resolved_ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+  resolved_commit: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
+  resolved_ref: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e
   version: unknown
   virtual_path: skills/productivity/grilling
   is_virtual: true
@@ -99,12 +103,16 @@ dependencies:
   deployed_files:
   - .agents/skills/grilling
   - .agents/skills/grilling/SKILL.md
+  - .agents/skills/grilling/agents/openai.yaml
   - .claude/skills/grilling
   - .claude/skills/grilling/SKILL.md
+  - .claude/skills/grilling/agents/openai.yaml
   deployed_file_hashes:
-    .agents/skills/grilling/SKILL.md: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
-    .claude/skills/grilling/SKILL.md: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
-  content_hash: sha256:ef685a6fa0bbe73b05bbd8dc1ec97258191587f07c6aa7dbc9006675ceb8f90f
+    .agents/skills/grilling/SKILL.md: sha256:fa5c1e5ee76b1c8f1ae56101f52c9e239de75d5c578adc61227b92d10b7e52ef
+    .agents/skills/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+    .claude/skills/grilling/SKILL.md: sha256:fa5c1e5ee76b1c8f1ae56101f52c9e239de75d5c578adc61227b92d10b7e52ef
+    .claude/skills/grilling/agents/openai.yaml: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
+  content_hash: sha256:6f3a681f493ac92bf3c0f1263a9bf89f10f8f406623f3fbe5c87268e6d09e91e
 - repo_url: modem-dev/hunk
   name: hunk-review
   host: github.com
@@ -150,6 +158,126 @@ dependencies:
   virtual_path: pm-execution
   is_virtual: true
   package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/brainstorm-okrs
+  - .agents/skills/brainstorm-okrs/SKILL.md
+  - .agents/skills/create-prd
+  - .agents/skills/create-prd/SKILL.md
+  - .agents/skills/dummy-dataset
+  - .agents/skills/dummy-dataset/SKILL.md
+  - .agents/skills/job-stories
+  - .agents/skills/job-stories/SKILL.md
+  - .agents/skills/outcome-roadmap
+  - .agents/skills/outcome-roadmap/SKILL.md
+  - .agents/skills/pre-mortem
+  - .agents/skills/pre-mortem/SKILL.md
+  - .agents/skills/prioritization-frameworks
+  - .agents/skills/prioritization-frameworks/SKILL.md
+  - .agents/skills/release-notes
+  - .agents/skills/release-notes/SKILL.md
+  - .agents/skills/retro
+  - .agents/skills/retro/SKILL.md
+  - .agents/skills/sprint-plan
+  - .agents/skills/sprint-plan/SKILL.md
+  - .agents/skills/stakeholder-map
+  - .agents/skills/stakeholder-map/SKILL.md
+  - .agents/skills/strategy-red-team
+  - .agents/skills/strategy-red-team/SKILL.md
+  - .agents/skills/summarize-meeting
+  - .agents/skills/summarize-meeting/SKILL.md
+  - .agents/skills/test-scenarios
+  - .agents/skills/test-scenarios/SKILL.md
+  - .agents/skills/user-stories
+  - .agents/skills/user-stories/SKILL.md
+  - .agents/skills/wwas
+  - .agents/skills/wwas/SKILL.md
+  - .claude/commands/generate-data.md
+  - .claude/commands/meeting-notes.md
+  - .claude/commands/plan-okrs.md
+  - .claude/commands/pre-mortem.md
+  - .claude/commands/red-team-prd.md
+  - .claude/commands/sprint.md
+  - .claude/commands/stakeholder-map.md
+  - .claude/commands/test-scenarios.md
+  - .claude/commands/transform-roadmap.md
+  - .claude/commands/write-prd.md
+  - .claude/commands/write-stories.md
+  - .claude/skills/brainstorm-okrs
+  - .claude/skills/brainstorm-okrs/SKILL.md
+  - .claude/skills/create-prd
+  - .claude/skills/create-prd/SKILL.md
+  - .claude/skills/dummy-dataset
+  - .claude/skills/dummy-dataset/SKILL.md
+  - .claude/skills/job-stories
+  - .claude/skills/job-stories/SKILL.md
+  - .claude/skills/outcome-roadmap
+  - .claude/skills/outcome-roadmap/SKILL.md
+  - .claude/skills/pre-mortem
+  - .claude/skills/pre-mortem/SKILL.md
+  - .claude/skills/prioritization-frameworks
+  - .claude/skills/prioritization-frameworks/SKILL.md
+  - .claude/skills/release-notes
+  - .claude/skills/release-notes/SKILL.md
+  - .claude/skills/retro
+  - .claude/skills/retro/SKILL.md
+  - .claude/skills/sprint-plan
+  - .claude/skills/sprint-plan/SKILL.md
+  - .claude/skills/stakeholder-map
+  - .claude/skills/stakeholder-map/SKILL.md
+  - .claude/skills/strategy-red-team
+  - .claude/skills/strategy-red-team/SKILL.md
+  - .claude/skills/summarize-meeting
+  - .claude/skills/summarize-meeting/SKILL.md
+  - .claude/skills/test-scenarios
+  - .claude/skills/test-scenarios/SKILL.md
+  - .claude/skills/user-stories
+  - .claude/skills/user-stories/SKILL.md
+  - .claude/skills/wwas
+  - .claude/skills/wwas/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/brainstorm-okrs/SKILL.md: sha256:9d4fcbc779aad7bcf4b4793148be31bec4bfe70e08f5885cf34635ecd08c47ee
+    .agents/skills/create-prd/SKILL.md: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
+    .agents/skills/dummy-dataset/SKILL.md: sha256:35ca70a479f3c9cbdbee2d59c56d777886a8788aa79bd4bf3258b2cf557937aa
+    .agents/skills/job-stories/SKILL.md: sha256:69f75264b311418a1ebaf06c9872ed1271203cfc6316466fcb99cc948ade800b
+    .agents/skills/outcome-roadmap/SKILL.md: sha256:3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8
+    .agents/skills/pre-mortem/SKILL.md: sha256:4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052
+    .agents/skills/prioritization-frameworks/SKILL.md: sha256:5dab45be9e46397ec1c35a6a6aaa85233843184fd1e9d8e5f279dd02d6e4fc21
+    .agents/skills/release-notes/SKILL.md: sha256:b617edd39e721267c9726286b6304f086991f5e2215b848c952a8ad9e001a0d3
+    .agents/skills/retro/SKILL.md: sha256:9ca1986756ce028a83314d49450ff390c00fce224099ff5678cdc83db0998b03
+    .agents/skills/sprint-plan/SKILL.md: sha256:54ac27165fd7d57fe3f598f1ef66087d03fbf56d9f583adf7608ccaca9ce3382
+    .agents/skills/stakeholder-map/SKILL.md: sha256:0cc656200848c710e50a4240cfe9aee3bcd08ebc536a5b87b01d38a96ffe4174
+    .agents/skills/strategy-red-team/SKILL.md: sha256:3758fcf6f2f2653721c9d58586f7816e17d47d4723b54a5d3457a6641d2663fc
+    .agents/skills/summarize-meeting/SKILL.md: sha256:4deabdd7f99c692ee800a80a4eaf6a688fb8873cdaaaea44b7f472499205f8e7
+    .agents/skills/test-scenarios/SKILL.md: sha256:2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4
+    .agents/skills/user-stories/SKILL.md: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
+    .agents/skills/wwas/SKILL.md: sha256:7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4
+    .claude/commands/generate-data.md: sha256:894dfdbcd64363f730ea332f47482a0d4bd92ea3583462a6c46674220ea57bfd
+    .claude/commands/meeting-notes.md: sha256:7863c5e7be05bf4238f05f35dc913b7dcd0ccf557f6be8861396895effad9d6c
+    .claude/commands/plan-okrs.md: sha256:1f4f7056e470ebb0ed91d98b69f8e86ae4e10ceb737356d61c41009cd1f3d776
+    .claude/commands/pre-mortem.md: sha256:2ea0625183e09594e16796907647c7fb4d96ad21fc26e9834c1cefd640325d58
+    .claude/commands/red-team-prd.md: sha256:1eac341df8a1210da4ee1431d29409a72035c97e38d6201f32f05bb7a829d303
+    .claude/commands/sprint.md: sha256:e223ff228f752cfb31c3235155fefc533d53b29e66e776abeecc52d886621136
+    .claude/commands/stakeholder-map.md: sha256:b330fcd6f92760715bffc2dc780ae4c6f53331125a8fe4f0eb8ba308bbd0b63f
+    .claude/commands/test-scenarios.md: sha256:16d748dd6723dd87fd35d7f91f5252c5635995bfdc30e681b20b7e576cd6624b
+    .claude/commands/transform-roadmap.md: sha256:0b0b947d8d25680df37790881704c2132a894ddc24a3b1a58de617d63bb101b0
+    .claude/commands/write-prd.md: sha256:b615c1d2b26628b93d8328e2a53fcb75cf9f73bf1e2c846fa3ac99ddc65bd689
+    .claude/commands/write-stories.md: sha256:4eedcc0038bbbb2ecf02d5cc3a83eb32984e63406d4792bed066a199dfd05adb
+    .claude/skills/brainstorm-okrs/SKILL.md: sha256:9d4fcbc779aad7bcf4b4793148be31bec4bfe70e08f5885cf34635ecd08c47ee
+    .claude/skills/create-prd/SKILL.md: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
+    .claude/skills/dummy-dataset/SKILL.md: sha256:35ca70a479f3c9cbdbee2d59c56d777886a8788aa79bd4bf3258b2cf557937aa
+    .claude/skills/job-stories/SKILL.md: sha256:69f75264b311418a1ebaf06c9872ed1271203cfc6316466fcb99cc948ade800b
+    .claude/skills/outcome-roadmap/SKILL.md: sha256:3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8
+    .claude/skills/pre-mortem/SKILL.md: sha256:4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052
+    .claude/skills/prioritization-frameworks/SKILL.md: sha256:5dab45be9e46397ec1c35a6a6aaa85233843184fd1e9d8e5f279dd02d6e4fc21
+    .claude/skills/release-notes/SKILL.md: sha256:b617edd39e721267c9726286b6304f086991f5e2215b848c952a8ad9e001a0d3
+    .claude/skills/retro/SKILL.md: sha256:9ca1986756ce028a83314d49450ff390c00fce224099ff5678cdc83db0998b03
+    .claude/skills/sprint-plan/SKILL.md: sha256:54ac27165fd7d57fe3f598f1ef66087d03fbf56d9f583adf7608ccaca9ce3382
+    .claude/skills/stakeholder-map/SKILL.md: sha256:0cc656200848c710e50a4240cfe9aee3bcd08ebc536a5b87b01d38a96ffe4174
+    .claude/skills/strategy-red-team/SKILL.md: sha256:3758fcf6f2f2653721c9d58586f7816e17d47d4723b54a5d3457a6641d2663fc
+    .claude/skills/summarize-meeting/SKILL.md: sha256:4deabdd7f99c692ee800a80a4eaf6a688fb8873cdaaaea44b7f472499205f8e7
+    .claude/skills/test-scenarios/SKILL.md: sha256:2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4
+    .claude/skills/user-stories/SKILL.md: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
+    .claude/skills/wwas/SKILL.md: sha256:7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4
   content_hash: sha256:c0f7a4c48e50476ff71c416b3c8e1fae216851508bfd817647984421b3a7e045
   declared_license: MIT
 - repo_url: phuryn/pm-skills
@@ -161,27 +289,243 @@ dependencies:
   virtual_path: pm-product-discovery
   is_virtual: true
   package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/analyze-feature-requests
+  - .agents/skills/analyze-feature-requests/SKILL.md
+  - .agents/skills/brainstorm-experiments-existing
+  - .agents/skills/brainstorm-experiments-existing/SKILL.md
+  - .agents/skills/brainstorm-experiments-new
+  - .agents/skills/brainstorm-experiments-new/SKILL.md
+  - .agents/skills/brainstorm-ideas-existing
+  - .agents/skills/brainstorm-ideas-existing/SKILL.md
+  - .agents/skills/brainstorm-ideas-new
+  - .agents/skills/brainstorm-ideas-new/SKILL.md
+  - .agents/skills/identify-assumptions-existing
+  - .agents/skills/identify-assumptions-existing/SKILL.md
+  - .agents/skills/identify-assumptions-new
+  - .agents/skills/identify-assumptions-new/SKILL.md
+  - .agents/skills/interview-script
+  - .agents/skills/interview-script/SKILL.md
+  - .agents/skills/metrics-dashboard
+  - .agents/skills/metrics-dashboard/SKILL.md
+  - .agents/skills/opportunity-solution-tree
+  - .agents/skills/opportunity-solution-tree/SKILL.md
+  - .agents/skills/prioritize-assumptions
+  - .agents/skills/prioritize-assumptions/SKILL.md
+  - .agents/skills/prioritize-features
+  - .agents/skills/prioritize-features/SKILL.md
+  - .agents/skills/summarize-interview
+  - .agents/skills/summarize-interview/SKILL.md
+  - .claude/commands/brainstorm.md
+  - .claude/commands/discover.md
+  - .claude/commands/interview.md
+  - .claude/commands/setup-metrics.md
+  - .claude/commands/triage-requests.md
+  - .claude/skills/analyze-feature-requests
+  - .claude/skills/analyze-feature-requests/SKILL.md
+  - .claude/skills/brainstorm-experiments-existing
+  - .claude/skills/brainstorm-experiments-existing/SKILL.md
+  - .claude/skills/brainstorm-experiments-new
+  - .claude/skills/brainstorm-experiments-new/SKILL.md
+  - .claude/skills/brainstorm-ideas-existing
+  - .claude/skills/brainstorm-ideas-existing/SKILL.md
+  - .claude/skills/brainstorm-ideas-new
+  - .claude/skills/brainstorm-ideas-new/SKILL.md
+  - .claude/skills/identify-assumptions-existing
+  - .claude/skills/identify-assumptions-existing/SKILL.md
+  - .claude/skills/identify-assumptions-new
+  - .claude/skills/identify-assumptions-new/SKILL.md
+  - .claude/skills/interview-script
+  - .claude/skills/interview-script/SKILL.md
+  - .claude/skills/metrics-dashboard
+  - .claude/skills/metrics-dashboard/SKILL.md
+  - .claude/skills/opportunity-solution-tree
+  - .claude/skills/opportunity-solution-tree/SKILL.md
+  - .claude/skills/prioritize-assumptions
+  - .claude/skills/prioritize-assumptions/SKILL.md
+  - .claude/skills/prioritize-features
+  - .claude/skills/prioritize-features/SKILL.md
+  - .claude/skills/summarize-interview
+  - .claude/skills/summarize-interview/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/analyze-feature-requests/SKILL.md: sha256:7615db7687a668a99e015664295f849bfab696a8dd7b3c02b0200a512c6ad3c2
+    .agents/skills/brainstorm-experiments-existing/SKILL.md: sha256:d72da1f4f08d5514662d7bad37dfc3ed4ef11fcc5b5ddec6ca5a8ac0e47f45c5
+    .agents/skills/brainstorm-experiments-new/SKILL.md: sha256:fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334
+    .agents/skills/brainstorm-ideas-existing/SKILL.md: sha256:cf950494541bd9b47e60054f1a917cef02094fe8c769d5feca86603282e2bd5b
+    .agents/skills/brainstorm-ideas-new/SKILL.md: sha256:400e5e0760d6dc52bfe34953d90db6223df532ce720d7e85568696ab5c3d34d2
+    .agents/skills/identify-assumptions-existing/SKILL.md: sha256:59d788213014552ac64f589c71ce82b135f9ef4b84fec457446ad90795fd439f
+    .agents/skills/identify-assumptions-new/SKILL.md: sha256:962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b
+    .agents/skills/interview-script/SKILL.md: sha256:892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c
+    .agents/skills/metrics-dashboard/SKILL.md: sha256:fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9
+    .agents/skills/opportunity-solution-tree/SKILL.md: sha256:6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc
+    .agents/skills/prioritize-assumptions/SKILL.md: sha256:18160a0138c788790c9dd22995ffdcfac485c1f0599c170d8668678e59766073
+    .agents/skills/prioritize-features/SKILL.md: sha256:d05c001ea9d71ccf6aca975e0530a2a85545192b1eec9e06cc6d1339156c0f87
+    .agents/skills/summarize-interview/SKILL.md: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
+    .claude/commands/brainstorm.md: sha256:dd2a01e594dc7ad966e419fce8f593836cc6cc783e3c7aa9ca580f750fc97694
+    .claude/commands/discover.md: sha256:12e583d523e1bb0d957e25b373b791ed8cfd960eea2927bfbabb86f98bc8c9ba
+    .claude/commands/interview.md: sha256:b9caf8e372b347c76cc53f2301c76e851c7452d252f23db6070672ec0047c9b9
+    .claude/commands/setup-metrics.md: sha256:2286e37e33a4702ab2f34a4aa58b6c30364f6853bc465779cd3308c608963a5c
+    .claude/commands/triage-requests.md: sha256:b63389965f3f6a9cc800a81fdb85595c292a5dffc2263db5baa1def707af649d
+    .claude/skills/analyze-feature-requests/SKILL.md: sha256:7615db7687a668a99e015664295f849bfab696a8dd7b3c02b0200a512c6ad3c2
+    .claude/skills/brainstorm-experiments-existing/SKILL.md: sha256:d72da1f4f08d5514662d7bad37dfc3ed4ef11fcc5b5ddec6ca5a8ac0e47f45c5
+    .claude/skills/brainstorm-experiments-new/SKILL.md: sha256:fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334
+    .claude/skills/brainstorm-ideas-existing/SKILL.md: sha256:cf950494541bd9b47e60054f1a917cef02094fe8c769d5feca86603282e2bd5b
+    .claude/skills/brainstorm-ideas-new/SKILL.md: sha256:400e5e0760d6dc52bfe34953d90db6223df532ce720d7e85568696ab5c3d34d2
+    .claude/skills/identify-assumptions-existing/SKILL.md: sha256:59d788213014552ac64f589c71ce82b135f9ef4b84fec457446ad90795fd439f
+    .claude/skills/identify-assumptions-new/SKILL.md: sha256:962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b
+    .claude/skills/interview-script/SKILL.md: sha256:892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c
+    .claude/skills/metrics-dashboard/SKILL.md: sha256:fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9
+    .claude/skills/opportunity-solution-tree/SKILL.md: sha256:6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc
+    .claude/skills/prioritize-assumptions/SKILL.md: sha256:18160a0138c788790c9dd22995ffdcfac485c1f0599c170d8668678e59766073
+    .claude/skills/prioritize-features/SKILL.md: sha256:d05c001ea9d71ccf6aca975e0530a2a85545192b1eec9e06cc6d1339156c0f87
+    .claude/skills/summarize-interview/SKILL.md: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
   content_hash: sha256:d91fdb8670b7a3a50d1983fb0e6c7b2653f384cd7d00fd8ac01d07dbec32ea7d
   declared_license: MIT
 deployments:
 - kind: project-relative
   target: agent-skills
-  value: .agents/skills/ctx-agent-history-search
+  value: .agents/skills/analyze-feature-requests
   runtime: null
   scope: project
   owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
   content_hash: null
 - kind: project-relative
   target: agent-skills
-  value: .agents/skills/ctx-agent-history-search/SKILL.md
+  value: .agents/skills/analyze-feature-requests/SKILL.md
   runtime: null
   scope: project
   owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
-  content_hash: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:7615db7687a668a99e015664295f849bfab696a8dd7b3c02b0200a512c6ad3c2
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-experiments-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-experiments-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:d72da1f4f08d5514662d7bad37dfc3ed4ef11fcc5b5ddec6ca5a8ac0e47f45c5
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-experiments-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-experiments-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-ideas-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-ideas-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:cf950494541bd9b47e60054f1a917cef02094fe8c769d5feca86603282e2bd5b
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-ideas-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-ideas-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:400e5e0760d6dc52bfe34953d90db6223df532ce720d7e85568696ab5c3d34d2
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-okrs
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/brainstorm-okrs/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:9d4fcbc779aad7bcf4b4793148be31bec4bfe70e08f5885cf34635ecd08c47ee
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/create-prd
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/create-prd/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/ctx
+  runtime: null
+  scope: project
+  owners:
+  - ctxrs/ctx/skills/ctx
+  active_owner: ctxrs/ctx/skills/ctx
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/ctx/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - ctxrs/ctx/skills/ctx
+  active_owner: ctxrs/ctx/skills/ctx
+  content_hash: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/domain-modeling
@@ -220,6 +564,33 @@ deployments:
   content_hash: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
 - kind: project-relative
   target: agent-skills
+  value: .agents/skills/domain-modeling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills/skills/engineering/domain-modeling
+  active_owner: mattpocock/skills/skills/engineering/domain-modeling
+  content_hash: sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/dummy-dataset
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/dummy-dataset/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:35ca70a479f3c9cbdbee2d59c56d777886a8788aa79bd4bf3258b2cf557937aa
+- kind: project-relative
+  target: agent-skills
   value: .agents/skills/fd287c3133457c4fd8f5601d34aa817d
   runtime: null
   scope: project
@@ -253,7 +624,16 @@ deployments:
   owners:
   - mattpocock/skills/skills/productivity/grilling
   active_owner: mattpocock/skills/skills/productivity/grilling
-  content_hash: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
+  content_hash: sha256:fa5c1e5ee76b1c8f1ae56101f52c9e239de75d5c578adc61227b92d10b7e52ef
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills/skills/productivity/grilling
+  active_owner: mattpocock/skills/skills/productivity/grilling
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/herdr
@@ -327,6 +707,528 @@ deployments:
   active_owner: ayghri/i-have-adhd/skills/i-have-adhd
   content_hash: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
 - kind: project-relative
+  target: agent-skills
+  value: .agents/skills/identify-assumptions-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/identify-assumptions-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:59d788213014552ac64f589c71ce82b135f9ef4b84fec457446ad90795fd439f
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/identify-assumptions-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/identify-assumptions-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/interview-script
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/interview-script/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/job-stories
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/job-stories/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:69f75264b311418a1ebaf06c9872ed1271203cfc6316466fcb99cc948ade800b
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/metrics-dashboard
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/metrics-dashboard/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/opportunity-solution-tree
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/opportunity-solution-tree/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/outcome-roadmap
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/outcome-roadmap/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/pre-mortem
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/pre-mortem/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritization-frameworks
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritization-frameworks/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:5dab45be9e46397ec1c35a6a6aaa85233843184fd1e9d8e5f279dd02d6e4fc21
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritize-assumptions
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritize-assumptions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:18160a0138c788790c9dd22995ffdcfac485c1f0599c170d8668678e59766073
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritize-features
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/prioritize-features/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:d05c001ea9d71ccf6aca975e0530a2a85545192b1eec9e06cc6d1339156c0f87
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/release-notes
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/release-notes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:b617edd39e721267c9726286b6304f086991f5e2215b848c952a8ad9e001a0d3
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/retro
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/retro/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:9ca1986756ce028a83314d49450ff390c00fce224099ff5678cdc83db0998b03
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/sprint-plan
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/sprint-plan/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:54ac27165fd7d57fe3f598f1ef66087d03fbf56d9f583adf7608ccaca9ce3382
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/stakeholder-map
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/stakeholder-map/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:0cc656200848c710e50a4240cfe9aee3bcd08ebc536a5b87b01d38a96ffe4174
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/strategy-red-team
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/strategy-red-team/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:3758fcf6f2f2653721c9d58586f7816e17d47d4723b54a5d3457a6641d2663fc
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/summarize-interview
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/summarize-interview/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/summarize-meeting
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/summarize-meeting/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:4deabdd7f99c692ee800a80a4eaf6a688fb8873cdaaaea44b7f472499205f8e7
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/test-scenarios
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/test-scenarios/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/user-stories
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/user-stories/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/wwas
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/wwas/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4
+- kind: project-relative
+  target: claude
+  value: .claude/commands/brainstorm.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:dd2a01e594dc7ad966e419fce8f593836cc6cc783e3c7aa9ca580f750fc97694
+- kind: project-relative
+  target: claude
+  value: .claude/commands/discover.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:12e583d523e1bb0d957e25b373b791ed8cfd960eea2927bfbabb86f98bc8c9ba
+- kind: project-relative
+  target: claude
+  value: .claude/commands/generate-data.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:894dfdbcd64363f730ea332f47482a0d4bd92ea3583462a6c46674220ea57bfd
+- kind: project-relative
+  target: claude
+  value: .claude/commands/interview.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:b9caf8e372b347c76cc53f2301c76e851c7452d252f23db6070672ec0047c9b9
+- kind: project-relative
+  target: claude
+  value: .claude/commands/meeting-notes.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:7863c5e7be05bf4238f05f35dc913b7dcd0ccf557f6be8861396895effad9d6c
+- kind: project-relative
+  target: claude
+  value: .claude/commands/plan-okrs.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:1f4f7056e470ebb0ed91d98b69f8e86ae4e10ceb737356d61c41009cd1f3d776
+- kind: project-relative
+  target: claude
+  value: .claude/commands/pre-mortem.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:2ea0625183e09594e16796907647c7fb4d96ad21fc26e9834c1cefd640325d58
+- kind: project-relative
+  target: claude
+  value: .claude/commands/red-team-prd.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:1eac341df8a1210da4ee1431d29409a72035c97e38d6201f32f05bb7a829d303
+- kind: project-relative
+  target: claude
+  value: .claude/commands/setup-metrics.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:2286e37e33a4702ab2f34a4aa58b6c30364f6853bc465779cd3308c608963a5c
+- kind: project-relative
+  target: claude
+  value: .claude/commands/sprint.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:e223ff228f752cfb31c3235155fefc533d53b29e66e776abeecc52d886621136
+- kind: project-relative
+  target: claude
+  value: .claude/commands/stakeholder-map.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:b330fcd6f92760715bffc2dc780ae4c6f53331125a8fe4f0eb8ba308bbd0b63f
+- kind: project-relative
+  target: claude
+  value: .claude/commands/test-scenarios.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:16d748dd6723dd87fd35d7f91f5252c5635995bfdc30e681b20b7e576cd6624b
+- kind: project-relative
+  target: claude
+  value: .claude/commands/transform-roadmap.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:0b0b947d8d25680df37790881704c2132a894ddc24a3b1a58de617d63bb101b0
+- kind: project-relative
+  target: claude
+  value: .claude/commands/triage-requests.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:b63389965f3f6a9cc800a81fdb85595c292a5dffc2263db5baa1def707af649d
+- kind: project-relative
+  target: claude
+  value: .claude/commands/write-prd.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:b615c1d2b26628b93d8328e2a53fcb75cf9f73bf1e2c846fa3ac99ddc65bd689
+- kind: project-relative
+  target: claude
+  value: .claude/commands/write-stories.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:4eedcc0038bbbb2ecf02d5cc3a83eb32984e63406d4792bed066a199dfd05adb
+- kind: project-relative
   target: claude
   value: .claude/skills/adversarial-review
   runtime: null
@@ -373,22 +1275,148 @@ deployments:
   content_hash: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
 - kind: project-relative
   target: claude
-  value: .claude/skills/ctx-agent-history-search
+  value: .claude/skills/analyze-feature-requests
   runtime: null
   scope: project
   owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
   content_hash: null
 - kind: project-relative
   target: claude
-  value: .claude/skills/ctx-agent-history-search/SKILL.md
+  value: .claude/skills/analyze-feature-requests/SKILL.md
   runtime: null
   scope: project
   owners:
-  - ctxrs/ctx/skills/ctx-agent-history-search
-  active_owner: ctxrs/ctx/skills/ctx-agent-history-search
-  content_hash: sha256:d76cd55f506f6d8605f2fed933a16e4ab995b3a4ab8e6d96bfd84d469872b3d6
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:7615db7687a668a99e015664295f849bfab696a8dd7b3c02b0200a512c6ad3c2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-experiments-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-experiments-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:d72da1f4f08d5514662d7bad37dfc3ed4ef11fcc5b5ddec6ca5a8ac0e47f45c5
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-experiments-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-experiments-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-ideas-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-ideas-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:cf950494541bd9b47e60054f1a917cef02094fe8c769d5feca86603282e2bd5b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-ideas-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-ideas-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:400e5e0760d6dc52bfe34953d90db6223df532ce720d7e85568696ab5c3d34d2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-okrs
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/brainstorm-okrs/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:9d4fcbc779aad7bcf4b4793148be31bec4bfe70e08f5885cf34635ecd08c47ee
+- kind: project-relative
+  target: claude
+  value: .claude/skills/create-prd
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/create-prd/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
+- kind: project-relative
+  target: claude
+  value: .claude/skills/ctx
+  runtime: null
+  scope: project
+  owners:
+  - ctxrs/ctx/skills/ctx
+  active_owner: ctxrs/ctx/skills/ctx
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/ctx/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - ctxrs/ctx/skills/ctx
+  active_owner: ctxrs/ctx/skills/ctx
+  content_hash: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
 - kind: project-relative
   target: claude
   value: .claude/skills/deep-review
@@ -445,6 +1473,33 @@ deployments:
   content_hash: sha256:152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579
 - kind: project-relative
   target: claude
+  value: .claude/skills/domain-modeling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills/skills/engineering/domain-modeling
+  active_owner: mattpocock/skills/skills/engineering/domain-modeling
+  content_hash: sha256:f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/dummy-dataset
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/dummy-dataset/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:35ca70a479f3c9cbdbee2d59c56d777886a8788aa79bd4bf3258b2cf557937aa
+- kind: project-relative
+  target: claude
   value: .claude/skills/fd287c3133457c4fd8f5601d34aa817d
   runtime: null
   scope: project
@@ -478,7 +1533,16 @@ deployments:
   owners:
   - mattpocock/skills/skills/productivity/grilling
   active_owner: mattpocock/skills/skills/productivity/grilling
-  content_hash: sha256:fe00af3e1815f97c0a7644605479328a726b5cd95ba6ef56a4be2a92fae6c20f
+  content_hash: sha256:fa5c1e5ee76b1c8f1ae56101f52c9e239de75d5c578adc61227b92d10b7e52ef
+- kind: project-relative
+  target: claude
+  value: .claude/skills/grilling/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - mattpocock/skills/skills/productivity/grilling
+  active_owner: mattpocock/skills/skills/productivity/grilling
+  content_hash: sha256:1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b
 - kind: project-relative
   target: claude
   value: .claude/skills/handle
@@ -496,7 +1560,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:abcefb6680c548aef73a2b0c6407649dd3d5a4b0f2f6c2ef3c56552214fb6578
+  content_hash: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
 - kind: project-relative
   target: claude
   value: .claude/skills/handle/agents/openai.yaml
@@ -580,6 +1644,204 @@ deployments:
   content_hash: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
 - kind: project-relative
   target: claude
+  value: .claude/skills/identify-assumptions-existing
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/identify-assumptions-existing/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:59d788213014552ac64f589c71ce82b135f9ef4b84fec457446ad90795fd439f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/identify-assumptions-new
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/identify-assumptions-new/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/interview-script
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/interview-script/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/job-stories
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/job-stories/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:69f75264b311418a1ebaf06c9872ed1271203cfc6316466fcb99cc948ade800b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/metrics-dashboard
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/metrics-dashboard/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9
+- kind: project-relative
+  target: claude
+  value: .claude/skills/opportunity-solution-tree
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/opportunity-solution-tree/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc
+- kind: project-relative
+  target: claude
+  value: .claude/skills/outcome-roadmap
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/outcome-roadmap/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8
+- kind: project-relative
+  target: claude
+  value: .claude/skills/pre-mortem
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/pre-mortem/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritization-frameworks
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritization-frameworks/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:5dab45be9e46397ec1c35a6a6aaa85233843184fd1e9d8e5f279dd02d6e4fc21
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritize-assumptions
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritize-assumptions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:18160a0138c788790c9dd22995ffdcfac485c1f0599c170d8668678e59766073
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritize-features
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/prioritize-features/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:d05c001ea9d71ccf6aca975e0530a2a85545192b1eec9e06cc6d1339156c0f87
+- kind: project-relative
+  target: claude
   value: .claude/skills/prune-review
   runtime: null
   scope: project
@@ -596,6 +1858,186 @@ deployments:
   - .
   active_owner: .
   content_hash: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/release-notes
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/release-notes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:b617edd39e721267c9726286b6304f086991f5e2215b848c952a8ad9e001a0d3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/retro
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/retro/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:9ca1986756ce028a83314d49450ff390c00fce224099ff5678cdc83db0998b03
+- kind: project-relative
+  target: claude
+  value: .claude/skills/sprint-plan
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/sprint-plan/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:54ac27165fd7d57fe3f598f1ef66087d03fbf56d9f583adf7608ccaca9ce3382
+- kind: project-relative
+  target: claude
+  value: .claude/skills/stakeholder-map
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/stakeholder-map/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:0cc656200848c710e50a4240cfe9aee3bcd08ebc536a5b87b01d38a96ffe4174
+- kind: project-relative
+  target: claude
+  value: .claude/skills/strategy-red-team
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/strategy-red-team/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:3758fcf6f2f2653721c9d58586f7816e17d47d4723b54a5d3457a6641d2663fc
+- kind: project-relative
+  target: claude
+  value: .claude/skills/summarize-interview
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/summarize-interview/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-product-discovery
+  active_owner: phuryn/pm-skills/pm-product-discovery
+  content_hash: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/summarize-meeting
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/summarize-meeting/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:4deabdd7f99c692ee800a80a4eaf6a688fb8873cdaaaea44b7f472499205f8e7
+- kind: project-relative
+  target: claude
+  value: .claude/skills/test-scenarios
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/test-scenarios/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4
+- kind: project-relative
+  target: claude
+  value: .claude/skills/user-stories
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/user-stories/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
+- kind: project-relative
+  target: claude
+  value: .claude/skills/wwas
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/wwas/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - phuryn/pm-skills/pm-execution
+  active_owner: phuryn/pm-skills/pm-execution
+  content_hash: sha256:7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4
 - kind: project-relative
   target: legacy
   value: .agents/skills/adversarial-review
@@ -676,7 +2118,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:abcefb6680c548aef73a2b0c6407649dd3d5a4b0f2f6c2ef3c56552214fb6578
+  content_hash: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
 - kind: project-relative
   target: legacy
   value: .agents/skills/handle/agents/openai.yaml
@@ -734,13 +2176,13 @@ local_deployed_file_hashes:
   .agents/skills/aicommit/SKILL.md: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
   .agents/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
-  .agents/skills/handle/SKILL.md: sha256:abcefb6680c548aef73a2b0c6407649dd3d5a4b0f2f6c2ef3c56552214fb6578
+  .agents/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
   .agents/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
   .agents/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
   .claude/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
   .claude/skills/aicommit/SKILL.md: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
   .claude/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .claude/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
-  .claude/skills/handle/SKILL.md: sha256:abcefb6680c548aef73a2b0c6407649dd3d5a4b0f2f6c2ef3c56552214fb6578
+  .claude/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
   .claude/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
   .claude/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd

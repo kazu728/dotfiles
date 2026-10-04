@@ -10,13 +10,13 @@ dependencies:
   apm:
     - git: mattpocock/skills
       path: skills/engineering/domain-modeling
-      ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+      ref: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e # v1.2.3
     - git: mattpocock/skills
       path: skills/productivity/grilling
-      ref: 42396a51d66f07d2f521d728108e7a6c0a1b32c2
+      ref: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e # v1.2.3
     - git: ctxrs/ctx
-      path: skills/ctx-agent-history-search
-      ref: eb4df7da5825245c9ca53a02382585445f64c4b4
+      path: skills/ctx
+      ref: c13a92db70147533c256532384fe8baab6f87950 # v2.2.7
     - git: ayghri/i-have-adhd
       path: skills/i-have-adhd
       ref: b15d0be58f55b33972ba3e39709e0e5208ef30cb
