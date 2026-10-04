@@ -141,6 +141,28 @@ dependencies:
     .agents/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
     .claude/skills/herdr/SKILL.md: sha256:b16ba0d9a22adbaf259d2022cd323801f8e51d530c94cb0cd23a69069292506b
   content_hash: sha256:66715d76e5947497431ec0db32f2693b9c916ad799c3f32b99e6174b4b9c607f
+- repo_url: phuryn/pm-skills
+  name: pm-execution
+  host: github.com
+  resolved_commit: 8607e3b077817f89bf4a9b623246219734ac3be0
+  resolved_ref: 8607e3b077817f89bf4a9b623246219734ac3be0
+  version: 2.1.0
+  virtual_path: pm-execution
+  is_virtual: true
+  package_type: skill_bundle
+  content_hash: sha256:c0f7a4c48e50476ff71c416b3c8e1fae216851508bfd817647984421b3a7e045
+  declared_license: MIT
+- repo_url: phuryn/pm-skills
+  name: pm-product-discovery
+  host: github.com
+  resolved_commit: 8607e3b077817f89bf4a9b623246219734ac3be0
+  resolved_ref: 8607e3b077817f89bf4a9b623246219734ac3be0
+  version: 2.1.0
+  virtual_path: pm-product-discovery
+  is_virtual: true
+  package_type: skill_bundle
+  content_hash: sha256:d91fdb8670b7a3a50d1983fb0e6c7b2653f384cd7d00fd8ac01d07dbec32ea7d
+  declared_license: MIT
 deployments:
 - kind: project-relative
   target: agent-skills

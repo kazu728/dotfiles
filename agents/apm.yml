@@ -28,3 +28,9 @@ dependencies:
       ref: 7b116c05bfda646af39d2524c54e70c751f57ee8
     - git: https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
       ref: 8f2d57610a73efc97d743c9b0b0ecb1002e09fa4
+    - git: phuryn/pm-skills
+      path: pm-execution
+      ref: 8607e3b077817f89bf4a9b623246219734ac3be0
+    - git: phuryn/pm-skills
+      path: pm-product-discovery
+      ref: 8607e3b077817f89bf4a9b623246219734ac3be0
