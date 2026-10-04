@@ -1,6 +1,28 @@
 lockfile_version: '1'
 apm_version: 0.32.0
 dependencies:
+- repo_url: anthropics/skills
+  name: frontend-design
+  host: github.com
+  resolved_commit: 8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4
+  resolved_ref: 8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4
+  version: unknown
+  virtual_path: skills/frontend-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/frontend-design
+  - .agents/skills/frontend-design/LICENSE.txt
+  - .agents/skills/frontend-design/SKILL.md
+  - .claude/skills/frontend-design
+  - .claude/skills/frontend-design/LICENSE.txt
+  - .claude/skills/frontend-design/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/frontend-design/LICENSE.txt: sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594
+    .agents/skills/frontend-design/SKILL.md: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+    .claude/skills/frontend-design/LICENSE.txt: sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594
+    .claude/skills/frontend-design/SKILL.md: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+  content_hash: sha256:89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576
 - repo_url: ayghri/i-have-adhd
   name: i-have-adhd
   host: github.com
@@ -381,6 +403,24 @@ dependencies:
     .claude/skills/summarize-interview/SKILL.md: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
   content_hash: sha256:d91fdb8670b7a3a50d1983fb0e6c7b2653f384cd7d00fd8ac01d07dbec32ea7d
   declared_license: MIT
+- repo_url: vercel-labs/agent-skills
+  name: web-design-guidelines
+  host: github.com
+  resolved_commit: 063bee94c3f4df8453406c830b0a7df0f2860278
+  resolved_ref: 063bee94c3f4df8453406c830b0a7df0f2860278
+  version: unknown
+  virtual_path: skills/web-design-guidelines
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/web-design-guidelines
+  - .agents/skills/web-design-guidelines/SKILL.md
+  - .claude/skills/web-design-guidelines
+  - .claude/skills/web-design-guidelines/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/web-design-guidelines/SKILL.md: sha256:f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f
+    .claude/skills/web-design-guidelines/SKILL.md: sha256:f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f
+  content_hash: sha256:a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a
 deployments:
 - kind: project-relative
   target: agent-skills
@@ -607,6 +647,33 @@ deployments:
   - gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
   active_owner: gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
   content_hash: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/frontend-design
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/frontend-design/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/frontend-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/grilling
@@ -1068,6 +1135,24 @@ deployments:
   content_hash: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
 - kind: project-relative
   target: agent-skills
+  value: .agents/skills/web-design-guidelines
+  runtime: null
+  scope: project
+  owners:
+  - vercel-labs/agent-skills/skills/web-design-guidelines
+  active_owner: vercel-labs/agent-skills/skills/web-design-guidelines
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/web-design-guidelines/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - vercel-labs/agent-skills/skills/web-design-guidelines
+  active_owner: vercel-labs/agent-skills/skills/web-design-guidelines
+  content_hash: sha256:f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f
+- kind: project-relative
+  target: agent-skills
   value: .agents/skills/wwas
   runtime: null
   scope: project
@@ -1516,6 +1601,33 @@ deployments:
   - gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
   active_owner: gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
   content_hash: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
+- kind: project-relative
+  target: claude
+  value: .claude/skills/frontend-design
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/frontend-design/LICENSE.txt
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594
+- kind: project-relative
+  target: claude
+  value: .claude/skills/frontend-design/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - anthropics/skills/skills/frontend-design
+  active_owner: anthropics/skills/skills/frontend-design
+  content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
 - kind: project-relative
   target: claude
   value: .claude/skills/grilling
@@ -2020,6 +2132,24 @@ deployments:
   - phuryn/pm-skills/pm-execution
   active_owner: phuryn/pm-skills/pm-execution
   content_hash: sha256:8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55
+- kind: project-relative
+  target: claude
+  value: .claude/skills/web-design-guidelines
+  runtime: null
+  scope: project
+  owners:
+  - vercel-labs/agent-skills/skills/web-design-guidelines
+  active_owner: vercel-labs/agent-skills/skills/web-design-guidelines
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/web-design-guidelines/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - vercel-labs/agent-skills/skills/web-design-guidelines
+  active_owner: vercel-labs/agent-skills/skills/web-design-guidelines
+  content_hash: sha256:f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f
 - kind: project-relative
   target: claude
   value: .claude/skills/wwas
