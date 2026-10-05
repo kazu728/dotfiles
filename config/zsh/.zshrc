@@ -50,7 +50,7 @@ ghq-fzf() {
   repo=$(ghq list | fzf --preview "$preview_cmd")
   if [ -n "$repo" ]; then
     repo=$(ghq list --full-path --exact "$repo")
-    BUFFER="cd ${repo}"
+    BUFFER="cd ${(q)repo}"
     zle accept-line
   fi
   zle clear-screen
