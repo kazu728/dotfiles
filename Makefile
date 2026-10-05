@@ -2,23 +2,14 @@ BUN_GLOBAL_PACKAGES := @openai/codex opencode-ai elm @earendil-works/pi-coding-a
 APM_HOME := $(HOME)/.apm
 APM_GENERATED := $(APM_HOME)/apm.yml $(APM_HOME)/apm.lock.yaml $(APM_HOME)/apm_modules
 SKILL_DIRS := $(HOME)/.agents/skills $(HOME)/.claude/skills
+NIX := /nix/var/nix/profiles/default/bin/nix
 
 .PHONY: init
 init:
-	@if command -v nix >/dev/null 2>&1; then \
-		echo "Nix is already installed"; \
-	else \
-		echo "Installing Nix..."; \
-		curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate; \
-	fi
-	@if command -v darwin-rebuild >/dev/null 2>&1; then \
-		echo "nix-darwin is already installed, running build..."; \
-		$(MAKE) build; \
-	else \
-		echo "Setting up nix-darwin for the first time..."; \
-		nix run nix-darwin -- switch --flake .#aarch64; \
-	fi
-	$(MAKE) tools
+	test -x /opt/homebrew/bin/brew || { echo "Install Homebrew first: https://brew.sh/"; exit 1; }
+	test -x $(NIX) || curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh
+	sudo $(NIX) --extra-experimental-features "nix-command flakes" run --inputs-from . darwin#darwin-rebuild -- switch --flake .#aarch64
+	PATH="/etc/profiles/per-user/$$USER/bin:$$PATH" $(MAKE) tools
 
 .PHONY: build
 build:
