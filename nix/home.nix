@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -68,8 +67,7 @@ in
 
       "AGENTS.md".source = ../AGENTS.md;
       ".codex/AGENTS.md".source = ../AGENTS.md;
-      ".claude/statusline.sh".source =
-        config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/ghq/github.com/kazu728/dotfiles/scripts/claude-statusline.sh";
+      ".claude/statusline.sh".source = ../scripts/claude-statusline.sh;
     };
   };
 
