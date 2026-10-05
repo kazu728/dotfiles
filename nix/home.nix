@@ -18,7 +18,6 @@ in
     ./modules/ssh.nix
     ./modules/yazi.nix
     ./modules/herdr.nix
-    ./modules/agent-skills.nix
   ];
 
   home = {
