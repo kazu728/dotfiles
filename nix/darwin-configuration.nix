@@ -101,6 +101,7 @@
     ];
     casks = [
       "appcleaner"
+      "bitwarden"
       "cloudflare-warp"
       "codexbar"
       "discord"
