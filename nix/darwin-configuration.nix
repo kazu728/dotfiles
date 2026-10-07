@@ -77,9 +77,6 @@
       autoUpdate = false;
       cleanup = "none";
     };
-    taps = [
-      "k1LoW/tap"
-    ];
     brews = [
       "automake"
       "awscli"
@@ -88,7 +85,6 @@
       "direnv"
       "expect"
       "just"
-      "k1LoW/tap/mo"
       "libgit2"
       "libyaml"
       "mise"
@@ -102,8 +98,6 @@
     casks = [
       "appcleaner"
       "bitwarden"
-      "cloudflare-warp"
-      "codexbar"
       "discord"
       "ghostty"
       "google-chrome"
@@ -116,7 +110,6 @@
       "secretive"
       "slack"
       "spotify"
-      "tableplus"
       "tailscale-app"
       "twingate"
       "utm"
