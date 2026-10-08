@@ -19,6 +19,8 @@
 
   programs.zsh.enable = true;
 
+  users.users.kazuki.home = "/Users/kazuki";
+
   system = {
     stateVersion = 4;
     startup.chime = false;

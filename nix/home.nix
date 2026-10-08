@@ -1,12 +1,11 @@
 {
-  lib,
+  config,
   pkgs,
   ...
 }:
 
 let
-  username = "kazuki";
-  homeDirectory = "/Users/${username}";
+  inherit (config.home) homeDirectory;
 in
 {
   imports = [
@@ -21,8 +20,6 @@ in
   ];
 
   home = {
-    inherit username;
-    homeDirectory = lib.mkForce homeDirectory;
     stateVersion = "26.05";
 
     packages = with pkgs; [
