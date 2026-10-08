@@ -57,18 +57,6 @@ ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
 
-cdf() {
-  local dir entry preview_cmd
-  preview_cmd='eza -a --icons --classify --git --no-permissions --no-user --no-filesize --sort modified --reverse --tree --level 2 -- "{}" 2>/dev/null || ls -la "{}"'
-
-  dir=$(find . -mindepth 1 -type d -not -path '*/.git/*' -not -path './.git' -print 2>/dev/null |
-    while IFS= read -r entry; do
-      print -r -- "${entry#./}"
-    done | fzf --preview "$preview_cmd")
-
-  [[ -n "$dir" ]] && cd -- "$dir"
-}
-
 _git_fzf_guard() {
   command -v fzf >/dev/null 2>&1 || return 1
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return 1
