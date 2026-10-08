@@ -6,7 +6,7 @@
 }:
 
 let
-  herdrPkg = herdr.packages.${pkgs.system}.default;
+  herdrPkg = herdr.packages.${pkgs.stdenv.hostPlatform.system}.default;
   integrations = [
     "claude"
     "codex"
