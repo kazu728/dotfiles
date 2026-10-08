@@ -133,9 +133,7 @@ gbd() {
   target=$(printf '%s\n' "${list[@]}" | fzf "${fzf_opts[@]}")
 
   [[ -z "$target" ]] && return 0
-  while IFS= read -r line; do
-    git branch -D "$line"
-  done <<< "$target"
+  git branch -D -- "${(@f)target}"
 }
 
 '$'() {
