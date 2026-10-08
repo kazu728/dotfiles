@@ -73,6 +73,7 @@
 
   homebrew = {
     enable = true;
+    enableZshIntegration = true;
     onActivation = {
       autoUpdate = false;
       cleanup = "none";
