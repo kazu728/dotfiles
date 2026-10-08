@@ -44,9 +44,8 @@ cache_cleanup() {
 }
 
 ghq-fzf() {
-  local repo preview_cmd
-  preview_cmd='repo=$(ghq list --full-path --exact {}) && { eza -a --icons --classify --git --no-permissions --no-user --no-filesize --git-ignore --sort modified --reverse --tree --level 2 -- "$repo" 2>/dev/null || ls -la "$repo"; }'
-  repo=$(ghq list | fzf --preview "$preview_cmd")
+  local repo
+  repo=$(ghq list | fzf)
   if [ -n "$repo" ]; then
     repo=$(ghq list --full-path --exact "$repo")
     BUFFER="cd ${(q)repo}"
