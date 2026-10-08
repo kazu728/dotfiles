@@ -146,7 +146,12 @@ alias codex='codex --sandbox danger-full-access --ask-for-approval never -c '\''
 alias claude='claude --permission-mode auto'
 
 opencode() {
-  env OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 opencode "$@" --auto
+  local -a auto
+  case "${1-}" in
+    ""|-*|run) auto=(--auto) ;;
+    *) [[ -d $1 ]] && auto=(--auto) ;;
+  esac
+  OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 command opencode "$@" "${auto[@]}"
 }
 
 sbx() {
