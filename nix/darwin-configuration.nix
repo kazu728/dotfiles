@@ -74,10 +74,7 @@
   homebrew = {
     enable = true;
     enableZshIntegration = true;
-    onActivation = {
-      autoUpdate = false;
-      cleanup = "none";
-    };
+    onActivation.cleanup = "zap";
     brews = [
       "automake"
       "awscli"
