@@ -14,9 +14,6 @@ dependencies:
     - git: mattpocock/skills
       path: skills/productivity/grilling
       ref: 6acc160e4e0cd062dbbbd7a1b26ae92855edf07e # v1.2.3
-    - git: ctxrs/ctx
-      path: skills/ctx
-      ref: c13a92db70147533c256532384fe8baab6f87950 # v2.2.7
     - git: ayghri/i-have-adhd
       path: skills/i-have-adhd
       ref: b15d0be58f55b33972ba3e39709e0e5208ef30cb

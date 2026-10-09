@@ -49,24 +49,6 @@ dependencies:
     .claude/skills/i-have-adhd/agents/gemini.toml: sha256:5108a6123beb9df24846e0dd3f902c652d18522dfbc56e5762032ea383041c62
     .claude/skills/i-have-adhd/agents/openai.yaml: sha256:2c51291283dcefdca43ca6b0c08172f225c7c26a9783ec444d6bdfa51ca96f8f
   content_hash: sha256:27e3b1d7339b6898419c6df77e1339bbd8362e5926e86bb991417c60af390b81
-- repo_url: ctxrs/ctx
-  name: ctx
-  host: github.com
-  resolved_commit: c13a92db70147533c256532384fe8baab6f87950
-  resolved_ref: c13a92db70147533c256532384fe8baab6f87950
-  version: unknown
-  virtual_path: skills/ctx
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/ctx
-  - .agents/skills/ctx/SKILL.md
-  - .claude/skills/ctx
-  - .claude/skills/ctx/SKILL.md
-  deployed_file_hashes:
-    .agents/skills/ctx/SKILL.md: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
-    .claude/skills/ctx/SKILL.md: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
-  content_hash: sha256:93115b2bd2fa3dbafdec4361e1ee6fa3f5e01b635a4f9f4c62ab06ab340b747d
 - repo_url: k16shikano/fd287c3133457c4fd8f5601d34aa817d
   name: japanese-tech-writing
   host: gist.github.com
@@ -548,24 +530,6 @@ deployments:
   - phuryn/pm-skills/pm-execution
   active_owner: phuryn/pm-skills/pm-execution
   content_hash: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
-- kind: project-relative
-  target: agent-skills
-  value: .agents/skills/ctx
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx
-  active_owner: ctxrs/ctx/skills/ctx
-  content_hash: null
-- kind: project-relative
-  target: agent-skills
-  value: .agents/skills/ctx/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx
-  active_owner: ctxrs/ctx/skills/ctx
-  content_hash: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/domain-modeling
@@ -1348,7 +1312,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
+  content_hash: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
 - kind: project-relative
   target: claude
   value: .claude/skills/aicommit/subject-policy.md
@@ -1484,24 +1448,6 @@ deployments:
   - phuryn/pm-skills/pm-execution
   active_owner: phuryn/pm-skills/pm-execution
   content_hash: sha256:2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32
-- kind: project-relative
-  target: claude
-  value: .claude/skills/ctx
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx
-  active_owner: ctxrs/ctx/skills/ctx
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/ctx/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - ctxrs/ctx/skills/ctx
-  active_owner: ctxrs/ctx/skills/ctx
-  content_hash: sha256:76f1fc36a011a719bbf9789418e5dd1287a0d6de7603b6240a068f5ad23fc682
 - kind: project-relative
   target: claude
   value: .claude/skills/deep-review
@@ -2239,7 +2185,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
+  content_hash: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
 - kind: project-relative
   target: legacy
   value: .agents/skills/aicommit/subject-policy.md
@@ -2383,7 +2329,7 @@ local_deployed_files:
 - .claude/skills/prune-review/SKILL.md
 local_deployed_file_hashes:
   .agents/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-  .agents/skills/aicommit/SKILL.md: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
+  .agents/skills/aicommit/SKILL.md: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
   .agents/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .agents/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
@@ -2393,7 +2339,7 @@ local_deployed_file_hashes:
   .agents/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
   .agents/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
   .claude/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-  .claude/skills/aicommit/SKILL.md: sha256:28bd89c6996ea322c8b2b1f23a8b4d2d4d2417c53f0956a67249c0c8faaf3046
+  .claude/skills/aicommit/SKILL.md: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
   .claude/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
   .claude/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .claude/skills/handle/SKILL.md: sha256:7ec7343ee34656a3268e72c9af77ffc1555d3364d5ed8e363a551638f9dcf74e
