@@ -9,8 +9,8 @@ stdenvNoCC.mkDerivation rec {
   version = "0.32.0";
 
   src = fetchurl {
-    url = "https://github.com/microsoft/apm/releases/download/v${version}/apm-darwin-arm64.tar.gz";
-    hash = "sha256-IuMO89nuSV15j0Z70wYn3LLxemSmDs/KoVymzqojjFY=";
+    url = "https://github.com/microsoft/apm/releases/download/v${version}/apm-linux-arm64.tar.gz";
+    hash = "sha256-2ZTtSduiwy7jO93MH9lWtvMrV2tRqqOUjdqUYwpYXLg=";
   };
 
   dontFixup = true;
@@ -26,6 +26,6 @@ stdenvNoCC.mkDerivation rec {
     homepage = "https://github.com/microsoft/apm";
     license = lib.licenses.mit;
     mainProgram = "apm";
-    platforms = [ "aarch64-darwin" ];
+    platforms = [ "aarch64-linux" ];
   };
 }

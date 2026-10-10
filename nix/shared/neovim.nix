@@ -23,17 +23,6 @@
       onedark-nvim
     ];
 
-    extraPackages = with pkgs; [
-      clang-tools
-      elmPackages.elm-language-server
-      elixir-ls
-      nodejs
-      typescript-language-server
-      nil
-      rust-analyzer
-      ty
-    ];
-
     initLua = builtins.readFile ../../config/neovim/init.lua;
   };
 

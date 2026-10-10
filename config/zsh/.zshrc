@@ -1,60 +1,6 @@
-eval "$(mise activate zsh)"
-
 if [[ $HERDR_ENV == 1 && $TERM == xterm-256color ]]; then
   export TERM=xterm-ghostty
 fi
-
-cache_cleanup() {
-  local mode="${1:-safe}"
-  local targets=(
-    "$HOME/.cache/uv"
-    "$HOME/.bun/install/cache"
-    "$HOME/.npm/_cacache"
-    "$HOME/Library/Caches"
-  )
-
-  if [[ "$mode" != "safe" && "$mode" != "full" ]]; then
-    echo "Usage: cache_cleanup [safe|full]"
-    return 1
-  fi
-
-  echo "Before:"
-  du -sh "${targets[@]}" 2>/dev/null
-
-  case "$mode" in
-    safe)
-      uv cache prune
-      npm cache verify
-      ;;
-    full)
-      read -q "REPLY?Delete caches now? [y/N] "
-      echo
-      if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
-        echo "Aborted."
-        return 1
-      fi
-      uv cache clean
-      npm cache clean --force
-      rm -rf "$HOME/.bun/install/cache" "$HOME/Library/Caches/"*
-      ;;
-  esac
-
-  echo "After:"
-  df -h /
-}
-
-ghq-fzf() {
-  local repo
-  repo=$(ghq list | fzf)
-  if [ -n "$repo" ]; then
-    repo=$(ghq list --full-path --exact "$repo")
-    BUFFER="cd ${(q)repo}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N ghq-fzf
-bindkey '^]' ghq-fzf
 
 _git_fzf_guard() {
   command -v fzf >/dev/null 2>&1 || return 1
@@ -125,36 +71,4 @@ gbd() {
 
 '$'() {
     "$@"
-}
-
-alias codex='codex --sandbox danger-full-access --ask-for-approval never -c '\''tui.status_line=["model","five-hour-limit","weekly-limit"]'\'''
-alias claude='claude --permission-mode auto'
-
-opencode() {
-  local -a auto
-  case "${1-}" in
-    ""|-*|run) auto=(--auto) ;;
-    *) [[ -d $1 ]] && auto=(--auto) ;;
-  esac
-  OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 command opencode "$@" "${auto[@]}"
-}
-
-sbx() {
-  local -a args=("$@")
-  while (( ${#args} )); do
-    case "${args[1]}" in
-      -D|--debug|--cloud|--cloud-api-url=*) shift args ;;
-      --cloud-api-url)
-        (( ${#args} >= 2 )) || break
-        shift 2 args
-        ;;
-      *) break ;;
-    esac
-  done
-  case "${args[1]-}" in
-    ""|run|create|tui)
-      command sbx skills import --force >/dev/null || return
-      ;;
-  esac
-  command sbx "$@"
 }
