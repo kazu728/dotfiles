@@ -1,70 +1,25 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
-let
-  inherit (config.home) homeDirectory;
-in
 {
   imports = [
-    ./modules/ghostty.nix
-    ./modules/opencode.nix
-    ./modules/zsh.nix
-    ./modules/git.nix
-    ./modules/neovim.nix
-    ./modules/ssh.nix
-    ./modules/yazi.nix
-    ./modules/herdr.nix
+    ./zsh.nix
+    ./git.nix
+    ./neovim.nix
+    ./yazi.nix
+    ./herdr.nix
   ];
 
   home = {
     stateVersion = "26.05";
 
     packages = with pkgs; [
-      bun
-      deadnix
       delta
-      (pkgs.callPackage ./packages/docker-sbx.nix { })
-      gh
-      ghq
-      go
       jq
-      lima
-      mise
-      nix-output-monitor
-      nixfmt
       procs
       ripgrep
-      rustup
-      statix
     ];
 
-    sessionVariables = {
-      BUN_INSTALL = "${homeDirectory}/.bun";
-      CLAUDE_CODE_PLUGIN_PREFER_HTTPS = "1";
-      EDITOR = "nvim";
-    };
-
-    sessionPath = [
-      "${homeDirectory}/.local/bin"
-      "${homeDirectory}/.bun/bin"
-      "${homeDirectory}/.cargo/bin"
-    ];
-
-    file = {
-      ".local/bin/git-aicommit" = {
-        source = ../scripts/git-aicommit;
-        executable = true;
-      };
-      ".local/share/git-aicommit/subject-policy.md".source =
-        ../agents/.apm/skills/aicommit/subject-policy.md;
-
-      "AGENTS.md".source = ../AGENTS.md;
-      ".codex/AGENTS.md".source = ../AGENTS.md;
-      ".claude/statusline.sh".source = ../scripts/claude-statusline.sh;
-    };
+    sessionVariables.EDITOR = "nvim";
   };
 
   xdg.enable = true;
@@ -82,19 +37,11 @@ in
       };
     };
 
-    reauthfi.enable = true;
-
     lazygit = {
       enable = true;
       enableZshIntegration = false;
       settings = {
         customCommands = [
-          {
-            key = "G";
-            context = "files";
-            command = "git aicommit";
-            description = "AI commit (git aicommit)";
-          }
           {
             key = "O";
             context = "files";
@@ -148,11 +95,6 @@ in
         git_branch.format = "[$symbol$branch]($style) ";
         git_status.format = "([\\[$conflicted\\]]($style) )";
       };
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
     };
   };
 }

@@ -1,5 +1,5 @@
 {
-  description = "Darwin system configuration";
+  description = "Host and VM configurations";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
@@ -39,12 +39,15 @@
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      formatter.${system} = pkgs.nixfmt;
 
-      checks.${system} = {
-        darwin = self.darwinConfigurations.aarch64.system;
+      vmSystem = "aarch64-linux";
+      vmPkgs = import nixpkgs { system = vmSystem; };
+      vmUsers = map (machine: "kazuki@${machine}") [
+        "private"
+        "work"
+      ];
+
+      lintChecks = pkgs: {
         deadnix = pkgs.runCommandLocal "deadnix-check" { } ''
           ${pkgs.deadnix}/bin/deadnix --fail ${self}
           touch $out
@@ -58,11 +61,25 @@
           touch $out
         '';
       };
+    in
+    {
+      formatter = {
+        ${system} = pkgs.nixfmt;
+        ${vmSystem} = vmPkgs.nixfmt;
+      };
 
-      darwinConfigurations.aarch64 = darwin.lib.darwinSystem {
+      checks.${system} = lintChecks pkgs // {
+        host = self.darwinConfigurations.host.system;
+      };
+
+      checks.${vmSystem} =
+        lintChecks vmPkgs
+        // nixpkgs.lib.genAttrs vmUsers (user: self.homeConfigurations.${user}.activationPackage);
+
+      darwinConfigurations.host = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          ./nix/darwin-configuration.nix
+          ./nix/host/system.nix
           home-manager.darwinModules.home-manager
           {
             home-manager = {
@@ -74,10 +91,26 @@
                 reauthfi.homeManagerModules.default
               ];
               extraSpecialArgs = { inherit herdr; };
-              users.kazuki = import ./nix/home.nix;
+              users.kazuki.imports = [
+                ./nix/shared/home.nix
+                ./nix/host/home.nix
+              ];
             };
           }
         ];
       };
+
+      homeConfigurations = nixpkgs.lib.genAttrs vmUsers (
+        _:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = vmPkgs;
+          modules = [
+            hunk.homeManagerModules.default
+            ./nix/shared/home.nix
+            ./nix/vm/home.nix
+          ];
+          extraSpecialArgs = { inherit herdr; };
+        }
+      );
     };
 }

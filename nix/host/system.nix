@@ -1,14 +1,10 @@
-{ pkgs, ... }:
+_:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = [ (pkgs.callPackage ./packages/apm.nix { }) ];
-
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 7d";
     };
     optimise.automatic = true;
     settings.experimental-features = [
@@ -74,24 +70,6 @@
     enable = true;
     enableZshIntegration = true;
     onActivation.cleanup = "zap";
-    brews = [
-      "automake"
-      "awscli"
-      "coreutils"
-      "cryptography"
-      "direnv"
-      "expect"
-      "just"
-      "libgit2"
-      "libyaml"
-      "mise"
-      "poppler"
-      "sevenzip"
-      "shellcheck"
-      "unixodbc"
-      "unzip"
-      "wxwidgets"
-    ];
     casks = [
       "appcleaner"
       "bitwarden"
@@ -109,9 +87,7 @@
       "spotify"
       "tailscale-app"
       "twingate"
-      "utm"
       "wireshark-app"
-      "wkhtmltopdf"
       "zulip"
     ];
   };
