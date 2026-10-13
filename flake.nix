@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     hunk = {
       url = "github:modem-dev/hunk/v0.23.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +33,7 @@
       herdr,
       home-manager,
       hunk,
+      nix-homebrew,
       reauthfi,
       nixpkgs,
       ...
@@ -80,6 +82,7 @@
         system = "aarch64-darwin";
         modules = [
           ./nix/host/system.nix
+          nix-homebrew.darwinModules.default
           home-manager.darwinModules.home-manager
           {
             home-manager = {

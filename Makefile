@@ -6,7 +6,6 @@ NIX := /nix/var/nix/profiles/default/bin/nix
 
 .PHONY: init
 init:
-	test -x /opt/homebrew/bin/brew || { echo "Install Homebrew first: https://brew.sh/"; exit 1; }
 	test -x $(NIX) || curl --proto '=https' --tlsv1.2 -sSf -L https://nixos.org/nix/install | sh
 	sudo $(NIX) --extra-experimental-features "nix-command flakes" run --inputs-from . darwin#darwin-rebuild -- switch --flake .#host
 

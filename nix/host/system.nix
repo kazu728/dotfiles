@@ -1,4 +1,4 @@
-_:
+{ config, ... }:
 
 {
   nix = {
@@ -64,6 +64,12 @@ _:
   security.pam.services.sudo_local = {
     touchIdAuth = true;
     reattach = true;
+  };
+
+  nix-homebrew = {
+    enable = true;
+    user = config.system.primaryUser;
+    autoMigrate = true;
   };
 
   homebrew = {
