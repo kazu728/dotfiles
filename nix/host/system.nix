@@ -18,7 +18,7 @@
   users.users.kazuki.home = "/Users/kazuki";
 
   system = {
-    stateVersion = 4;
+    stateVersion = 7;
     startup.chime = false;
     primaryUser = "kazuki";
 
