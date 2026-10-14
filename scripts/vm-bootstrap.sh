@@ -31,5 +31,4 @@ fi
 git pull --ff-only
 make switch
 
-curl -fsSL https://claude.ai/install.sh | bash
 sudo chsh -s /usr/bin/zsh "$USER"

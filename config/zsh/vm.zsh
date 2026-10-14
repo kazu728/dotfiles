@@ -4,7 +4,6 @@ cache_cleanup() {
   local mode="${1:-safe}"
   local targets=(
     "$HOME/.cache/uv"
-    "$HOME/.bun/install/cache"
     "$HOME/.npm/_cacache"
   )
 
@@ -30,7 +29,6 @@ cache_cleanup() {
       fi
       uv cache clean
       npm cache clean --force
-      rm -rf "$HOME/.bun/install/cache"
       ;;
   esac
 
@@ -50,15 +48,3 @@ ghq-fzf() {
 }
 zle -N ghq-fzf
 bindkey '^]' ghq-fzf
-
-alias codex='codex --sandbox danger-full-access --ask-for-approval never -c '\''tui.status_line=["model","five-hour-limit","weekly-limit"]'\'''
-alias claude='claude --permission-mode auto'
-
-opencode() {
-  local -a auto
-  case "${1-}" in
-    ""|-*|run) auto=(--auto) ;;
-    *) [[ -d $1 ]] && auto=(--auto) ;;
-  esac
-  OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 command opencode "$@" "${auto[@]}"
-}

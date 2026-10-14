@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./agents.nix
     ./zsh.nix
     ./git.nix
     ./neovim.nix

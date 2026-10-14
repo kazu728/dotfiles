@@ -20,15 +20,6 @@ in
         User = "git";
         IdentityAgent = secretiveAgent;
       };
-
-      n150 = {
-        HostName = "nixos";
-        User = "kazuki";
-        IdentityAgent = secretiveAgent;
-        ControlMaster = "auto";
-        ControlPath = "~/.ssh/cm-%r@%h:%p";
-        ControlPersist = 60;
-      };
     };
   };
 }
