@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (config.home) homeDirectory;
@@ -38,7 +43,11 @@ in
   };
 
   programs = {
+    gh.enable = true;
+
     zsh.initContent = builtins.readFile ../../config/zsh/agents.zsh;
+
+    neovim.initLua = lib.mkAfter ''vim.keymap.set("n", "<leader>gc", "<cmd>!git aicommit<cr>")'';
 
     lazygit.settings.customCommands = [
       {

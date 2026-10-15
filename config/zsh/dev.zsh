@@ -1,5 +1,3 @@
-eval "$(mise activate zsh)"
-
 cache_cleanup() {
   local mode="${1:-safe}"
   local targets=(
