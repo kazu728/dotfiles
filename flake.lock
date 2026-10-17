@@ -165,6 +165,26 @@
         "type": "github"
       }
     },
+    "mdpx": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791808117,
+        "narHash": "sha256-0rUnHUFKkgIYjakbKezsolZ1k4StZy1wsl683nGo53g=",
+        "owner": "kazu728",
+        "repo": "mdpx",
+        "rev": "ac166c3e488cff75c88685d93852d3dc7fff4701",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kazu728",
+        "repo": "mdpx",
+        "type": "github"
+      }
+    },
     "nix-homebrew": {
       "inputs": {
         "brew-src": "brew-src"
@@ -240,6 +260,7 @@
         "herdr": "herdr",
         "home-manager": "home-manager",
         "hunk": "hunk",
+        "mdpx": "mdpx",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
         "reauthfi": "reauthfi"

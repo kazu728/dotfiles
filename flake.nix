@@ -20,6 +20,10 @@
       url = "github:ogulcancelik/herdr/v0.9.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mdpx = {
+      url = "github:kazu728/mdpx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +37,7 @@
       herdr,
       home-manager,
       hunk,
+      mdpx,
       nix-homebrew,
       reauthfi,
       nixpkgs,
@@ -93,7 +98,7 @@
                 hunk.homeManagerModules.default
                 reauthfi.homeManagerModules.default
               ];
-              extraSpecialArgs = { inherit herdr; };
+              extraSpecialArgs = { inherit herdr mdpx; };
               users.kazuki.imports = [
                 ./nix/shared/home.nix
                 ./nix/host/home.nix
