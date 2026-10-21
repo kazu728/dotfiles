@@ -9,7 +9,7 @@
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     hunk = {
-      url = "github:modem-dev/hunk/v0.23.0";
+      url = "github:modem-dev/hunk/v0.24.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     reauthfi = {
@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     herdr = {
-      url = "github:ogulcancelik/herdr/v0.9.3";
+      url = "github:herdrdev/herdr/v0.9.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mdpx = {
