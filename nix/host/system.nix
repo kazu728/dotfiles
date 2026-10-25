@@ -162,13 +162,5 @@
       "zoom"
       "zulip"
     ];
-    masApps = {
-      "Amazon Kindle" = 302584613;
-      iMovie = 408981434;
-      Keynote = 361285480;
-      LINE = 539883307;
-      Numbers = 361304891;
-      Pages = 361309726;
-    };
   };
 }
