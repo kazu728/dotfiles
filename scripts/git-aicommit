@@ -13,8 +13,8 @@ fi
 
 repo_root=$(git rev-parse --show-toplevel)
 recent_subjects=$(git log --no-merges -n 20 --pretty=format:'%s' 2>/dev/null || true)
-tmpfile=$(mktemp)
-trap 'rm -f "$tmpfile"' EXIT HUP INT TERM
+tmpdir=$(mktemp -d)
+trap 'rm -rf "$tmpdir"' EXIT HUP INT TERM
 aicommit_skill=$HOME/.agents/skills/aicommit/SKILL.md
 repo_aicommit_skill=$repo_root/.agents/skills/aicommit/SKILL.md
 
@@ -47,17 +47,53 @@ if [ -z "$policy_file" ]; then
 fi
 
 subject_policy=$(cat "$policy_file")
+staged_paths=$(git diff --cached --no-renames --name-only -z | jq -Rs 'split("\u0000")[:-1]')
+
+# Options for git commit describe a single commit, and splitting rebuilds the index from HEAD.
+if [ $# -eq 0 ] && git rev-parse --verify --quiet HEAD >/dev/null; then
+  can_split=true
+  split_rule="Plan one commit unless the diff mixes changes with clearly different purposes. When splitting, keep a renamed file's old and new paths together, and keep files that reference each other's changed code in the same commit so that every commit builds on its own."
+else
+  can_split=false
+  split_rule="Plan exactly one commit."
+fi
 
 prompt=$(cat <<EOF
-Write a git commit subject for the staged diff provided in the <stdin> block.
+Plan git commits for the staged diff provided in the <stdin> block.
+
+$split_rule
+Assign every staged path to exactly one commit:
+$staged_paths
 
 Recent commit subjects from this repository:
 $recent_subjects
 
-Subject policy:
+Subject policy, which applies to each commit's subject:
 $subject_policy
 EOF
 )
+
+cat >"$tmpdir/schema.json" <<'EOF'
+{
+  "type": "object",
+  "properties": {
+    "commits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subject": { "type": "string" },
+          "paths": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["subject", "paths"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["commits"],
+  "additionalProperties": false
+}
+EOF
 
 # Pipe the diff instead of asking the model to run git diff; it sometimes skips the tool call and invents a subject.
 # This prompt matches the aicommit skill, so disable it to prevent a recursive commit attempt.
@@ -65,21 +101,49 @@ git diff --cached | codex exec -C "$repo_root" --sandbox read-only --ephemeral \
   -m gpt-6-luna \
   -c 'model_reasoning_effort="low"' \
   -c "skills.config=[{path=\"$aicommit_skill\",enabled=false},{path=\"$repo_aicommit_skill\",enabled=false}]" \
-  -o "$tmpfile" \
+  --output-schema "$tmpdir/schema.json" \
+  -o "$tmpdir/plan.json" \
   "$prompt" \
   >/dev/null
 
-msg=$(tr -d '\r' < "$tmpfile")
-if [ -z "$msg" ]; then
-  echo "Codex returned an empty commit message." >&2
+plan=$tmpdir/plan.json
+if ! jq -e --argjson staged "$staged_paths" --argjson can_split "$can_split" '
+  (.commits | length) as $n
+  | all(.commits[]; .subject | length > 0 and (test("[\r\n]") | not))
+    and ($n == 1 or ($can_split and $n > 1
+      and all(.commits[]; .paths | length > 0)
+      and ([.commits[].paths[]] | sort) == ($staged | sort)))
+' "$plan" >/dev/null 2>&1; then
+  printf 'Codex returned an invalid commit plan:\n%s\n' "$(cat "$plan")" >&2
   exit 1
 fi
 
-case $msg in
-  *$'\n'*)
-    printf 'Codex returned more than a subject line:\n%s\n' "$msg" >&2
-    exit 1
-    ;;
-esac
+count=$(jq '.commits | length' "$plan")
+if [ "$count" -eq 1 ]; then
+  git commit -m "$(jq -r '.commits[0].subject' "$plan")" "$@"
+  exit
+fi
 
-git commit -m "$msg" "$@"
+staged_tree=$(git write-tree)
+start=$(git rev-parse HEAD)
+for ((i = 0; i < count; i++)); do
+  paths=()
+  while IFS= read -r -d '' path; do
+    paths+=("$path")
+  done < <(jq -j --argjson i "$i" '.commits[$i].paths[] + "\u0000"' "$plan")
+  if ! {
+    git read-tree HEAD &&
+      git --literal-pathspecs diff --binary HEAD "$staged_tree" -- "${paths[@]}" | git apply --cached &&
+      git commit -m "$(jq -r --argjson i "$i" '.commits[$i].subject' "$plan")"
+  }; then
+    git read-tree "$staged_tree"
+    echo "Commit $((i + 1)) of $count failed. The index is back to the staged changes. Commits already made:" >&2
+    git log --oneline "$start"..HEAD >&2
+    exit 1
+  fi
+done
+
+if ! git diff --quiet HEAD "$staged_tree"; then
+  echo "The commits differ from the staged changes, likely rewritten by a hook:" >&2
+  git diff --stat HEAD "$staged_tree" >&2
+fi
