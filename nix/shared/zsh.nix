@@ -17,8 +17,6 @@
 
     shellAliases = {
       rm = "rm -i";
-      ll = "eza -a";
-      lla = "eza -la";
       grep = "grep --color";
       ga = "git add -A";
       gs = "git status";
@@ -28,7 +26,6 @@
       gsu = "git stash save -u";
       gco = "git commit";
       gca = "git commit --amend";
-      dc = "docker container";
       doco = "docker compose";
     };
 

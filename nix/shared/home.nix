@@ -17,7 +17,6 @@
     packages = with pkgs; [
       delta
       jq
-      procs
       ripgrep
     ];
 
