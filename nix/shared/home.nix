@@ -15,6 +15,7 @@
     stateVersion = "26.05";
 
     packages = with pkgs; [
+      curl
       delta
       jq
       ripgrep
