@@ -143,7 +143,7 @@
       "bitwarden"
       "chatgpt"
       "claude"
-      "cleanshot"
+      "cloudflare-warp"
       "discord"
       "ghostty"
       "google-chrome"
