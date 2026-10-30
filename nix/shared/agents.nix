@@ -18,10 +18,7 @@ in
 
     sessionVariables.CLAUDE_CODE_PLUGIN_PREFER_HTTPS = "1";
 
-    sessionPath = [
-      "${homeDirectory}/.local/bin"
-      "${homeDirectory}/.opencode/bin"
-    ];
+    sessionPath = [ "${homeDirectory}/.local/bin" ];
 
     file = {
       "AGENTS.md".source = ../../AGENTS.md;
@@ -35,11 +32,6 @@ in
       ".local/share/git-aicommit/subject-policy.md".source =
         ../../agents/.apm/skills/aicommit/subject-policy.md;
     };
-  };
-
-  xdg.configFile = {
-    "opencode/AGENTS.md".source = ../../AGENTS.md;
-    "opencode/tui.json".source = ../../config/opencode/tui.json;
   };
 
   programs = {
