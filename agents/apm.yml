@@ -37,3 +37,178 @@ dependencies:
     - git: vercel-labs/agent-skills
       path: skills/web-design-guidelines
       ref: 063bee94c3f4df8453406c830b0a7df0f2860278
+    # APM cannot deploy the pstack v0.15.36 plugin to agent-skills or claude as a whole.
+    - git: cursor/plugins
+      path: pstack/skills/architect
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/arena
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/automate-me
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/benchmark-checklist
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/blast-radius
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/bro
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/correct
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/create-formal-verification-skill
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/create-verification-skill
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/figure-it-out
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/how
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/in-your-own-words
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/interrogate
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/ketchup-video
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/ketchup
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/maintain-formal-verification-skill
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/maintain-verification-skill
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/make-bot-ui
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/no-comments
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/poteto-help
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/poteto-mode
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-attack-the-premise
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-boundary-discipline
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-build-the-lever
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-encode-lessons-in-structure
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-exhaust-the-design-space
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-experience-first
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-explain-the-number
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-fix-root-causes
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-foundational-thinking
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-guard-the-context-window
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-laziness-protocol
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-make-operations-idempotent
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-migrate-callers-then-delete-legacy-apis
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-minimize-reader-load
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-model-the-domain
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-never-block-on-the-human
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-outcome-oriented-execution
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-prove-it-works
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-redesign-from-first-principles
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-separate-before-serializing-shared-state
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-sequence-verifiable-units
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-subtract-before-you-add
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-test-behavior-not-implementation
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/principle-type-system-discipline
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/recall
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/reflect
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/setup-pstack
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/sharpen
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/show-me-your-work
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/statechart
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/swarm
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/tdd
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/teach
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/technical-writing
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/typescript-best-practices
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/unslop
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
+    - git: cursor/plugins
+      path: pstack/skills/why
+      ref: ae5650febf4320793844c12c4adaa937f417f8da
