@@ -71,14 +71,14 @@
           showCommandLog = false;
           sidePanelWidth = 0.2;
         };
-        git.pagers = [
+        git.diffRenderers = [
           {
             colorArg = "always";
-            pager = "delta --paging=never --side-by-side";
+            command = "delta --paging=never --side-by-side";
           }
           {
             colorArg = "always";
-            pager = "delta --paging=never";
+            command = "delta --paging=never";
           }
         ];
       };
