@@ -37,6 +37,9 @@ dependencies:
     - git: vercel-labs/agent-skills
       path: skills/web-design-guidelines
       ref: 063bee94c3f4df8453406c830b0a7df0f2860278
+    - git: GoogleChrome/modern-web-guidance
+      path: skills/modern-web-guidance
+      ref: 4dd968349e54ca45a05dd5c818fb035c9054b022 # v1.0.0
     # APM cannot deploy the pstack v0.15.36 plugin to agent-skills or claude as a whole.
     - git: cursor/plugins
       path: pstack/skills/architect
