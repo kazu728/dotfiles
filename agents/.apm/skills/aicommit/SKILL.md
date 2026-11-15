@@ -25,17 +25,21 @@ description: コミットまたは件名案の生成を明示的に頼まれた�
 
 ## 分割
 
-- ファイル単位で分け、`git diff --cached --no-renames --name-only` の全パスをいずれかの commit に割り当てる。rename の移動元と移動先は同じ commit に入れる。
+- 変更はファイル単位で commit に割り当て、1つのファイルに目的の異なる変更が混ざるときだけ、そのファイルを行単位で分ける。`git diff --cached --no-renames --name-only` の全パスと、行単位で分けるファイルの全変更行を、いずれかの commit に割り当てる。rename の移動元と移動先は同じ commit に入れる。
+- 行単位で分けるファイルは、そのファイルを含む最後の commit を除く各 commit について、その commit の時点の内容を一時ファイルに書き、`git hash-object -w <一時ファイル>` で blob にする。内容は HEAD の版（`git show HEAD:<path>`、新規ファイルなら空）に、その commit までに割り当てた `git diff --cached` の変更を足して作り、working tree のファイルは書き換えない。index を組み替える前に、`git diff <直前の版> <blob>` で各 blob がその commit に割り当てた変更だけを足していること、`git diff <最後の blob> :<path>` で残りが後の commit に割り当てた変更だけであることを確かめる。直前の版は、最初の blob では `HEAD:<path>`（新規ファイルなら `git hash-object -w --stdin </dev/null` の空の blob）、以降は1つ前の blob とする。
 - 次の手順を1回のコマンドで実行し、index だけを組み替える。失敗したら index を元の staged 状態 `$T` に戻す。
 
   ```sh
   if T=$(git write-tree) &&
-     git read-tree HEAD && git diff --binary HEAD "$T" -- <paths> | git apply --cached && git commit -m "<件名>" &&
+     git read-tree HEAD && git diff --binary HEAD "$T" -- <paths> | git apply --cached &&
+       git update-index --add --cacheinfo <mode>,<blob>,<path> && git commit -m "<件名>" &&
      git read-tree HEAD && git diff --binary HEAD "$T" -- <paths> | git apply --cached && git commit -m "<件名>"
   then git diff --stat HEAD "$T"
   else git read-tree "$T"
   fi
   ```
+
+- `<paths>` には、その commit にファイル単位で割り当てたパスと、行単位で分けたファイルのうちその commit が最後になるものを入れる。行単位で分けたファイルが後の commit にも続くときは、`<paths>` に入れず `git update-index` で blob を置く。`<mode>` は `git ls-files -s -- <path>` のモードとする。`<paths>` が空になる commit では `git diff … | git apply --cached` を、blob を置かない commit では `git update-index` を省く。`<paths>` を空のまま残すと、全パスの差分が入る。
 
 - `git reset` 後の `git add` や `git commit -- <paths>` は、部分的に stage したファイルで working tree の内容を取り込むため使わない。シェル変数はコマンド間で引き継がれず、`set -e` もホストの実行方法によって効かないため、手順を複数のコマンドに分けたり `&&` を外したりしない。
 - 成功しても index は戻さず、表示された差分が空でなければ、フックによる書き換えか割り当て漏れとしてその差分を伝える。戻すと、フックが commit 時に書き換えた内容を打ち消す差分が staged に残る。
