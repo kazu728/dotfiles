@@ -9,5 +9,5 @@
 - 返ってきた指摘のうち検証を通ったものは握りつぶさず、提示で止めずに直す。
 - GitHub の操作には `gh` を使い、GitHub コネクタへ自動で切り替えない。
 - 依存（パッケージ、GitHub Actions の action、Nix の入力など）は、公開から7日以上たった版を使う。条件を満たす版で解決できないときは、制限を外すフラグや除外設定で回避せず、止めて確認する。
-- GitHub Actions の action は公式・third party を問わず、最新タグのフルの commit SHA で固定し `# vX.Y.Z` のコメントを添える。
+- GitHub Actions の action は公式・third party を問わず、使える中で最新のリリースタグ（`vX.Y.Z` があればそれ）で参照し、commit は `gh actions-lock` で `.github/workflows/actions.lock` に固定する。workflow を追加・変更したら、同じコミットで lockfile も更新する。lockfile の対象外である reusable workflow（`jobs.<job_id>.uses`）はフルの commit SHA で、container image は `@sha256:` の digest で固定する。
 - ツールが未導入のとき `brew install` を直接実行しない。一時利用なら `nix run nixpkgs#<pkg>` / `nix shell` で済ませ、恒久的に必要なら dotfiles の `nix/shared/dev.nix`（開発用途に限らずホストでも常に要るなら `nix/shared/home.nix`）に追加する。

@@ -4,6 +4,8 @@
   home.packages = [ pkgs.ghq ];
 
   programs = {
+    gh.extensions = [ (pkgs.callPackage ../packages/gh-actions-lock.nix { }) ];
+
     mise.enable = true;
 
     direnv = {
