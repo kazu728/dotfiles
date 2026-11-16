@@ -57,8 +57,6 @@
         NSWindowResizeTime = 0.001;
       };
 
-      universalaccess.reduceMotion = true;
-
       trackpad = {
         Clicking = true;
         TrackpadRightClick = true;
@@ -100,6 +98,22 @@
           "30".enabled = false;
           "31".enabled = false;
           "184".enabled = false;
+        };
+        "com.knollsoft.Rectangle" = {
+          alternateDefaultShortcuts = true;
+          subsequentExecutionMode = 5;
+          leftHalf = {
+            keyCode = 123;
+            modifierFlags = 1572864;
+          };
+          rightHalf = {
+            keyCode = 124;
+            modifierFlags = 1572864;
+          };
+          maximize = {
+            keyCode = 3;
+            modifierFlags = 524288;
+          };
         };
         "~${config.system.primaryUser}/Library/Preferences/ByHost/com.apple.screensaver".idleTime = 3600;
       };
@@ -157,6 +171,7 @@
       "karabiner-elements"
       "keycastr"
       "orbstack"
+      "rectangle"
       "secretive"
       "slack"
       "spotify"
