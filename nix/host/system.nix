@@ -100,8 +100,6 @@
           "30".enabled = false;
           "31".enabled = false;
           "184".enabled = false;
-          "64".enabled = false;
-          "65".enabled = false;
         };
         "~${config.system.primaryUser}/Library/Preferences/ByHost/com.apple.screensaver".idleTime = 3600;
       };
@@ -159,7 +157,6 @@
       "karabiner-elements"
       "keycastr"
       "orbstack"
-      "raycast"
       "secretive"
       "slack"
       "spotify"
