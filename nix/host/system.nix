@@ -40,6 +40,9 @@
       dock = {
         autohide = true;
         autohide-delay = 0.0;
+        autohide-time-modifier = 0.0;
+        expose-animation-duration = 0.0;
+        launchanim = false;
         show-recents = false;
       };
       NSGlobalDomain = {
@@ -50,7 +53,11 @@
         AppleShowAllExtensions = true;
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
+        NSAutomaticWindowAnimationsEnabled = false;
+        NSWindowResizeTime = 0.001;
       };
+
+      universalaccess.reduceMotion = true;
 
       trackpad = {
         Clicking = true;
