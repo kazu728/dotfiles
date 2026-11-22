@@ -4807,6 +4807,24 @@ deployments:
   content_hash: null
 - kind: project-relative
   target: agent-skills
+  value: .agents/skills/herdr-worktree
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/herdr-worktree/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+- kind: project-relative
+  target: agent-skills
   value: .agents/skills/herdr/SKILL.md
   runtime: null
   scope: project
@@ -13060,6 +13078,24 @@ deployments:
   content_hash: null
 - kind: project-relative
   target: claude
+  value: .claude/skills/herdr-worktree
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/herdr-worktree/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+- kind: project-relative
+  target: claude
   value: .claude/skills/herdr/SKILL.md
   runtime: null
   scope: project
@@ -20584,6 +20620,8 @@ local_deployed_files:
 - .agents/skills/handle
 - .agents/skills/handle/SKILL.md
 - .agents/skills/handle/agents/openai.yaml
+- .agents/skills/herdr-worktree
+- .agents/skills/herdr-worktree/SKILL.md
 - .agents/skills/japanese-ui-ux
 - .agents/skills/japanese-ui-ux/SKILL.md
 - .agents/skills/japanese-ui-ux/references/ui-patterns.md
@@ -20600,6 +20638,8 @@ local_deployed_files:
 - .claude/skills/handle
 - .claude/skills/handle/SKILL.md
 - .claude/skills/handle/agents/openai.yaml
+- .claude/skills/herdr-worktree
+- .claude/skills/herdr-worktree/SKILL.md
 - .claude/skills/japanese-ui-ux
 - .claude/skills/japanese-ui-ux/SKILL.md
 - .claude/skills/japanese-ui-ux/references/ui-patterns.md
@@ -20613,6 +20653,7 @@ local_deployed_file_hashes:
   .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .agents/skills/handle/SKILL.md: sha256:bb677b655b4762d9142c074bd34eed9ef4b55634c425dae99836ea7d1966edb4
   .agents/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
+  .agents/skills/herdr-worktree/SKILL.md: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
   .agents/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
   .agents/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
   .agents/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
@@ -20623,6 +20664,7 @@ local_deployed_file_hashes:
   .claude/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
   .claude/skills/handle/SKILL.md: sha256:bb677b655b4762d9142c074bd34eed9ef4b55634c425dae99836ea7d1966edb4
   .claude/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
+  .claude/skills/herdr-worktree/SKILL.md: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
   .claude/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
   .claude/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
   .claude/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
