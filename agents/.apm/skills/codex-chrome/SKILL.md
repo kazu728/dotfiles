@@ -1,13 +1,40 @@
 ---
 name: codex-chrome
-description: Codex CLI（codex-tui・codex exec）からユーザーの Chrome を操作するとき（ページを開く、内容を確認する、フォームを操作するなど）に使う。Claude Code では使わない。
+description: Claude Code・Codex CLI でブラウザを操作するとき、ほかのブラウザ操作より先に使う。ブラウザでページを開く、画面を確認する、ボタンをクリックする、フォームに入力するなどの依頼が対象。ブラウザの指定がなければユーザーの Chrome を使う。
 ---
 
 # codex-chrome
 
-Codex CLI では、`cua_repl` のブラウザ操作（`cua.createBrowserTab("chrome", …)`・`cua.getTab`・`cua.getState` のブラウザ一覧）が `The browser access host is unavailable` で失敗する（openai/codex#57641）。そのまま進むと Chrome アプリ全体を Computer Use で操作することになり、ユーザーの Chrome 操作とぶつかる。#57641 が直るまでは、Chrome プラグイン同梱の公式クライアントを `node_repl` から呼び、タブ単位で操作する。
+「codex-chrome のブラウザ担当として実行」と依頼されたら、[ブラウザ担当の手順](#ブラウザ担当の手順)に進む。
 
-## 手順
+## 親エージェントの手順
+
+Chrome の操作はブラウザ担当に任せる。依頼は「codex-chrome のブラウザ担当として実行」で始め、対象ページやタブ、作業の目的、操作上の制約を渡す。
+
+ブラウザ担当は、Herdr のペインで Fast の Codex として起動する。
+
+1. 同じタブにペインを作る。
+
+   ```sh
+   test "${HERDR_ENV:-}" = 1 && herdr pane split --current --direction right --cwd "$PWD" --no-focus
+   ```
+
+2. 返った `.result.pane.pane_id` のペインでブラウザ担当を起動し、依頼する。
+
+   ```sh
+   herdr agent start "$agent_name" --kind codex --pane "$pane_id" -- \
+     -m gpt-6.1-terra -c 'model_reasoning_effort="xhigh"' -c 'service_tier="fast"'
+   herdr agent prompt "$agent_name" "$request"
+   ```
+
+3. 完了は Codex のログで判定する。`herdr agent get "$agent_name"` の `.result.agent.agent_session.value` が ID で、`~/.codex/sessions` の `rollout-*<ID>.jsonl` に `task_complete` が出たら完了、その `last_agent_message` が報告になる。
+4. 報告を受け取ったら `herdr pane close "$pane_id"` でペインを閉じる。承認や質問で止まった場合はペインを残し、ユーザーに状況を伝える。
+
+1 のコマンドが失敗したら自分で操作する。Codex は[ブラウザ担当の手順](#ブラウザ担当の手順)を行い、Claude Code は Claude in Chrome を使う。
+
+## ブラウザ担当の手順
+
+Codex CLI では `cua_repl` のブラウザ操作が `The browser access host is unavailable` で失敗する（openai/codex#57641）。直るまでは、Chrome プラグイン同梱の公式クライアントを `node_repl` から呼ぶ。
 
 1. `node_repl` の `js` ツールで最初に次を実行する。`cua_repl` は使わない。
 
@@ -20,9 +47,7 @@ Codex CLI では、`cua_repl` のブラウザ操作（`cua.createBrowserTab("chr
    console.log(await browser.documentation());
    ```
 
-2. 返ったドキュメントに載っている API だけを使う。作業の始めに `browser.nameSession("🔎 <作業名>")` でセッション名を付け、`browser.tabs.new()` で自分のタブを作って操作する。
-3. 以降の呼び出しでは `agent` と `browser` を使い回し、import や setup をやり直さない。
-4. 作ったタブは作業の終わりに閉じる。
+2. 返ったドキュメントに載っている API だけを使い、`browser.tabs.new()` で自分のタブを作って操作する。
 
 ## 制約
 
