@@ -30,6 +30,7 @@ agents: export PATH := $(HOME)/.local/bin:$(PATH)
 agents:
 	test -x $(HOME)/.local/bin/claude || curl -fsSL https://claude.ai/install.sh | bash
 	test -x $(HOME)/.local/bin/codex || curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh
+	test -x "$(HOME)/.local/bin/agy" || bash -o pipefail -c 'curl -fsSL https://antigravity.google/cli/install.sh | bash'
 # The pi installer has no non-interactive option: it waits for keys on /dev/tty and then starts pi.
 # Without a controlling terminal it installs with its defaults instead.
 	test -x $(HOME)/.local/bin/pi || curl -fsSL https://pi.dev/install.sh | perl -MPOSIX=setsid -e 'setsid; exec @ARGV' sh
