@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.ghq ];
+  home.packages = with pkgs; [
+    ghq
+    tlaplus
+  ];
 
   programs = {
     gh.extensions = [ (pkgs.callPackage ../packages/gh-actions-lock.nix { }) ];
