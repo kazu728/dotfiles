@@ -8,5 +8,4 @@
 - 返ってきた指摘のうち検証を通ったものは握りつぶさず、提示で止めずに直す。
 - ブラウザを使うかは自分で判断し、使ってよいかをユーザーに尋ねない。CLI・API・`gh` などで現実的な手間で済むならそちらを優先し、手間が大幅に増えるならブラウザを使う。タブ単位で操作する手段は告げずに使う。アプリや画面全体を操作する Computer Use のように、ユーザーの操作とぶつかる手段を使うときだけ、始める前に一言告げて確認を待たずに進める。ユーザーに頼むのは、ツールで操作できない箇所（ネイティブのファイル選択画面など）と、送信・購入など取り消せない操作の確認に限る。
 - 依存（パッケージ、GitHub Actions の action、Nix の入力など）は、公開から7日以上たった版を使う。条件を満たす版で解決できないときは、制限を外すフラグや除外設定で回避せず、止めて確認する。
-- GitHub Actions の action は公式・third party を問わず、使える中で最新のリリースタグ（`vX.Y.Z` があればそれ）で参照し、commit は `gh actions-lock` で `.github/workflows/actions.lock` に固定する。workflow を追加・変更したら、同じコミットで lockfile も更新する。lockfile の対象外である reusable workflow（`jobs.<job_id>.uses`）はフルの commit SHA で、container image は `@sha256:` の digest で固定する。
 - ツールが未導入のとき `brew install` を直接実行しない。一時利用なら `nix run nixpkgs#<pkg>` / `nix shell` で済ませ、恒久的に必要なら dotfiles の `nix/shared/dev.nix`（開発用途に限らずホストでも常に要るなら `nix/shared/home.nix`）に追加する。
