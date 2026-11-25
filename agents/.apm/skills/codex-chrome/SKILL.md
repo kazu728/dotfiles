@@ -11,7 +11,7 @@ description: Claude Code・Codex CLI でブラウザを操作するとき、ほ�
 
 Chrome の操作はブラウザ担当に任せる。依頼は「codex-chrome のブラウザ担当として実行」で始め、対象ページやタブ、作業の目的、操作上の制約を渡す。
 
-ブラウザ担当は、Herdr のペインで Fast の Codex として起動する。
+ブラウザ担当は、Herdr のペインで Codex として起動する。
 
 1. 同じタブにペインを作る。
 
@@ -23,7 +23,7 @@ Chrome の操作はブラウザ担当に任せる。依頼は「codex-chrome の
 
    ```sh
    herdr agent start "$agent_name" --kind codex --pane "$pane_id" -- \
-     -m gpt-6.1-terra -c 'model_reasoning_effort="xhigh"' -c 'service_tier="fast"'
+     -m gpt-6.1-terra -c 'model_reasoning_effort="xhigh"'
    herdr agent prompt "$agent_name" "$request"
    ```
 
