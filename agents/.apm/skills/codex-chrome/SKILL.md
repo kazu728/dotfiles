@@ -1,6 +1,6 @@
 ---
 name: codex-chrome
-description: Claude Code・Codex CLI でブラウザを操作するとき、ほかのブラウザ操作より先に使う。ブラウザでページを開く、画面を確認する、ボタンをクリックする、フォームに入力するなどの依頼が対象。ブラウザの指定がなければユーザーの Chrome を使う。
+description: ブラウザを操作するとき、ほかのブラウザ操作より先に使う。ブラウザでページを開く、画面を確認する、ボタンをクリックする、フォームに入力するなどの依頼が対象。ブラウザの指定がなければユーザーの Chrome を使う。
 ---
 
 # codex-chrome
@@ -30,7 +30,7 @@ Chrome の操作はブラウザ担当に任せる。依頼は「codex-chrome の
 3. 完了は Codex のログで判定する。`herdr agent get "$agent_name"` の `.result.agent.agent_session.value` が ID で、`~/.codex/sessions` の `rollout-*<ID>.jsonl` に `task_complete` が出たら完了、その `last_agent_message` が報告になる。
 4. 報告を受け取ったら `herdr pane close "$pane_id"` でペインを閉じる。承認や質問で止まった場合はペインを残し、ユーザーに状況を伝える。
 
-1 のコマンドが失敗したら自分で操作する。Codex は[ブラウザ担当の手順](#ブラウザ担当の手順)を行い、Claude Code は Claude in Chrome を使う。
+1 のコマンドが失敗したら、Codex は[ブラウザ担当の手順](#ブラウザ担当の手順)を行い、Claude Code は Claude in Chrome を使い、Antigravity は `/browser` の実行をユーザーに案内する。
 
 ## ブラウザ担当の手順
 
