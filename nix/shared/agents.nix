@@ -24,6 +24,7 @@ in
       "AGENTS.md".source = ../../AGENTS.md;
       ".codex/AGENTS.md".source = ../../AGENTS.md;
       ".claude/statusline.sh".source = ../../scripts/claude-statusline.sh;
+      ".gemini/antigravity-cli/statusline.sh".source = ../../scripts/antigravity-statusline.sh;
 
       ".local/bin/git-aicommit" = {
         source = ../../scripts/git-aicommit;
