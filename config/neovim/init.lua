@@ -10,8 +10,6 @@ vim.g.mapleader = " "
 
 vim.keymap.set({ "n", "i" }, "<C-j>", "<Esc>")
 
-vim.keymap.set("n", "<leader>gp", "<cmd>!git push<cr>")
-
 vim.keymap.set("i", "<CR>", function()
   if vim.fn.pumvisible() == 0 then
     return "<CR>"

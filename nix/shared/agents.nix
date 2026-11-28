@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
@@ -39,16 +38,5 @@ in
     gh.enable = true;
 
     zsh.initContent = builtins.readFile ../../config/zsh/agents.zsh;
-
-    neovim.initLua = lib.mkAfter ''vim.keymap.set("n", "<leader>gc", "<cmd>!git aicommit<cr>")'';
-
-    lazygit.settings.customCommands = [
-      {
-        key = "G";
-        context = "files";
-        command = "git aicommit";
-        description = "AI commit (git aicommit)";
-      }
-    ];
   };
 }
