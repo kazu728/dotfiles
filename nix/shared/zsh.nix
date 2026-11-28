@@ -5,6 +5,11 @@
     enable = true;
     defaultKeymap = "emacs";
     dotDir = "${config.xdg.configHome}/zsh";
+    history = {
+      size = 100000;
+      save = 100000;
+      extended = true;
+    };
     autosuggestion = {
       enable = true;
       strategy = [
