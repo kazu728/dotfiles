@@ -29,8 +29,6 @@ in
         source = ../../scripts/git-aicommit;
         executable = true;
       };
-      ".local/share/git-aicommit/subject-policy.md".source =
-        ../../agents/.apm/skills/aicommit/subject-policy.md;
     };
   };
 
