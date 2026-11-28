@@ -4192,6 +4192,48 @@ dependencies:
     .claude/skills/summarize-interview/SKILL.md: sha256:5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c
   content_hash: sha256:d91fdb8670b7a3a50d1983fb0e6c7b2653f384cd7d00fd8ac01d07dbec32ea7d
   declared_license: MIT
+- repo_url: u-ichi/agent-plugins
+  name: figure-docs
+  host: github.com
+  resolved_commit: fbc87d0cd8506d300dd2d6cf8708dc817e9aebd1
+  resolved_ref: fbc87d0cd8506d300dd2d6cf8708dc817e9aebd1
+  version: unknown
+  virtual_path: plugins/figure-docs/skills/figure-docs
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/figure-docs
+  - .agents/skills/figure-docs/SKILL.md
+  - .agents/skills/figure-docs/references/business.html
+  - .agents/skills/figure-docs/references/dev.html
+  - .agents/skills/figure-docs/scripts/examples/expense-approval.json
+  - .agents/skills/figure-docs/scripts/examples/expense-approval.svg
+  - .agents/skills/figure-docs/scripts/stepper.mjs
+  - .agents/skills/figure-docs/scripts/stepper.test.mjs
+  - .claude/skills/figure-docs
+  - .claude/skills/figure-docs/SKILL.md
+  - .claude/skills/figure-docs/references/business.html
+  - .claude/skills/figure-docs/references/dev.html
+  - .claude/skills/figure-docs/scripts/examples/expense-approval.json
+  - .claude/skills/figure-docs/scripts/examples/expense-approval.svg
+  - .claude/skills/figure-docs/scripts/stepper.mjs
+  - .claude/skills/figure-docs/scripts/stepper.test.mjs
+  deployed_file_hashes:
+    .agents/skills/figure-docs/SKILL.md: sha256:aa92ceec77ca7c1c96f3f4e48859f4c71102e7692e721dd14dcebf224899a65c
+    .agents/skills/figure-docs/references/business.html: sha256:baceeeecab004ca9baf910082680d3907ababac9407ac63713a91ca2e1620b53
+    .agents/skills/figure-docs/references/dev.html: sha256:4b81475676cbcc782c531cc6f9c1590e7692cd9f298d5e4acfbd8e9e22968841
+    .agents/skills/figure-docs/scripts/examples/expense-approval.json: sha256:c714d8b463b71942523628e9ef60bc791d45955ba6a5c7b5adfbc5cd902aa922
+    .agents/skills/figure-docs/scripts/examples/expense-approval.svg: sha256:a22df5e93b6675c15925e465f7081bf06bdb82aefc561980aeeb29c72cb9bda1
+    .agents/skills/figure-docs/scripts/stepper.mjs: sha256:0bb8fa90565a8b955d667ce9ec68e436831875e5b4e371f11e73ecce80908213
+    .agents/skills/figure-docs/scripts/stepper.test.mjs: sha256:b3936fb8584ff4664bf73d76b69bb9e169c835ed64575617b82a4605162a12ed
+    .claude/skills/figure-docs/SKILL.md: sha256:aa92ceec77ca7c1c96f3f4e48859f4c71102e7692e721dd14dcebf224899a65c
+    .claude/skills/figure-docs/references/business.html: sha256:baceeeecab004ca9baf910082680d3907ababac9407ac63713a91ca2e1620b53
+    .claude/skills/figure-docs/references/dev.html: sha256:4b81475676cbcc782c531cc6f9c1590e7692cd9f298d5e4acfbd8e9e22968841
+    .claude/skills/figure-docs/scripts/examples/expense-approval.json: sha256:c714d8b463b71942523628e9ef60bc791d45955ba6a5c7b5adfbc5cd902aa922
+    .claude/skills/figure-docs/scripts/examples/expense-approval.svg: sha256:a22df5e93b6675c15925e465f7081bf06bdb82aefc561980aeeb29c72cb9bda1
+    .claude/skills/figure-docs/scripts/stepper.mjs: sha256:0bb8fa90565a8b955d667ce9ec68e436831875e5b4e371f11e73ecce80908213
+    .claude/skills/figure-docs/scripts/stepper.test.mjs: sha256:b3936fb8584ff4664bf73d76b69bb9e169c835ed64575617b82a4605162a12ed
+  content_hash: sha256:68eab069685bb04662ddaa36b4b1abf6c8694a862190e5aa7486464041ee4297
 - repo_url: vercel-labs/agent-skills
   name: web-design-guidelines
   host: github.com
@@ -4213,24 +4255,6 @@ dependencies:
 deployments:
 - kind: project-relative
   target: agent-skills
-  value: .agents/skills/adversarial-review
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: agent-skills
-  value: .agents/skills/adversarial-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-- kind: project-relative
-  target: agent-skills
   value: .agents/skills/aicommit
   runtime: null
   scope: project
@@ -4246,7 +4270,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
+  content_hash: sha256:df27f93c9de8980700e32ff5ad60fd5c54ff86e8c1357032c7dea4771188843d
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/aicommit/subject-policy.md
@@ -4501,6 +4525,24 @@ deployments:
   content_hash: sha256:aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb
 - kind: project-relative
   target: agent-skills
+  value: .agents/skills/codex-chrome
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/codex-chrome/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2ba1e879956d94330f86e17d8209d3ef149b9c6c9f514bd80db49f1805589a90
+- kind: project-relative
+  target: agent-skills
   value: .agents/skills/correct
   runtime: null
   scope: project
@@ -4615,7 +4657,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
+  content_hash: sha256:582c189bba75c04db31617b52c8169674adac29fc0ba6a4df865247ba413b879
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/domain-modeling
@@ -4699,6 +4741,78 @@ deployments:
   content_hash: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
 - kind: project-relative
   target: agent-skills
+  value: .agents/skills/figure-docs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:aa92ceec77ca7c1c96f3f4e48859f4c71102e7692e721dd14dcebf224899a65c
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/references/business.html
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:baceeeecab004ca9baf910082680d3907ababac9407ac63713a91ca2e1620b53
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/references/dev.html
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:4b81475676cbcc782c531cc6f9c1590e7692cd9f298d5e4acfbd8e9e22968841
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/scripts/examples/expense-approval.json
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:c714d8b463b71942523628e9ef60bc791d45955ba6a5c7b5adfbc5cd902aa922
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/scripts/examples/expense-approval.svg
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:a22df5e93b6675c15925e465f7081bf06bdb82aefc561980aeeb29c72cb9bda1
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/scripts/stepper.mjs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:0bb8fa90565a8b955d667ce9ec68e436831875e5b4e371f11e73ecce80908213
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/figure-docs/scripts/stepper.test.mjs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:b3936fb8584ff4664bf73d76b69bb9e169c835ed64575617b82a4605162a12ed
+- kind: project-relative
+  target: agent-skills
   value: .agents/skills/figure-it-out
   runtime: null
   scope: project
@@ -4742,6 +4856,24 @@ deployments:
   - anthropics/skills/skills/frontend-design
   active_owner: anthropics/skills/skills/frontend-design
   content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/github-actions-pinning
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/github-actions-pinning/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d02a09defdfe9de0dfbc5098623cd40de3b138879e791096f2e12ed3b0c625d6
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/grilling
@@ -4822,7 +4954,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+  content_hash: sha256:0f82ef0321f6a385fe2d5294b2ef2164f50bf28a95ac7278fb3ccb88a7a37516
 - kind: project-relative
   target: agent-skills
   value: .agents/skills/herdr/SKILL.md
@@ -12484,24 +12616,6 @@ deployments:
   content_hash: sha256:4eedcc0038bbbb2ecf02d5cc3a83eb32984e63406d4792bed066a199dfd05adb
 - kind: project-relative
   target: claude
-  value: .claude/skills/adversarial-review
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: claude
-  value: .claude/skills/adversarial-review/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-- kind: project-relative
-  target: claude
   value: .claude/skills/aicommit
   runtime: null
   scope: project
@@ -12517,7 +12631,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
+  content_hash: sha256:df27f93c9de8980700e32ff5ad60fd5c54ff86e8c1357032c7dea4771188843d
 - kind: project-relative
   target: claude
   value: .claude/skills/aicommit/subject-policy.md
@@ -12772,6 +12886,24 @@ deployments:
   content_hash: sha256:aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb
 - kind: project-relative
   target: claude
+  value: .claude/skills/codex-chrome
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/codex-chrome/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2ba1e879956d94330f86e17d8209d3ef149b9c6c9f514bd80db49f1805589a90
+- kind: project-relative
+  target: claude
   value: .claude/skills/correct
   runtime: null
   scope: project
@@ -12886,7 +13018,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
+  content_hash: sha256:582c189bba75c04db31617b52c8169674adac29fc0ba6a4df865247ba413b879
 - kind: project-relative
   target: claude
   value: .claude/skills/domain-modeling
@@ -12970,6 +13102,78 @@ deployments:
   content_hash: sha256:ad350e0e6f5630fd94d8ab98a6aee194053b0096fdc944c23e271d6dfa09ee68
 - kind: project-relative
   target: claude
+  value: .claude/skills/figure-docs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:aa92ceec77ca7c1c96f3f4e48859f4c71102e7692e721dd14dcebf224899a65c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/references/business.html
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:baceeeecab004ca9baf910082680d3907ababac9407ac63713a91ca2e1620b53
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/references/dev.html
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:4b81475676cbcc782c531cc6f9c1590e7692cd9f298d5e4acfbd8e9e22968841
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/scripts/examples/expense-approval.json
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:c714d8b463b71942523628e9ef60bc791d45955ba6a5c7b5adfbc5cd902aa922
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/scripts/examples/expense-approval.svg
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:a22df5e93b6675c15925e465f7081bf06bdb82aefc561980aeeb29c72cb9bda1
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/scripts/stepper.mjs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:0bb8fa90565a8b955d667ce9ec68e436831875e5b4e371f11e73ecce80908213
+- kind: project-relative
+  target: claude
+  value: .claude/skills/figure-docs/scripts/stepper.test.mjs
+  runtime: null
+  scope: project
+  owners:
+  - u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  active_owner: u-ichi/agent-plugins/plugins/figure-docs/skills/figure-docs
+  content_hash: sha256:b3936fb8584ff4664bf73d76b69bb9e169c835ed64575617b82a4605162a12ed
+- kind: project-relative
+  target: claude
   value: .claude/skills/figure-it-out
   runtime: null
   scope: project
@@ -13013,6 +13217,24 @@ deployments:
   - anthropics/skills/skills/frontend-design
   active_owner: anthropics/skills/skills/frontend-design
   content_hash: sha256:d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/github-actions-pinning
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/github-actions-pinning/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d02a09defdfe9de0dfbc5098623cd40de3b138879e791096f2e12ed3b0c625d6
 - kind: project-relative
   target: claude
   value: .claude/skills/grilling
@@ -13093,7 +13315,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+  content_hash: sha256:0f82ef0321f6a385fe2d5294b2ef2164f50bf28a95ac7278fb3ccb88a7a37516
 - kind: project-relative
   target: claude
   value: .claude/skills/herdr/SKILL.md
@@ -20610,13 +20832,15 @@ deployments:
   active_owner: phuryn/pm-skills/pm-execution
   content_hash: sha256:7fad2bed16046679a9eb2941573f978c692db425e5e5b7a7c31a8be2e4dd10a4
 local_deployed_files:
-- .agents/skills/adversarial-review
-- .agents/skills/adversarial-review/SKILL.md
 - .agents/skills/aicommit
 - .agents/skills/aicommit/SKILL.md
 - .agents/skills/aicommit/subject-policy.md
+- .agents/skills/codex-chrome
+- .agents/skills/codex-chrome/SKILL.md
 - .agents/skills/deep-review
 - .agents/skills/deep-review/SKILL.md
+- .agents/skills/github-actions-pinning
+- .agents/skills/github-actions-pinning/SKILL.md
 - .agents/skills/handle
 - .agents/skills/handle/SKILL.md
 - .agents/skills/handle/agents/openai.yaml
@@ -20628,13 +20852,15 @@ local_deployed_files:
 - .agents/skills/japanese-ui-ux/references/ux-writing.md
 - .agents/skills/prune-review
 - .agents/skills/prune-review/SKILL.md
-- .claude/skills/adversarial-review
-- .claude/skills/adversarial-review/SKILL.md
 - .claude/skills/aicommit
 - .claude/skills/aicommit/SKILL.md
 - .claude/skills/aicommit/subject-policy.md
+- .claude/skills/codex-chrome
+- .claude/skills/codex-chrome/SKILL.md
 - .claude/skills/deep-review
 - .claude/skills/deep-review/SKILL.md
+- .claude/skills/github-actions-pinning
+- .claude/skills/github-actions-pinning/SKILL.md
 - .claude/skills/handle
 - .claude/skills/handle/SKILL.md
 - .claude/skills/handle/agents/openai.yaml
@@ -20647,24 +20873,26 @@ local_deployed_files:
 - .claude/skills/prune-review
 - .claude/skills/prune-review/SKILL.md
 local_deployed_file_hashes:
-  .agents/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-  .agents/skills/aicommit/SKILL.md: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
+  .agents/skills/aicommit/SKILL.md: sha256:df27f93c9de8980700e32ff5ad60fd5c54ff86e8c1357032c7dea4771188843d
   .agents/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
-  .agents/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
+  .agents/skills/codex-chrome/SKILL.md: sha256:2ba1e879956d94330f86e17d8209d3ef149b9c6c9f514bd80db49f1805589a90
+  .agents/skills/deep-review/SKILL.md: sha256:582c189bba75c04db31617b52c8169674adac29fc0ba6a4df865247ba413b879
+  .agents/skills/github-actions-pinning/SKILL.md: sha256:d02a09defdfe9de0dfbc5098623cd40de3b138879e791096f2e12ed3b0c625d6
   .agents/skills/handle/SKILL.md: sha256:bb677b655b4762d9142c074bd34eed9ef4b55634c425dae99836ea7d1966edb4
   .agents/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
-  .agents/skills/herdr-worktree/SKILL.md: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+  .agents/skills/herdr-worktree/SKILL.md: sha256:0f82ef0321f6a385fe2d5294b2ef2164f50bf28a95ac7278fb3ccb88a7a37516
   .agents/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
   .agents/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
   .agents/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
   .agents/skills/prune-review/SKILL.md: sha256:f58ead017fc6a5d5e868f12d27d5da69828ef9e58156c2bf8ccf6f5376b751bd
-  .claude/skills/adversarial-review/SKILL.md: sha256:5cd1533a59b0a5bcbfea767f848897f1636a2147f0bf13af5dfd522be17bbea2
-  .claude/skills/aicommit/SKILL.md: sha256:cef10047ab5c7147412829e3aec7d0885205459b6ed6b2085166d12454d648a3
+  .claude/skills/aicommit/SKILL.md: sha256:df27f93c9de8980700e32ff5ad60fd5c54ff86e8c1357032c7dea4771188843d
   .claude/skills/aicommit/subject-policy.md: sha256:14eb70e06a62fdee008acb280bba8b35cd07d0eed4df0ce5b51fff9af94544c3
-  .claude/skills/deep-review/SKILL.md: sha256:d4ae0fc27174da16bc2da3331c33c99d71c154546796cffacfb9556ad44d37a1
+  .claude/skills/codex-chrome/SKILL.md: sha256:2ba1e879956d94330f86e17d8209d3ef149b9c6c9f514bd80db49f1805589a90
+  .claude/skills/deep-review/SKILL.md: sha256:582c189bba75c04db31617b52c8169674adac29fc0ba6a4df865247ba413b879
+  .claude/skills/github-actions-pinning/SKILL.md: sha256:d02a09defdfe9de0dfbc5098623cd40de3b138879e791096f2e12ed3b0c625d6
   .claude/skills/handle/SKILL.md: sha256:bb677b655b4762d9142c074bd34eed9ef4b55634c425dae99836ea7d1966edb4
   .claude/skills/handle/agents/openai.yaml: sha256:a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94
-  .claude/skills/herdr-worktree/SKILL.md: sha256:a995b4c2413dcc40b174c5c4e72a3db2a5eb3941665021b8124275887377b901
+  .claude/skills/herdr-worktree/SKILL.md: sha256:0f82ef0321f6a385fe2d5294b2ef2164f50bf28a95ac7278fb3ccb88a7a37516
   .claude/skills/japanese-ui-ux/SKILL.md: sha256:d519b343b42ef44967b5404d246fa2f709507c7130a092f07bc8afaeabd37f37
   .claude/skills/japanese-ui-ux/references/ui-patterns.md: sha256:39d2d9e15212aa9ab4d897718439e71368fa61c7c1adaf945cde965b9f8e59ee
   .claude/skills/japanese-ui-ux/references/ux-writing.md: sha256:2545e56300a7241af09aa1036af2ea75219155610b884423f4109729f0556bd7
